@@ -169,6 +169,6 @@ What you are aiming at is a signed pilot, not the full deal. A pilot is real mon
 
 I am not asking for your email. There is no list, no sequence, nothing to unsubscribe from.
 
-Two minutes, three things: how you found this, whether it was useful, and what you want me to build next. https://form.jotform.com/262191867802059
+Two minutes, three things: how you found this, whether it was useful, and what you want me to build next. https://form.jotform.com/262194392563059
 
 The next build comes from those answers.

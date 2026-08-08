@@ -11,7 +11,7 @@ export const AUTHOR_NAME = "Built by GAP";
 export const AUTHOR_URL = "https://www.linkedin.com/in/garychakraborty";
 
 // Feedback form shown at the bottom of every build page.
-export const FORM_URL = "https://form.jotform.com/262191867802059";
+export const FORM_URL = "https://form.jotform.com/262194392563059";
 
 // Book a call. Shown inside build pages and once in the footer.
 export const BOOKING_URL = "https://calendly.com/garychakraborty";
