@@ -4,3 +4,8 @@ out/
 .vercel/
 .env*
 .DS_Store
+next-env.d.ts
+*.tsbuildinfo
+
+# Build pages are generated from builds/*/README.md at build time.
+site/app/builds/
