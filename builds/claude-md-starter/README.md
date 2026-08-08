@@ -9,38 +9,49 @@ status: live
 
 ## What this is
 
-A CLAUDE.md starter file that teaches Claude your business once, so every reply and plan
-it writes already knows your offer, price, and rules.
+A text file. Claude reads it first, every chat, so it already knows your business.
 
-- Tells Claude your offer, prices, and rules before you type one word
-- Stops you from re-explaining your business in every new chat
-- Keeps every draft, reply, and plan written the way you actually talk
+- Tells Claude your offer, your price, and your rules before you type a word.
+- Stops you from re-explaining your business in every new chat.
+- Keeps every draft, reply, and plan written in your own voice, not a generic one.
 
 ## The problem it kills
 
-It's Tuesday afternoon and a lead just replied asking about price. You open Claude to
-draft the response, and it asks you what your offer is. Again. You paste the same
-paragraph you pasted on Monday, and on Friday, and the week before that: your price, your
-guarantee, the one rule about never dropping a booking link into a cold reply.
+Claude got fast at drafting. It never learned to remember you.
 
-Fifteen minutes a day doing that adds up to close to 65 hours a year, spent re-explaining
-a business you already know cold, to a tool that is supposed to save you time.
+Every new chat starts blank. It does not know your offer. It does not know your price. It does not know the phrase you banned last month.
 
-The bigger cost hides underneath the time. Without fixed rules, Claude fills the gaps
-itself. One reply quotes a price you retired two months ago. Another uses a phrase a
-client once called "salesy," and you banned it the same day. A third recommends a
-booking link, and you catch it five seconds before it goes out. Each miss looks small on
-its own. A client who reads three of them in one thread reads a business that does not
-have its act together, not a busy founder.
+So you re-teach it. Every time.
 
-You do not need Claude to be smarter. You need it to stop forgetting who you are between
-chats.
+Here is what that looks like on a Tuesday.
+
+A lead replies asking about price. You open Claude to draft the response.
+
+It asks what your offer is. Again.
+
+You paste the same paragraph you pasted Monday. And Friday. And the week before that.
+
+Your price. Your guarantee. The one rule about never dropping a booking link into a cold reply.
+
+Now the cost. Do the arithmetic with your own numbers.
+
+Say you spend fifteen minutes a day at this. Five days a week. That is close to 65 hours a year, spent teaching a tool what it should already know.
+
+The bigger cost hides underneath the time.
+
+Without fixed rules, Claude fills the gaps itself. One reply quotes a price you retired two months ago. Another uses a word a client once called "salesy," and you banned it the same day. A third recommends a booking link, and you catch it five seconds before it goes out.
+
+Each miss looks small on its own.
+
+Three months of small misses reads like a business that cannot keep its own story straight. Not a busy founder. A liability.
 
 ## How it works
 
-A CLAUDE.md file is just a text file Claude reads at the start of every chat. You fill in
-who you are, what you sell, and how you write. Claude reads it first, every single time,
-so you never explain it twice.
+A CLAUDE.md file is just a text file. Claude reads it at the start of every chat.
+
+Not a new tool. Nothing to automate. Just one file, filled in once.
+
+You write down who you are, what you sell, and how you talk. Claude reads it first, every time. You stop repeating yourself.
 
 1. Copy the starter template into a new text file.
 2. Fill in who you are and what you sell.
@@ -51,49 +62,47 @@ so you never explain it twice.
 
 ## What you get
 
-- [CLAUDE-md-starter-template.md](./CLAUDE-md-starter-template.md) - the blank starter
-  file, ready to fill in with your own business, plus a fully filled example built into
-  the same doc.
-- [CLAUDE-md-example-filled.md](./CLAUDE-md-example-filled.md) - the same filled example
-  as its own standalone file, so you can read it side by side while you build yours.
+- [CLAUDE-md-starter-template.md](./CLAUDE-md-starter-template.md): the blank starter file, ready to fill in with your own business, plus a fully filled example built into the same doc.
+- [CLAUDE-md-example-filled.md](./CLAUDE-md-example-filled.md): the same filled example as its own standalone file, so you can read it side by side while you build yours.
 
 ## Tools you need
 
 | Tool | What it does here | Free or paid | Link |
 |---|---|---|---|
-| Claude | Reads your CLAUDE.md file at the start of every chat | Free to start, paid plans add higher limits | https://claude.ai |
-| A text editor | Where you write and save the file | Free | https://code.visualstudio.com |
+| Claude | Reads your CLAUDE.md file at the start of every chat | Free to start. Pro is $20/mo for higher limits | https://claude.ai |
+| A text editor | Where you write and save the file | Free, whatever you already have | - |
 
 ## Install it
 
-1. Open `CLAUDE-md-starter-template.md` in your text editor.
-2. Fill in every bracketed section with your own business details:
-   - Who you are and what your business does
-   - Your offer, pricing, and any rules you already follow
-   - How you want Claude to write for you
-3. Save the file and rename it exactly CLAUDE.md.
-4. Go to claude.ai and click New Project in the left sidebar.
-5. Give the project your business name.
-6. Click Add Content, then Upload files, and choose your CLAUDE.md file.
-7. Open a new chat inside that project.
+This takes about 15 minutes. You will not write any code.
 
-How you know it worked: ask "what does my business do" in that new chat, and Claude
-answers with your real offer and pricing, not a guess.
+1. Open `CLAUDE-md-starter-template.md` from this folder. Use TextEdit on a Mac, Notepad on Windows, or paste it into a new Google Doc if that is easier.
+   - You should see a template full of bracketed sections, like [YOUR BUSINESS NAME].
+2. Fill in every bracket with your own business details: who you are, what you sell, your pricing, your rules, and how you write.
+   - An empty bracket means Claude guesses, and a guess in a client-facing draft is worse than no draft at all.
+3. Save the file. Name it exactly CLAUDE.md, capital letters included.
+4. Go to claude.ai in your browser and click "New project" in the left sidebar.
+   - You should see a box asking you to name the project.
+5. Name the project after your business and click "Create."
+6. Click "Add Content," then "Upload files," and choose your CLAUDE.md file.
+   - You should see the file listed under the project's knowledge.
+7. Click "New chat" inside that project.
+
+How you know it worked: ask "what does my business do" in that new chat. Claude answers with your real offer and pricing, not a guess.
 
 ## Run it the first time
 
-Open the project chat and type a real task, not a test question. Try: "A lead just
-replied saying our price is too high. Draft a reply."
+Open the project chat. Type a real task, not a test question.
 
-If your CLAUDE.md is filled in right, Claude answers with your actual price, your actual
-guarantee, and the objection-handling rule you wrote in the file, not a generic
-"I understand your concern" script. It should sound like something you would actually
-send, in your own words, on the first try.
+Try: "A lead just replied saying our price is too high. Draft a reply."
 
-The one thing people get wrong most: they fill in the "who I am" section and skip the
-writing rules section, so the facts are right but the tone is still generic. Fix it by
-going back and adding three real examples of how you actually talk: a sentence you would
-send, a word you never use, and a phrase you are sick of seeing from other AI tools.
+If your CLAUDE.md is filled in right, Claude answers with your actual price, your actual guarantee, and the objection-handling rule you wrote in the file. Not a generic "I understand your concern" script.
+
+It should sound like something you would actually send, in your own words, on the first try.
+
+The one thing people get wrong: they fill in the "who I am" section and skip the writing-rules section. The facts are right. The tone still reads generic.
+
+Fix it. Go back and add three real examples of how you actually talk: a sentence you would send, a word you never use, and a phrase you are sick of seeing from other AI tools.
 
 ## Tell me how it went
 

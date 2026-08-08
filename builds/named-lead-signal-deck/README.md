@@ -9,9 +9,7 @@ status: live
 
 ## What this is
 
-This kit builds a deck of 6 to 8 real, named companies in your ICP, each with a live buying
-signal and a written opener, so you have something to send when a good lead goes quiet or
-says "not interested."
+This kit builds a deck of 6 to 8 real, named companies in your ICP. Each one carries a live buying signal and a written opener. Something to send when a good lead goes quiet.
 
 - Finds real, dated, checkable buying signals instead of generic company facts
 - Turns each signal into a ready-to-send opener under 64 words
@@ -19,38 +17,50 @@ says "not interested."
 
 ## The problem it kills
 
-It's 4pm on a Tuesday. The fourth reply this week reads some version of "not for us" or "we
-already have someone for that." The message you sent was fine. It was true. It just wasn't
-enough to make them stop and look twice. From here you've got two moves: send a bump that
-says "just following up," which reads as pressure, or let the thread go cold, which is what
-usually happens.
+Cold email got easy to send. It got easy to ignore too.
 
-Most people reach for one of three fixes, and all three fall short. A generic case study
-proves you've worked with someone, somewhere, never that you understand THIS company's world.
-A "just checking in" bump adds no new information, so it reads as pressure, not proof.
-Letting the lead go cold is the default outcome, and it's the most expensive one, because
-that lead already showed up once.
+A prospect can read past a personalized line in one glance now. It looks like every other one in their inbox.
 
-The real problem under all of this isn't price or timing. It's that the prospect has no
-reason yet to believe you actually know their market well enough to be worth a second look.
+That's the exact problem: your message was true, and it still wasn't enough to make them look twice.
+
+Here's what that looks like on a Tuesday afternoon.
+
+It's 4pm. The fourth reply this week reads some version of "not for us."
+
+The message you sent was fine. It was accurate. It just didn't prove anything.
+
+From here you've got two moves. Send a bump that says "just following up." That reads as pressure.
+
+Or let the thread go cold. That's what usually happens.
+
+Three fixes people reach for instead, and why each one falls short.
+
+A generic case study proves you've worked with someone, somewhere. Never that you understand THIS company's world.
+
+A "just checking in" bump adds no new information. It reads as pressure, not proof.
+
+Letting the lead go cold is the default outcome. It's also the most expensive one, because that lead already showed up once.
+
+The real problem isn't price or timing.
+
+It's that the prospect has no reason yet to believe you actually know their market.
+
 "Not interested" is often shorthand for "prove it."
 
-A deck built from this kit does that in one move: instead of describing your understanding of
-their world, you hand over six real companies inside it, each with a genuine reason to care
-right now, each with a message already written for them. That's harder to wave off than
-another paragraph of copy.
+Now count the cost. Every stalled thread this month is a lead you already paid to reach once.
+
+Three months of this and your pipeline isn't short on leads. It's full of "not interested" replies that were never really closed, just abandoned.
 
 ## How it works
 
-You research real events in your target market, verify each one by hand, then turn the
-strongest ones into a short deck built to prove you can reach and understand this exact ICP.
+You research real events in your target market and verify each one by hand. Then you turn the strongest ones into a short deck. Built to prove you can reach and understand this exact ICP.
 
-1. Pick the ICP you want to build a deck for
-2. Run the signal-research prompt to find real, dated events
-3. Verify every signal yourself before it goes anywhere near the deck
-4. Turn each verified signal into a short opener with the opener-writing prompt
-5. Lay out 6 to 8 rows following the deck template
-6. Send it mid-thread, never cold, with two real times attached
+1. Pick the ICP you want to build a deck for.
+2. Run the signal-research prompt to find real, dated events.
+3. Verify every signal yourself before it goes near the deck.
+4. Turn each verified signal into a short opener.
+5. Lay out 6 to 8 rows following the deck template.
+6. Send it mid-thread, never cold, with two real times attached.
 
 ## What you get
 
@@ -75,42 +85,49 @@ strongest ones into a short deck built to prove you can reach and understand thi
 
 ## Install it
 
-1. Open a blank Google Sheet and add five columns across the top: Company, Signal, Date,
-   Source, Opener.
-2. Save `signal-research-prompt.md` and `opener-writing-prompt.md` somewhere you can copy
-   from fast, a notes app or a pinned doc both work.
-3. Open Claude or ChatGPT in a second tab, or turn on web search if your tool supports it.
-4. Pick the ICP you're about to build for and write one sentence describing it (who they are,
-   roughly how big, what you sell them). You'll drop this straight into the first prompt.
+This takes about 10 minutes. Nothing to install, no code.
 
-How you know it worked: you have an empty five-column sheet open, the two prompt files handy,
-and one clear sentence describing your target ICP.
+1. Go to sheets.google.com and click "Blank spreadsheet." Add five columns across the top: Company, Signal, Date, Source, Opener.
+   - You should see an empty grid with those five headers sitting across row 1.
+2. Save `signal-research-prompt.md` and `opener-writing-prompt.md` somewhere you can copy from fast: a notes app or a pinned doc both work.
+3. Open a new tab and go to claude.ai or chat.openai.com. Sign in, or sign up free if you haven't.
+   - You should see an empty chat box waiting for your first message.
+4. Pick the ICP you're about to build for. Write one sentence describing it: who they are, roughly how big, what you sell them.
+   - You should end this step holding one written sentence you'll paste into the first prompt.
+
+How you know it worked: you have an empty five-column sheet open and the two prompt files handy. You can state your target ICP in one clear sentence.
 
 ## Run it the first time
 
-Take the ICP sentence from step 4 above and paste it into the signal-research prompt from
-`signal-research-prompt.md`, either with a list of company names you already have (mode A) or
-asking the tool to find candidates first (mode B). You should get back a table of company
-names, a signal, a date, and a source for each one.
+Take the ICP sentence from step 4 above and paste it into the signal-research prompt from `signal-research-prompt.md`.
 
-Now do the part no tool can do for you: open the actual source for each row. If you can find
-and confirm it in about three minutes, keep the row and note the source link in your sheet. If
-you can't, delete the row. Don't soften it, delete it. Keep going until you have 6 to 8 fully
-verified rows.
+Give it a list of company names you already have, or ask it to find candidates first.
 
-Take each verified row into the opener-writing prompt from `opener-writing-prompt.md`. Write
-your first opener by hand against the rules if you can, it's the fastest way to learn the
-shape. Feed the tool the rest one row at a time, checking the word count and the banned-words
-list yourself on every output.
+You should get back a table: company names, a signal, a date, and a source for each one.
 
-Lay the finished rows into your deck tool following `deck-template.md`, one company per slide
-or section, in this order: company name and size, the signal with its date, why it matters,
-the opener. Read `when-to-send.md` before you send anything.
+Now do the part no tool can do for you. Open the actual source for each row.
 
-The one thing people get wrong most often: using a fact that's true of the whole market, like
-"they're growing" or "it's a competitive industry," as if it were a signal. It isn't. A real
-signal is one dated event specific to that one company. If two rows in your deck could swap
-signals and nobody would notice, go back and find a sharper one for each.
+If you can find and confirm it in about three minutes, keep the row and note the source link in your sheet.
+
+If you can't, delete the row. Don't soften it, delete it.
+
+Keep going until you have 6 to 8 fully verified rows.
+
+Take each verified row into the opener-writing prompt from `opener-writing-prompt.md`.
+
+Write your first opener by hand against the rules if you can. It's the fastest way to learn the shape.
+
+Feed the tool the rest one row at a time. Check the word count and the banned-words list yourself, on every output.
+
+Lay the finished rows into your deck tool following `deck-template.md`. One company per slide, in this order: company name and size, the signal with its date, why it matters, the opener.
+
+Read `when-to-send.md` before you send anything.
+
+The one thing people get wrong most often: using a fact that's true of the whole market, like "they're growing," as if it were a signal.
+
+It isn't. A real signal is one dated event specific to that one company.
+
+If two rows in your deck could swap signals and nobody would notice, go back and find a sharper one for each.
 
 ## Tell me how it went
 

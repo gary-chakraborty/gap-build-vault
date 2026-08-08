@@ -9,9 +9,7 @@ status: live
 
 ## What this is
 
-A five-step method for checking one real buying signal before you build a list or write
-a single line of outreach, so you know exactly why you're reaching out to someone this
-week and not last month.
+A five-step check for one real buying signal, done before you build a list or write a single line.
 
 - Turns one signal into a checkable, one-sentence reason to reach out
 - Builds a company list around that signal instead of a generic industry filter
@@ -19,30 +17,43 @@ week and not last month.
 
 ## The problem it kills
 
-It's a Tuesday afternoon. You just sent 217 emails that all open the same way: "Hi
-{{FirstName}}, saw you're the {{Title}} at {{Company}}." Three hours went into pulling
-those names off LinkedIn to make the list feel personal. By 4pm you have 4 opens and
-zero replies, and the plan for next week is the same list with a new subject line.
+Merge tags used to work. Now everyone can fake a first name.
 
-Swapping in a first name and a job title isn't personalization. It's a mail merge with
-extra steps, and a buyer's inbox pattern-matches the shape of that email in about a
-second, no matter what's filled into the brackets.
+A buyer spots a bracket-filled template before they finish reading line one.
 
-Three things people try instead, and why each one falls short. Sending more volume
-doubles the list and doubles the same failure rate; it doesn't fix why nobody replies.
-Paying someone to "research" each lead usually produces facts, not signals. They paste a
-job title, a location, or a shared school off a LinkedIn bio. Facts describe who someone
-is. They don't explain why this week is the week to reach out. Buying a bigger or
-"better" list just puts more names in the wrong moment. A bigger list amplifies a
-targeting problem instead of fixing one.
+That's the whole problem. Not the offer. Not the price.
 
-The real cost isn't just the wasted send. It's not being able to say why a campaign
-failed, which means you can't fix the next one either. You just try again, louder.
+The first line proves nothing, so nobody reads line two.
+
+Here's what that looks like on a Tuesday afternoon.
+
+You sent 217 emails this morning. Every one opens "Hi {{FirstName}}, saw you're the {{Title}} at {{Company}}."
+
+Three hours went into pulling those names off LinkedIn. All to make the list feel personal.
+
+By 4pm you have 4 opens. Zero replies.
+
+The plan for next week is the same list with a new subject line.
+
+Three fixes people reach for instead, and why each one falls short.
+
+Sending more volume doubles the list and doubles the same failure rate. It doesn't touch why nobody replies.
+
+Paying someone to "research" a lead usually gets you a job title and a shared school. A fact about who someone is. Not a reason this week is the week to reach out.
+
+Buying a bigger list just puts more names in the wrong moment.
+
+Now the cost. Do the arithmetic with your own numbers.
+
+Take what one email costs you: the tool, the list, the hour spent writing it.
+
+Divide that by the replies you actually got back. That's your real cost per reply.
+
+Three months of this and you're not testing an offer anymore. You're paying, on repeat, to prove the same list doesn't work.
 
 ## How it works
 
-Five steps, run once per signal and reused for every list you build against it. Each one
-checks the step before it, so a bad guess gets caught before it reaches anyone's inbox.
+Five steps, run once per signal and reused for every list you build against it. Each step checks the one before it, so a bad guess gets caught before it reaches an inbox.
 
 1. Write one sentence that names a real, dated event.
 2. Pull companies where that exact event just happened.
@@ -73,40 +84,41 @@ checks the step before it, so a bad guess gets caught before it reaches anyone's
 
 ## Install it
 
-1. Save all four files from this folder somewhere you'll actually reopen: a folder on
-   your own drive, a Notion page, or a plain doc.
-2. Open `signal-picker.md` and pick one signal that fits how you already sell. Don't try
-   to cover all six on your first run.
-3. Open `five-step-system.md`, go to Step 1, and write your own one-sentence signal
-   definition in the exact shape given there.
-4. Save `list-building-prompt.md` somewhere you can copy and paste it straight into
-   whatever AI tool you already use.
-5. Pin or print `send-gate-checklist.md` somewhere you'll see it before you click send on
-   your outreach tool.
+This takes about 8 minutes. Nothing to install, no code.
 
-How you know it worked: you have one written signal definition sentence, and you can
-name the exact page you'd show someone to prove it's real.
+1. Save all four files from this folder somewhere you'll actually reopen: a folder on your own drive, a Notion page, or a plain doc.
+   - You should see four files together: five-step-system.md, signal-picker.md, list-building-prompt.md, send-gate-checklist.md.
+2. Open `signal-picker.md`. Read the six signal categories and pick one that fits how you already sell.
+   - Stop at one. Don't try to cover all six on your first run.
+3. Open `five-step-system.md` and scroll to Step 1. Write your own one-sentence signal definition in the exact shape shown there.
+   - You should end this step holding one written sentence, not a paragraph.
+4. Go to sheets.google.com and click "Blank spreadsheet." Add four columns across the top: Company, Signal, Date, Source.
+5. Open `list-building-prompt.md` and copy the whole thing. Keep it somewhere you can paste it into Claude or ChatGPT in one click.
+6. Print or pin `send-gate-checklist.md` somewhere you'll see it before you click send in your outreach tool.
+
+How you know it worked: you have one written signal sentence and an empty four-column sheet. You can name the exact page that proves your signal is real.
 
 ## Run it the first time
 
-Say your signal is "a software company that closed a seed or Series A round in the last
-90 days." You run the list-building prompt with your niche set to "B2B software
-companies" and your target count set to 8.
+Say your signal is "a software company that closed a seed or Series A round in the last 90 days."
 
-The output comes back as a table of roughly 24 rows. One of them: a company that closed
-a $6.4 million seed round on 2026-05-14, sourced from its own funding announcement page,
-with "Head of Finance" flagged as the best contact. You open that link. It's a real
-announcement and the date checks out, so the row survives.
+Run the list-building prompt with your niche set to "B2B software companies" and your target count set to 8.
 
-Run the same check on the other 23 rows. Somewhere around 8 to 10 usually hold up, which
-is exactly why Step 2 says to pull three to four times your target count in the first
-place.
+The output comes back as a table of roughly 24 rows.
 
-The one thing people get wrong the first time: they stop the moment the tool returns a
-list and never open a single source link. Do this check once, for real. Pull five links
-from your first output at random and see how many actually hold up. If fewer than half
-do, your niche or your time window is too loose. Tighten it and run the prompt again
-before you build a full list.
+One of them: a company that closed a $6.4 million seed round on 2026-05-14. The source is its own funding announcement page. "Head of Finance" is flagged as the best contact.
+
+You open that link. It's a real announcement. The date checks out. The row survives.
+
+Run the same check on the other 23 rows.
+
+Somewhere around 8 to 10 usually hold up. That's exactly why Step 2 says to pull three to four times your target count in the first place.
+
+The one thing people get wrong the first time: they stop at the list. They never open a single source link.
+
+Do this check once, for real. Pull five links from your first output at random and see how many actually hold up.
+
+If fewer than half do, your niche or your time window is too loose. Tighten it and run the prompt again before you build a full list.
 
 ## Tell me how it went
 

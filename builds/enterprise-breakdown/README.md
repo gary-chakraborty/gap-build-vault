@@ -9,25 +9,43 @@ status: live
 
 ## What this is
 
-This guide breaks down the four real reasons small agencies lose enterprise deals, and exactly what to change about your sales process for each one.
+This guide breaks down the four real reasons agencies lose enterprise deals, and what to change for each one.
 
-- Maps who actually has to say yes before you pitch just one person
-- Builds a proof pack sized to the buyer, not to your own comfort
-- Splits the cash-flow ask from the vendor-approval ask so procurement can't stall you
+- Maps who actually has to say yes before you pitch just one person.
+- Builds a proof pack sized to the buyer, not to your own comfort.
+- Splits the cash-flow ask from the vendor-approval ask so procurement can't stall you.
 
 ## The problem it kills
 
-It's Tuesday afternoon and you're re-reading an email from a VP of Marketing at a company that would triple your average deal size. The call two weeks ago went well. She said she'd loop in procurement. Since then: one email asking for three reference clients your own size, a security questionnaire full of terms you've never filled in before, and silence on when anyone will actually sign.
+Selling to one owner and selling to a company are not the same deal. You are still running the first playbook on the second kind.
 
-You have four other deals running right now. Add them up and this one is still worth more than all four combined. It's been six weeks since the call. You've sent two follow-ups. Nobody has said no. Nobody has said yes either.
+Here is the exact problem: one buyer loved your pitch, but she cannot sign alone. Four people you have never spoken to have to agree first.
 
-This isn't a sign your work is weak. It's a sign you're running the same sales process on a $612,000 deal that you run on a $4,200 deal. That process works fine when one owner makes the call on a video chat. It falls apart the moment five people you've never spoken to have to agree with each other first.
+Here is what that looks like on a Tuesday.
 
-Every week this deal sits stuck costs you the hours you spent chasing it, plus the smaller deals you didn't have time to close instead. Add that up across a year and most agencies quietly stop chasing enterprise, and go back to fighting over $4,000 retainers with twenty other agencies just like them.
+You are re-reading an email from a VP of Marketing at a company that would triple your average deal size.
+
+The call two weeks ago went well. She said she would loop in procurement.
+
+Since then: one email asking for three reference clients your own size. A security questionnaire full of terms you have never filled in before. Silence on when anyone will actually sign.
+
+You have four other deals running right now. Add them up and this one is still worth more than all four combined.
+
+It has been six weeks since the call. You have sent two follow-ups. Nobody has said no. Nobody has said yes either.
+
+This is not a sign your work is weak. It is a sign you are running a $4,200 sales process on a $612,000 deal.
+
+That process works fine when one owner decides on a video call. It falls apart the moment five strangers have to agree with each other first.
+
+Now the cost. Every week this deal sits stuck costs you the hours you spent chasing it, plus the smaller deals you did not have time to close instead.
+
+Add that up across a year. Most agencies quietly stop chasing enterprise. They go back to fighting over $4,000 retainers with twenty other agencies just like them.
 
 ## How it works
 
-Enterprise deals stall for four specific reasons, not one vague "we're too small for them." Once you know which reason is holding your deal back, the fix is a specific action, not a feeling.
+Enterprise deals stall for four specific reasons. Not one vague "we're too small."
+
+Find the reason holding your deal back, and the fix is a specific action. Not a feeling.
 
 1. Find out who actually has to say yes, not just your contact.
 2. Check if your proof pack matches their size, not yours.
@@ -49,34 +67,49 @@ This one's all on this page. Read it, steal it, nothing to download.
 
 ## Install it
 
-1. Open a doc and list everyone connected to the enterprise deal you're in now, or the last one that stalled.
-   a. The person who invited you in
-   b. Whoever they said they'd "loop in"
-   c. Legal, security, or finance, if anyone was named
-2. Next to each name, write their real question: does this fix my problem, is this safe to buy, does this fit the budget.
-3. Write one line of proof for each question, using a real number from your own work.
-4. Pull your three strongest case studies from clients closest to the prospect's size. If you don't have three, that's this week's fix, not something to solve mid-pitch.
-5. Split your ask in two: a smaller paid pilot that can move on your timeline, and the full contract that moves on procurement's timeline.
-6. Name the pilot as its own option in your next email, not buried inside the full proposal.
-7. Read your own pricing page and proposal like a stranger would. Remove any "starting at," any stat you can't back up with a name and a number, and add one line stating who you don't work with.
+This takes about 40 minutes. You will not write any code.
 
-How you know it worked: the buyer's next reply names a specific person, department, or next step, instead of going quiet.
+1. Open a new Google Doc. Title it "Enterprise Deal Map" plus the client's name.
+2. List everyone connected to the deal you're in now, or the last one that stalled.
+   a. The person who invited you in.
+   b. Whoever they said they'd "loop in."
+   c. Legal, security, or finance, if anyone was named.
+   - You should see a short list, usually three to five names.
+3. Next to each name, write their real question: does this fix my problem, is this safe to buy, does this fit the budget.
+4. Under each question, write one line of proof, using a real number from your own work.
+5. Open your case studies folder. Pull the three strongest ones from clients closest to the prospect's size.
+   - If you don't have three, that's this week's fix, not something to solve mid-pitch.
+6. In the same doc, write two numbers: a smaller paid pilot that can move on your timeline, and the full contract that moves on procurement's timeline.
+7. Open your pricing page and your last proposal. Read them like a stranger would.
+   - Remove any "starting at." Remove any stat you can't back up with a name and a number. Add one line stating who you don't work with.
+
+How you know it worked: your next email to the buyer names the pilot as its own option, sitting in the same email as the full proposal, not a follow-up sent after.
 
 ## Run it the first time
 
-Say you run an 11-person paid-social agency. Your average client pays $4,850 a month. A regional grocery chain with 340 stores took a call with you after a referral, and their director of marketing loved the results deck.
+What follows is a made-up example, not a client of ours. The numbers are invented so you can see the moves in order.
 
-Here's the walkthrough:
+Say you run an 11-person paid-social agency. Your average client pays $4,850 a month.
 
-1. The committee: on the call, you learn the director reports to a VP of marketing, and any spend over $75,000 needs sign-off from finance. That's three people, not one.
-2. The real question per person: the director wants results, the VP wants no surprises in front of her boss, finance wants a fixed number for a budget line, not a monthly variable.
-3. The proof: your two best case studies are both from clients under 10 stores. You call a past client, a 22-store regional pharmacy chain, and get permission to name them and a real number: a 34 percent rise in in-store redemptions over 5 months. Now your proof matches the buyer's scale.
-4. The split ask: instead of pitching the full annual contract at $189,400, you offer a 90-day pilot across 40 stores for $22,500, with the full rollout as the next step if the pilot hits an agreed number.
-5. The reads-small fix: you update your one-pager to drop "we've worked with dozens of brands" and replace it with the pharmacy chain's real name, the real number, and a line stating who you don't work with, single-location businesses under $2.3 million in revenue.
+A regional grocery chain with 340 stores took a call with you after a referral. Their director of marketing loved the results deck.
 
-Three weeks later, finance signs off on the pilot. Not the full deal. The pilot is real money, on your timeline, and it becomes the new case study for the accounts still stuck the same way.
+Here is the walkthrough.
 
-The one thing agencies get wrong most often: they fix the proof problem and skip the split-ask problem, then wait five more months for procurement to finish before any money moves. The fix: always put the smaller, faster-moving offer in the same email as the full proposal, never send it as a follow-up after.
+The committee: on the call, you learn the director reports to a VP of marketing. Any spend over $75,000 needs sign-off from finance. That is three people, not one.
+
+The real question per person: the director wants results. The VP wants no surprises in front of her boss. Finance wants a fixed number for a budget line, not a monthly variable.
+
+The proof: your two best case studies are both from clients under 10 stores. You call a past client, a 22-store regional pharmacy chain, and get permission to name them and a real number: a 34 percent rise in in-store redemptions over 5 months. Now your proof matches the buyer's scale.
+
+The split ask: instead of pitching the full annual contract at $189,400, you offer a 90-day pilot across 40 stores for $22,500. The full rollout is the next step if the pilot hits an agreed number.
+
+The reads-small fix: you update your one-pager. Drop "we've worked with dozens of brands." Replace it with the pharmacy chain's real name, the real number, and a line stating who you don't work with: single-location businesses under $2.3 million in revenue.
+
+What you are aiming at is a signed pilot, not the full deal. A pilot is real money, on your timeline. It also becomes the proof you were missing for every account still stuck the same way.
+
+The one thing agencies get wrong most often: they fix the proof problem and skip the split-ask problem, then wait five more months for procurement to finish before any money moves.
+
+Fix it. Always put the smaller, faster-moving offer in the same email as the full proposal. Never send it as a follow-up after.
 
 ## Tell me how it went
 
