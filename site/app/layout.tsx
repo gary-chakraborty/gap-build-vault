@@ -6,7 +6,7 @@ import "@fontsource-variable/jetbrains-mono/wght.css";
 import {
   AUTHOR_NAME,
   AUTHOR_URL,
-  BOOKING_URL,
+
   REPO_URL,
   SITE_NAME,
   TAGLINE,
@@ -59,9 +59,6 @@ export default function RootLayout({
               </a>
               <a href={AUTHOR_URL} target="_blank" rel="noreferrer">
                 {AUTHOR_NAME}
-              </a>
-              <a href={BOOKING_URL} target="_blank" rel="noreferrer">
-                Work with GAP
               </a>
             </div>
           </div>

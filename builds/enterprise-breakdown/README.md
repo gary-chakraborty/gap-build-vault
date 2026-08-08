@@ -167,8 +167,8 @@ What you are aiming at is a signed pilot, not the full deal. A pilot is real mon
 
 ## Tell me how it went
 
-I read every one of these. Two minutes, five questions: what you used, how, and what happened. https://form.jotform.com/262191867802059 The best stories become the next build.
+I am not asking for your email. There is no list, no sequence, nothing to unsubscribe from.
 
-## Want this built for you?
+Two minutes, three things: how you found this, whether it was useful, and what you want me to build next. https://form.jotform.com/262191867802059
 
-This is one piece of the system we install for B2B service businesses: 15-25 qualified sales calls a month without referrals or hiring a sales team. If you'd rather have the whole thing built for you, grab a call: https://calendly.com/garychakraborty
+The next build comes from those answers.
