@@ -17,13 +17,16 @@ an automated pipe, and it's something you can set up today with zero technical s
 
 ## Copy-paste order, first time
 
-1. Open a new conversation in Claude (claude.ai or the Claude app).
-2. Paste in `claude-md-snippet.md`, filled in with your real business details. Don't
-   move on until every bracket is filled.
-3. Paste in `triage-prompt.md` right after it.
-4. Name this conversation something you'll recognize later (most tools let you
-   rename or pin a conversation) so you can find it again tomorrow instead of
-   starting over.
+1. In claude.ai, click **Projects** in the left sidebar, then **New project**, and
+   name it `Reply Desk`.
+2. Put `claude-md-snippet.md`, filled in with your real business details, into
+   **Project knowledge** (**Add content**, then **Add text**). Don't move on until
+   every bracket is filled.
+3. Start a chat inside that project and paste in `triage-prompt.md`.
+4. Rename the chat so you'll recognize it later (hover it in the sidebar, click the
+   three dots, click **Rename**) so you can find it again tomorrow instead of
+   starting over. Project knowledge loads into every new chat in the project, so a
+   fresh chat never forgets your business details.
 5. Keep `reply-drafting-prompt.md` and `objection-handling-prompt.md` open in two
    more browser tabs, or saved somewhere you can grab them fast. You'll paste one of
    these into the same conversation right after you get a color back.

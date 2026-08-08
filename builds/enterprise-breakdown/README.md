@@ -1,120 +1,174 @@
 ---
-title: "Close Your First Enterprise Client"
-oneliner: "Breaks down why agencies stall on enterprise deals so you close them instead of losing them quietly."
+title: "The Enterprise Gap"
+oneliner: "Four reasons enterprise deals stall on you, and the change to make for each one."
 tags: [calls, content]
 date: 2026-08-08
 keyword: ENTERPRISE
 status: live
+setup: "45 minutes"
+level: "No code"
 ---
 
 ## What this is
 
-This guide breaks down the four real reasons agencies lose enterprise deals, and what to change for each one.
+A guide to the four specific reasons an enterprise deal stalls, and what you change for each.
 
-- Maps who actually has to say yes before you pitch just one person.
-- Builds a proof pack sized to the buyer, not to your own comfort.
-- Splits the cash-flow ask from the vendor-approval ask so procurement can't stall you.
+- Maps everyone who has to say yes, before you pitch one person.
+- Sizes your proof to the buyer instead of to your own comfort.
+- Splits the money ask from the vendor approval ask, so procurement cannot park you.
 
-## The problem it kills
+## The problem
 
-Selling to one owner and selling to a company are not the same deal. You are still running the first playbook on the second kind.
+→ One buyer loved the pitch. She cannot sign alone.
 
-Here is the exact problem: one buyer loved your pitch, but she cannot sign alone. Four people you have never spoken to have to agree first.
+→ Four people you have never spoken to have to agree first.
 
-Here is what that looks like on a Tuesday.
+→ A security questionnaire arrives. Nobody has said no. Nobody has said yes.
 
-You are re-reading an email from a VP of Marketing at a company that would triple your average deal size.
+→ Six weeks gone. Multiply your own hourly rate by the hours you have spent chasing it.
 
-The call two weeks ago went well. She said she would loop in procurement.
-
-Since then: one email asking for three reference clients your own size. A security questionnaire full of terms you have never filled in before. Silence on when anyone will actually sign.
-
-You have four other deals running right now. Add them up and this one is still worth more than all four combined.
-
-It has been six weeks since the call. You have sent two follow-ups. Nobody has said no. Nobody has said yes either.
-
-This is not a sign your work is weak. It is a sign you are running a $4,200 sales process on a $612,000 deal.
-
-That process works fine when one owner decides on a video call. It falls apart the moment five strangers have to agree with each other first.
-
-Now the cost. Every week this deal sits stuck costs you the hours you spent chasing it, plus the smaller deals you did not have time to close instead.
-
-Add that up across a year. Most agencies quietly stop chasing enterprise. They go back to fighting over $4,000 retainers with twenty other agencies just like them.
+```mermaid
+flowchart LR
+  subgraph BROKEN
+    A1[One good call] --> A2[Send the same deck you always send]
+    A2 --> A3[She loops in procurement]
+    A3 --> A4[Silence, questionnaires, references]
+    A4 --> A5[Deal sits. No money moves]
+  end
+  subgraph FIXED
+    B1[One good call] --> B2[Map everyone who signs]
+    B2 --> B3[Proof matched to their size]
+    B3 --> B4[Paid pilot beside the full contract]
+    B4 --> B5[Pilot starts while procurement runs]
+  end
+```
 
 ## How it works
 
-Enterprise deals stall for four specific reasons. Not one vague "we're too small."
+```mermaid
+flowchart TD
+  D[Stalled enterprise deal] --> R1[Reason 1: you pitched one person, not the committee]
+  D --> R2[Reason 2: your proof is from clients your own size]
+  D --> R3[Reason 3: one big ask, on procurement's clock]
+  D --> R4[Reason 4: your own materials read smaller than you are]
+  R1 --> F1[Fix: name every seat and their real question]
+  R2 --> F2[Fix: one named client near their scale, one real number]
+  R3 --> F3[Fix: paid pilot and full contract in the same email]
+  R4 --> F4[Fix: cut vague claims, add who you refuse]
+```
 
-Find the reason holding your deal back, and the fix is a specific action. Not a feeling.
+Four reasons, and only four. Find the one holding your deal and the fix is an action, not a feeling.
 
-1. Find out who actually has to say yes, not just your contact.
-2. Check if your proof pack matches their size, not yours.
-3. Split the money ask from the vendor-approval ask.
-4. Fix any part of your pitch that reads smaller than it is.
-5. Run this checklist before every enterprise pitch from now on.
+- **Reason 1** is a mapping problem. You are selling to a person when a group decides.
+- **Reason 2** is a proof problem. Nobody gets fired for hiring the vendor who has done it at their size.
+- **Reason 3** is a timing problem. Procurement runs its own calendar and does not care about yours.
+- **Reason 4** is a positioning problem. Vague claims read as small, not safe.
 
-## What you get
+Not a tool. Nothing to install. This is a sequence of changes to your deal map, your proof, your offer shape, and your one pager.
 
-This one's all on this page. Read it, steal it, nothing to download.
-
-## Tools you need
+## What you need first
 
 | Tool | What it does here | Free or paid | Link |
 |---|---|---|---|
-| LinkedIn | Find and map who signs off on the deal before you pitch it | Free to use for this; a paid Sales Navigator tier exists if you want deeper search filters | https://www.linkedin.com |
-| Google Docs | Build the one-page proof pack from the walkthrough in section 7 | Free | https://docs.google.com |
-| Google Sheets | Track the buying committee, the procurement checklist, and the pilot terms in one place | Free | https://sheets.google.com |
+| LinkedIn | Find and name the people who sign off, before you pitch | Free covers this. Sales Navigator is $99.99 a month if you want deeper filters | https://www.linkedin.com |
+| Google Docs | Hold the deal map and the one page proof pack | Free | https://docs.google.com |
+| Google Sheets | Track the committee, the procurement checklist, and the pilot terms in one place | Free | https://sheets.google.com |
 
-## Install it
+> [!NOTE]
+> Before you start, have three things open: your last stalled enterprise thread, your case study folder, and your most recent proposal. Everything below is edits to those, not new material written from scratch.
 
-This takes about 40 minutes. You will not write any code.
+## Get the files
 
-1. Open a new Google Doc. Title it "Enterprise Deal Map" plus the client's name.
-2. List everyone connected to the deal you're in now, or the last one that stalled.
-   a. The person who invited you in.
-   b. Whoever they said they'd "loop in."
-   c. Legal, security, or finance, if anyone was named.
-   - You should see a short list, usually three to five names.
-3. Next to each name, write their real question: does this fix my problem, is this safe to buy, does this fit the budget.
-4. Under each question, write one line of proof, using a real number from your own work.
-5. Open your case studies folder. Pull the three strongest ones from clients closest to the prospect's size.
-   - If you don't have three, that's this week's fix, not something to solve mid-pitch.
-6. In the same doc, write two numbers: a smaller paid pilot that can move on your timeline, and the full contract that moves on procurement's timeline.
-7. Open your pricing page and your last proposal. Read them like a stranger would.
-   - Remove any "starting at." Remove any stat you can't back up with a name and a number. Add one line stating who you don't work with.
+This one's all on this page. Read it, steal it, nothing to download.
 
-How you know it worked: your next email to the buyer names the pilot as its own option, sitting in the same email as the full proposal, not a follow-up sent after.
+## Build it
+
+### Phase 1: Map who actually signs
+
+1. Open a new Google Doc. Title it **Enterprise Deal Map** plus the client's name.
+2. List every person already attached to the deal: the person who invited you in, anyone they said they would loop in, and any name from legal, security, or finance.
+3. You should see three to five names. If you see one, that is the finding, not a shortcut.
+4. Next to each name write their real question in their words: does this fix my problem, is this safe to buy, does this fit the budget line.
+5. Under each question write one line of proof, using a real number from your own work. One line, not a paragraph.
+6. Any name where you cannot write a proof line is your next ask to the buyer. Ask her directly who else has to be comfortable.
+
+> [!TIP]
+> The fastest way to find the missing seats is to ask the buyer what happened the last time they brought in a new vendor. She will list the steps and the people without being asked twice.
+
+**You know this phase worked when: every person on the list has a named question and one line of proof under it, and you know which seat you still cannot see.**
+
+### Phase 2: Resize your proof
+
+1. Open your case study folder. Sort by client size, not by how much you liked the project.
+2. Pull the three closest to the prospect's scale. Scale means staff count, locations, or spend, whichever the buyer talks about.
+3. If your three best are all much smaller than the prospect, that is the stall. Do not paper over it inside the pitch.
+4. Call one past client whose size is nearest and ask permission to use their name and one real result number. That call takes ten minutes and it is the highest paid ten minutes in this whole guide.
+5. Rewrite each case study to a single sentence: the client's name, what changed, the number, and over how long.
+
+> [!WARNING]
+> Do not answer a scale gap with a bigger adjective. Adding "enterprise grade" to a deck built from small client work is the exact move that gets you compared to vendors with hundreds of reviews, on their terms, where you lose. One honest number at their scale beats five impressive ones at yours.
+
+**You know this phase worked when: you can hand the buyer three one sentence case studies with real names and real numbers, and at least one is near their size.**
+
+### Phase 3: Split the ask
+
+1. In the same doc, write two offers side by side.
+2. The first is a paid pilot: a smaller scope, a fixed number, a fixed end date, and one agreed measure of success. It has to be small enough to fit under the buyer's own approval limit.
+3. Ask the buyer what she can approve without finance. That number sets the pilot price, not your wish.
+4. The second is the full contract, priced and scoped as normal, moving on procurement's timeline.
+5. Put both in the same email. Never send the pilot later as a rescue.
+6. Write the pilot's success measure as one sentence both sides could check without arguing.
+
+> [!WARNING]
+> A free pilot is not a smaller ask, it is a bigger one. Unpaid work has no budget owner, so nobody defends it internally and it slips whenever anything else moves. Paid, even small, gives your deal a person whose money is on it.
+
+**You know this phase worked when: your next email to the buyer carries the pilot and the full proposal together, each with its own number and its own timeline.**
+
+### Phase 4: Fix what reads small
+
+1. Open your pricing page and your last proposal. Read both as a stranger who has never heard of you.
+2. Delete every "starting at". A price you will not state reads as a price you will drop.
+3. Delete every statistic you cannot attach to a client name and a date.
+4. Add one line naming who you do not work with. A refusal is the cheapest credibility signal you own.
+5. Replace any "we have worked with dozens of brands" line with one named client and one number.
+6. Send the updated one pager to a friend outside your industry. Ask them what you do and who you do it for. If they cannot answer both in one go, it still reads small.
+
+**You know this phase worked when: someone outside your industry reads the one pager and tells you, correctly, what you sell and who you refuse.**
 
 ## Run it the first time
 
-What follows is a made-up example, not a client of ours. The numbers are invented so you can see the moves in order.
+> [!IMPORTANT]
+> What follows is a made-up example, not a client of ours. Every company, person, and number below is invented so you can watch the four moves in order. Do not quote any of it as a result.
 
-Say you run an 11-person paid-social agency. Your average client pays $4,850 a month.
+Say you run an 11 person paid social agency. Your average client pays $4,850 a month. A regional grocery chain with 340 stores took a call after a referral, and their director of marketing liked the deck.
 
-A regional grocery chain with 340 stores took a call with you after a referral. Their director of marketing loved the results deck.
+**Phase 1, the map.** On the call you learn the director reports to a VP of marketing, and anything over $75,000 needs finance sign off. Three seats, not one. The director wants results. The VP wants no surprises in front of her boss. Finance wants a fixed number for a budget line, not a monthly variable.
 
-Here is the walkthrough.
+**Phase 2, the proof.** Your two strongest case studies are both from clients under 10 locations. You call a past client, a 22 store regional pharmacy chain, and get permission to name them plus one real number: a 34 percent rise in in store redemptions over 5 months. Your proof now sits near the buyer's scale instead of under it.
 
-The committee: on the call, you learn the director reports to a VP of marketing. Any spend over $75,000 needs sign-off from finance. That is three people, not one.
+**Phase 3, the split.** Instead of pitching the full year at $189,400, you send two things in one email: a 90 day pilot across 40 stores at $22,500, and the full rollout priced as normal. The pilot sits under the director's own approval limit, so it can start while finance is still reading.
 
-The real question per person: the director wants results. The VP wants no surprises in front of her boss. Finance wants a fixed number for a budget line, not a monthly variable.
+**Phase 4, the read.** You cut "we have worked with dozens of brands" from the one pager. In its place goes the pharmacy chain's name, the 34 percent, and one line: you do not work with single location businesses.
 
-The proof: your two best case studies are both from clients under 10 stores. You call a past client, a 22-store regional pharmacy chain, and get permission to name them and a real number: a 34 percent rise in in-store redemptions over 5 months. Now your proof matches the buyer's scale.
+What you are aiming at is a signed pilot, not the full deal. A pilot is real money on your timeline, and it becomes the proof you were missing for every other account stuck the same way.
 
-The split ask: instead of pitching the full annual contract at $189,400, you offer a 90-day pilot across 40 stores for $22,500. The full rollout is the next step if the pilot hits an agreed number.
+> [!WARNING]
+> The mistake almost everyone makes on the first run: they do Phase 2, fix the proof, and skip Phase 3. The deck is better and the deal still sits, because the ask is still one big number on procurement's clock. Both offers, one email, every time.
 
-The reads-small fix: you update your one-pager. Drop "we've worked with dozens of brands." Replace it with the pharmacy chain's real name, the real number, and a line stating who you don't work with: single-location businesses under $2.3 million in revenue.
+## When it breaks
 
-What you are aiming at is a signed pilot, not the full deal. A pilot is real money, on your timeline. It also becomes the proof you were missing for every account still stuck the same way.
-
-The one thing agencies get wrong most often: they fix the proof problem and skip the split-ask problem, then wait five more months for procurement to finish before any money moves.
-
-Fix it. Always put the smaller, faster-moving offer in the same email as the full proposal. Never send it as a follow-up after.
+| What you see | What it means | What to do |
+|---|---|---|
+| Your champion goes quiet after a good call | She hit an internal blocker she cannot solve, or she was moved off the project. Silence is almost never about your price | Send one email that gives her something to forward, not something to answer: the one page proof pack and the pilot terms. Then ask directly who else needs to be comfortable and offer to answer them yourself |
+| Procurement adds a step you did not plan for, like a security questionnaire or an insurance certificate | You are being processed as a vendor, which is progress, but their checklist is running in parallel and nobody told you | Ask for the full list of steps and who owns each one, in one email. Fill in what you can this week. Say plainly which items you do not have yet and what you will do instead. A named gap moves. A dodged question stops the file |
+| They ask for three reference clients their own size and you do not have them | Your proof is sized to your comfort, not to the buyer. This is Phase 2 arriving as a demand instead of a choice | Offer what is real: your closest client by scale, named, with a number, plus a paid pilot that makes the reference unnecessary. Never pad the list with a client who will not take the call |
+| The pilot gets scoped down until it cannot prove anything | Somebody inside is protecting a budget, or the success measure was never agreed | Rewrite the pilot around one measure both sides can check. If the scope drops below what can move that measure, say so and pause rather than accept a test designed to fail |
+| Six weeks pass with no no and no yes | There is no owner for the decision, only participants | Ask the buyer for the date the decision gets made and what has to be true by then. Work backwards from that date. If no date exists, the deal is not stalled, it has not started |
 
 ## Tell me how it went
 
-I read every one of these. Two minutes, five questions: what you used, how, and what happened. https://form.jotform.com/262191867802059. The best stories become the next build.
+I read every one of these. Two minutes, five questions: what you used, how, and what happened. https://form.jotform.com/262191867802059 The best stories become the next build.
 
-## Want this running without doing any of this?
+## Want this built for you?
 
-This is one piece of the system we install for B2B service businesses: 15-25 qualified sales calls a month without referrals or hiring a sales team. If you'd rather have the whole thing built for you, grab a call: https://calendly.com/garychakraborty.
+This is one piece of the system we install for B2B service businesses: 15-25 qualified sales calls a month without referrals or hiring a sales team. If you'd rather have the whole thing built for you, grab a call: https://calendly.com/garychakraborty

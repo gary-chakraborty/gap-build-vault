@@ -9,3 +9,12 @@ next-env.d.ts
 
 # Build pages are generated from builds/*/README.md at build time.
 site/app/builds/
+
+# Local AI tooling configs (carry absolute home paths)
+.claude/
+.codex/
+.cursor/
+.gemini/
+.agents/
+PRODUCT.md
+DESIGN.md

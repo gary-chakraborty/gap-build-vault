@@ -1,133 +1,272 @@
 ---
-title: "Never Lose Another Hot Reply"
-oneliner: "Triages, drafts, and books every cold reply so you never lose a hot lead."
+title: "The Reply Desk"
+oneliner: "Sorts every cold reply and drafts the answer so you book the call the same day."
 tags: [inbox, calls, cold-email, linkedin]
 date: 2026-08-08
 keyword: INBOX
 status: live
+setup: "18 minutes"
+level: "No code"
 ---
 
 ## What this is
 
-Your outbound inbox, answered the same day, by you, in about ten minutes.
+A desk for your outbound inbox: paste a reply in, get the color and the reply to send back.
 
-- Sorts every reply into Green, Yellow, or Red in under 10 seconds.
-- Writes the exact reply to send back, matched to what they actually said.
-- Offers two call times and books the meeting. No calendar link.
+- Sorts every reply into Green, Yellow, or Red before you finish reading it.
+- Drafts the exact message to send, matched to what they actually said.
+- Offers two call times and books the meeting, with no calendar link.
 
-## The problem it kills
+## The problem
 
-Sending cold outreach got easy. Answering it did not.
+→ A reply lands at 9am. You open it at 6pm.
+→ The one asking about price sits longest, because it needs thought.
+→ Flat noes pile up in the same stack as the hot ones.
+→ Tomorrow there are five more.
 
-Ten years ago you sent forty emails a week by hand. Now one person sends a thousand. The sending scaled. The replying never did.
+You paid to get every one of those replies. Waiting is the only part that was free.
 
-So the bottleneck moved. It is not "how do I get replies" anymore. It is "the good reply sat in my inbox for four days."
-
-That is the whole problem. Not lead generation. Not copy. The hot one goes cold while it waits for a free five minutes.
-
-Here is what that actually looks like on a Tuesday.
-
-It is 4pm. You have not opened the outbound inbox since morning. Three replies are sitting there.
-
-One says "interested." It landed six hours ago.
-
-One asks what it costs. You do not want to type a number without thinking, so you leave it.
-
-One is a flat no. It needs nothing from you. But it sits in the same pile, so you keep re-reading all three and answering none.
-
-You close the tab. Client work is due today.
-
-Tomorrow there are five.
-
-Now the cost. Do the arithmetic with your own numbers.
-
-Take what you paid to get one reply. The ad spend, the sending tools, the hour you spent writing the sequence that finally landed. Divide it by the replies you actually got back. That is what one reply cost you.
-
-Now count the ones you answered four days late this month. Multiply.
-
-That is not a marketing number. That is your money, already spent, sitting unanswered in a tab.
-
-And it compounds. Three months of this and you are not running an outbound system. You are running a graveyard of leads who liked you enough to write back.
+```mermaid
+flowchart LR
+  subgraph BROKEN["What happens now"]
+    A1["Reply lands"] --> A2["Sits in the inbox"]
+    A2 --> A3["You re-read all three"]
+    A3 --> A4["Answer tomorrow, or never"]
+    A4 --> A5["Lead goes cold"]
+  end
+  subgraph FIXED["With the Reply Desk"]
+    B1["Reply lands"] --> B2["Paste it into the Desk"]
+    B2 --> B3["Green, Yellow, or Red"]
+    B3 --> B4["Draft comes back"]
+    B4 --> B5["You read it and send"]
+  end
+```
 
 ## How it works
 
-You teach Claude your business once. Then you paste in replies as they come, and it hands back what to do.
+```mermaid
+flowchart TD
+  S["Your business facts<br/>claude-md-snippet.md"] --> C["One Claude project<br/>named Reply Desk"]
+  R["A lead replies<br/>on email or LinkedIn"] --> C
+  C --> T["Triage<br/>triage-prompt.md"]
+  T --> G["GREEN<br/>they are leaning in"]
+  T --> Y["YELLOW<br/>objection-handling-prompt.md"]
+  T --> D["RED<br/>one line, close the thread"]
+  G --> W["Draft<br/>reply-drafting-prompt.md"]
+  Y --> W
+  W --> H["You read it, fix it, send it"]
+  H --> L["Log the color and what happened"]
+```
 
-Not a piece of software. Nothing to install. No automation to maintain.
+- **Your business facts** are pasted once and stay loaded. Every draft is built from them.
+- **Triage** returns a color, one line of why, and the next action.
+- **Green** means they want the next step, so you offer two times.
+- **Yellow** means something is in the way, so you find the real reason first.
+- **Red** means one polite line and stop.
+- **Draft** writes the message. You are still the one who hits send.
+- **Log** is a note or a sheet. It is how you find out which colors turn into calls.
 
-Just a conversation you keep open.
+Not a piece of software. Nothing to install. No automation to maintain, unless you want one.
 
-1. Paste your business details into Claude once.
-2. Paste a lead's reply in when one arrives.
-3. Get a color back: Green, Yellow, or Red.
-4. Get a drafted reply that matches the color.
-5. Read it, fix anything that sounds off, send it.
-6. Log the color and what happened.
-
-Green means they want to talk. Yellow means they are interested but stalling. Red means stop spending time here.
-
-## What you get
-
-- [triage-prompt.md](triage-prompt.md): the prompt that reads a reply and hands back a color, the reason, and what to do next.
-- [reply-drafting-prompt.md](reply-drafting-prompt.md): the prompt that drafts the actual message to send, by type of reply.
-- [objection-handling-prompt.md](objection-handling-prompt.md): the prompt that finds the real reason behind a pushback before writing a reply to it.
-- [claude-md-snippet.md](claude-md-snippet.md): the fill-in-the-blanks block that teaches Claude your offer, your ICP, and your rules.
-- [setup-checklist.md](setup-checklist.md): the no-code install path and your first week's routine.
-
-## Tools you need
+## What you need first
 
 | Tool | What it does here | Free or paid | Link |
 |---|---|---|---|
-| Claude | Runs the triage, drafting, and objection prompts | Free to start. Pro is $20/mo for higher limits | https://claude.ai |
-| Your email inbox | Where cold email replies already land. Nothing to install | Free, whatever you already use | - |
-| LinkedIn | Where DM replies already land. Nothing to install | Free | https://linkedin.com |
-| A notes doc or spreadsheet | Tracks the color and outcome of each reply | Free. Google Sheets, Notion, or a notebook | - |
+| Claude | Runs the triage, drafting, and objection prompts | Free to start. Pro is $20 a month for higher limits | https://claude.ai |
+| Your email inbox | Where cold email replies already land. Nothing to connect | Free, whatever you already use | - |
+| LinkedIn | Where DM replies already land. Nothing to connect | Free | https://linkedin.com |
+| A note or a sheet | One row per reply: date, name, color, what happened | Free. Google Sheets, Notion, or a notebook | - |
+| n8n (Phase 3 only, optional) | Automates the paste step if you want it hands off | Free if you host it yourself. Cloud plans are paid, check their pricing page | https://n8n.io |
 
-## Install it
+> [!NOTE]
+> Before you start, make sure you can log into: claude.ai, the email account your cold replies land in, and LinkedIn. That is the whole list for Phases 1 and 2. Phase 3 also needs an n8n account.
 
-This takes about 12 minutes. You will not write any code.
+## Get the files
 
-1. Go to claude.ai in your browser. Sign up for a free account if you do not have one.
-   - You should see an empty chat box with "How can I help you today?" above it.
-2. Click the "New chat" button in the top left.
-3. Open `claude-md-snippet.md` from this folder. Fill in every bracket with your real details, then copy the whole thing and paste it into the chat box. Press enter.
-   - Fill in every bracket. An empty slot means Claude guesses, and a guess in a reply to a real lead is worse than no reply at all.
-   - You should see Claude reply saying it understands your business.
-4. Open `triage-prompt.md`. Copy it. Paste it into the same chat. Press enter.
-   - You should see Claude confirm it is ready to triage replies.
-5. Find this chat in the left sidebar. Hover it, click the three dots, and rename it "Inbox" so you can find it tomorrow.
-6. Open `reply-drafting-prompt.md` and `objection-handling-prompt.md` in two more browser tabs. Leave them open. You will paste from them later.
+The files live in a public folder on GitHub. GitHub is where people keep files like this. You do not need an account and you do not need to know how it works.
 
-How you know it worked: paste in an old reply you already handled yourself. Claude hands back the same color you would have picked, and a draft close to what you actually sent.
+**The folder:** https://github.com/gary-chakraborty/gap-build-vault/tree/main/builds/ai-inbox-manager
+
+You can read every file right there in the browser. Click a file name and it opens as a page.
+
+**To download all of them at once:**
+
+1. Open https://github.com/gary-chakraborty/gap-build-vault
+2. Find the green **Code** button near the top right of the file list.
+3. Click it. A small menu drops down.
+4. Click **Download ZIP** at the bottom of that menu.
+5. Open the downloaded ZIP, then open the folder `builds/ai-inbox-manager`.
+
+> [!TIP]
+> You do not have to download anything. Opening each file in the browser and copying the text works exactly as well, and it is faster the first time.
+
+| File | What it is | What you do with it |
+|---|---|---|
+| `claude-md-snippet.md` | A fill in the blanks block about your business | Fill in every bracket, paste it into your project once |
+| `triage-prompt.md` | The prompt that returns Green, Yellow, or Red | Paste it in once, then paste replies under it |
+| `reply-drafting-prompt.md` | The prompt that writes the message to send | Paste it in after a Green or Yellow |
+| `objection-handling-prompt.md` | The prompt that finds the real reason behind a pushback | Paste it in when a Yellow is a real objection |
+| `setup-checklist.md` | The install order and your first week routine | Read it once, follow it on day one |
+
+## Build it
+
+### Phase 1: Set up the desk and teach it your business
+
+1. Go to https://claude.ai and sign in. Create a free account if you do not have one.
+   - You should see a chat box in the middle of the screen and a sidebar on the left.
+2. In the left sidebar, click **Projects**.
+   - You should see a page titled Projects with a button for a new one.
+3. Click **New project**. In the name field, type `Reply Desk`. Click **Create project**.
+   - You should now be inside an empty project with its own chat box.
+4. Open `claude-md-snippet.md` from the folder above. Fill in every bracket with your real details. Every one.
+5. In your project, find **Project knowledge** on the right side. Click **Add content**, then **Add text**. Paste your filled in block. Save it.
+   - You should see your text listed under Project knowledge with a file name next to it.
+
+> [!WARNING]
+> Do not leave a single bracket unfilled. An empty slot means Claude guesses, and a guess about your price or your guarantee, sent to a real lead, is worse than no reply at all. If you do not have a guarantee, write "no guarantee yet" in that slot so it has something to obey.
+
+**You know this phase worked when:** you open a new chat inside the Reply Desk project, ask "what do I sell and who do I sell it to", and Claude answers with your real offer and your real buyer, not a generic description.
+
+### Phase 2: Load the prompts and triage your first reply
+
+1. Inside the Reply Desk project, click the chat box and start a new chat.
+2. Open `triage-prompt.md`. Copy the text inside the code block. Paste it into the chat. Press enter.
+   - You should see Claude confirm it is ready and ask you to paste a reply.
+3. Find an old reply from a real lead that you already answered yourself. Copy what you sent and what they said back.
+4. Paste both into the same chat. Press enter.
+   - You should get back a color, one sentence of why, and a next action.
+5. Compare the color to what you decided at the time. If it matches, the desk is calibrated.
+6. Open `reply-drafting-prompt.md`. Copy the code block, paste it into the same chat under the color, press enter.
+   - You should get back a short message and a one line note on what to do after sending.
+7. Rename the chat so you can find it tomorrow. Hover the chat in the sidebar, click the three dots, click **Rename**, and call it `Desk` plus today's date.
+
+> [!TIP]
+> Keep `reply-drafting-prompt.md` and `objection-handling-prompt.md` open in two browser tabs. During a real day you want to paste from them in two seconds, not go hunting.
+
+> [!WARNING]
+> Run this on two or three old replies before you let it touch a live lead. If a draft comes back generic, the fault is almost always a vague slot in `claude-md-snippet.md`, not the prompt. Fix the slot and run it again.
+
+**You know this phase worked when:** you paste an old reply and get back the same color you picked at the time, plus a draft close enough that you would only change a word or two.
+
+### Phase 3 (OPTIONAL): Automate the paste step with n8n
+
+Phases 1 and 2 are the whole build. This phase only removes the copy and paste. Skip it entirely if you are not already using an automation tool.
+
+> [!NOTE]
+> This route needs an n8n account, either self hosted or on their cloud. We are not shipping a ready made workflow file here on purpose: an untested JSON that fails on import wastes more of your evening than building it yourself. The prompt below builds it against your own stack, and the blueprint table lets you check every node it makes.
+
+**Step 1. Generate a workflow for your own stack.** Open a new chat in Claude, paste this in, and answer its questions:
+
+```
+You are building an n8n workflow for me. I am not a developer, so explain every
+answer in plain words and never assume I know an n8n term.
+
+Before you write anything, ask me these questions one at a time and wait for my
+answer each time:
+1. Where do my cold replies land? (Gmail, Outlook, a sending tool like Smartlead
+   or Instantly, or somewhere else)
+2. Where do I want the drafted reply to appear? (as an unsent draft in my inbox,
+   in Slack, in a spreadsheet, or somewhere else)
+3. Where do I want the log to go? (Google Sheets, Airtable, Notion, or nowhere)
+4. Do I want a notification when a hot reply lands, and where?
+5. Which AI account do I have set up in n8n already, if any?
+
+Once I have answered all five, build me a single n8n workflow that does this:
+
+- Triggers when a new reply arrives in the place I named.
+- Drops anything that is not a real human reply: out of office, bounces,
+  auto-acknowledgements, and anything from a no-reply address.
+- Sends the reply text to Claude with MY triage rules, and gets back exactly
+  three things: a color of GREEN, YELLOW, or RED, one sentence of why, and the
+  next action.
+- Routes each color down its own branch.
+- For GREEN and YELLOW, sends the reply text back to Claude with MY drafting
+  rules and gets back a short message to send.
+- Saves that message as an UNSENT DRAFT. Never send anything automatically.
+- Appends one row to my log: date, lead name, lead email, color, the reason,
+  and the draft.
+- Notifies me only on GREEN.
+- Has an error path on every step that touches an outside account, so a failure
+  tells me instead of going quiet.
+
+Output the workflow as n8n JSON I can import, with every credential field left
+empty for me to fill in. Then, underneath the JSON, give me a numbered list of
+what I have to click in n8n to connect each account, naming the exact buttons.
+
+I will paste my triage rules and drafting rules in my next message.
+```
+
+Then paste the contents of `triage-prompt.md` and `reply-drafting-prompt.md` when it asks.
+
+**Step 2. Import what it gives you.** In n8n, go to **Workflows**, click the **three dots** in the top right, then **Import from File** (or **Import from URL** if you saved it online). Save the JSON to your computer first, then pick it.
+
+- You should see a canvas with connected boxes, each with a red warning triangle because no accounts are connected yet.
+
+**Step 3. Check it against this blueprint before you turn anything on.** Click each node and compare. If a node is missing, add it. If a node sends instead of drafting, change it.
+
+| Node | Type | What it does | Connects to |
+|---|---|---|---|
+| New reply | Gmail Trigger, Outlook Trigger, or Webhook | Fires when a reply lands in your inbox or your sending tool | Real human filter |
+| Real human filter | Filter | Drops out of office, bounces, and no-reply senders | Triage |
+| Triage | Claude (message a model) | Returns the color, one line of why, and the next action | Route by color |
+| Route by color | Switch | Sends GREEN, YELLOW, and RED down three separate paths | Draft the reply, Close the thread |
+| Draft the reply | Claude (message a model) | Writes the message using your drafting rules | Save as draft |
+| Close the thread | Set | Marks RED as handled with no message written | Log it |
+| Save as draft | Gmail or Outlook, create draft | Puts the message in your drafts folder, unsent | Log it |
+| Log it | Google Sheets, append row | One row per reply: date, name, email, color, reason, draft | Notify me |
+| Notify me | Slack or email | Pings you on GREEN only, so the alert still means something | End |
+| Error catch | Error Trigger workflow | Tells you when any step above fails, instead of failing quietly | Notify me |
+
+> [!WARNING]
+> Set every message node to create a draft, never to send. An AI that sends without you reading it will eventually send something you would not have. The draft step is the whole safety net.
+
+> [!TIP]
+> Turn the workflow on with a test email to yourself first. Send yourself a message that says "sounds interesting, what does this cost", and watch it move through the canvas one node at a time.
+
+**You know this phase worked when:** you send yourself a test reply, and within a minute an unsent draft appears in your drafts folder, a new row appears in your log with the color YELLOW, and no message has been sent to anyone.
 
 ## Run it the first time
 
-Paste this into your Inbox chat:
+Open your Desk chat. Paste in this reply, exactly as written. (This is a made up lead, not a real one.)
 
-"Hey thanks for reaching out, what's this going to cost roughly?"
+```
+Hey thanks for reaching out, what's this going to cost roughly?
+```
 
-Claude should hand back something close to:
+You should get back something close to this:
 
-> Color: YELLOW
+> **YELLOW**
 > Why: they are evaluating, not committing, and they asked a direct price question.
-> Next: do not quote a number. Acknowledge the question, move to the call.
+> Next: do not quote a number. Acknowledge the question and move to the call.
 
-Now go to your `reply-drafting-prompt.md` tab. Copy it, paste it into the Inbox chat under that result, and press enter.
+Now open your `reply-drafting-prompt.md` tab, copy the code block, paste it into the same chat underneath that result, and press enter.
 
-You should get something close to:
+You should get back something close to this:
 
-> "Good question. It depends on scope, so it's something we cover on the call. Happy to walk you through it. Thursday at 2pm or Friday at 11am?"
+> Good question. It depends on scope, so it's something we cover on the call. Happy to walk you through it. Thursday at 2pm or Friday at 11am?
 
-That is the whole loop. Reply in, color out, draft out, send.
+That is the whole loop. Reply in, color out, draft out, you send.
 
-The one thing people get wrong: leaving the slots in `claude-md-snippet.md` vague. "We help businesses grow" is vague. A vague slot produces a vague reply that reads like every other cold DM in their inbox.
+> [!WARNING]
+> The most common first run mistake is leaving `claude-md-snippet.md` vague. "We help businesses grow" in the WHAT I SELL slot produces a draft that reads like every other cold DM in their inbox. Go back and write the sentence you would actually say out loud to a buyer, with your real proof point and your real price rule, before a draft reaches a live lead.
 
-Go back and fill every slot with your real proof and your real price language before you let a single draft reach a live lead.
+## When it breaks
+
+| What you see | What it means | What to do |
+|---|---|---|
+| A blunt one line reply gets called RED, but it was really a question | It is judging tone instead of words | Paste the RED and YELLOW definitions back into the chat and add "judge what they said, not how it sounds". Re-run that reply |
+| Every draft sounds the same, and none of them sound like you | Your business block is generic in one or more slots | Rewrite WHAT I SELL, MY REAL PROOF POINTS, and MY TONE with real specifics, then update the text in Project knowledge |
+| It quotes a price, a guarantee, or a client result you never gave it | A slot was left empty or still has a bracket in it | Fill the slot. If you do not have that thing, write "no guarantee yet" or "no range yet, always redirect to the call" so it has a rule to follow |
+| It invents call times you are not free for | It has no idea what your calendar looks like | Paste your two real open times into the chat before asking for a draft, every morning |
+| A reply asks three questions, the draft answers one | Long stacked replies get flattened | Reply in the chat with "answer every question they asked, in order, then offer the two times" |
+| The drafts drift after a long day of pasting | The chat got long and your rules scrolled out of reach | Start a new chat inside the Reply Desk project. The project knowledge loads again automatically |
+| Phase 3 only: the workflow runs green but no draft appears | The node is set to send rather than create a draft, or the account connected is the wrong inbox | Open the Gmail or Outlook node, check the operation says create draft, and check the account at the top of the node |
+| Phase 3 only: nothing runs at all and there is no error | The workflow was saved but never activated | Open the workflow and switch the **Active** toggle in the top right to on. Check the Executions tab for a run |
 
 ## Tell me how it went
 
 I read every one of these. Two minutes, five questions: what you used, how, and what happened. https://form.jotform.com/262191867802059 The best stories become the next build.
 
-## Want this running without doing any of this?
+## Want this built for you?
 
 This is one piece of the system we install for B2B service businesses: 15-25 qualified sales calls a month without referrals or hiring a sales team. If you'd rather have the whole thing built for you, grab a call: https://calendly.com/garychakraborty
