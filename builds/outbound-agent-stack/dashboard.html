@@ -1,0 +1,830 @@
+<title>The Eight Agents</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;450;500;600&display=swap">
+
+<style>
+:root{
+  --ink:#0D1117;
+  --panel:#131B26;
+  --rise:#1A2432;
+  --rule:#263346;
+  --rule-soft:#1B2534;
+  --accent:#3B82F6;
+  --accent-deep:#1B4A8F;
+  --accent-ghost:rgba(59,130,246,.12);
+  --paper:#E6EDF6;
+  --muted:#8698AF;
+  --dim:#61728C;
+  --drop:#33415A;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  background:var(--ink);color:var(--paper);
+  font-family:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
+  font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+
+/* ---------- sticky result strip ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(13,17,23,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--rule);
+}
+.topbar .wrap{display:flex;align-items:center;gap:28px;height:62px;overflow-x:auto}
+.brandmark{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--accent);white-space:nowrap;font-weight:600;
+}
+.chips{display:flex;gap:26px;margin-left:auto}
+.chip{display:flex;flex-direction:column;gap:1px;white-space:nowrap}
+.chip .v{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19px;
+  line-height:1.1;letter-spacing:-.02em;font-variant-numeric:tabular-nums;
+}
+.chip .k{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim)}
+@media (max-width:720px){.chips{gap:16px}.chip .v{font-size:16px}}
+
+/* ---------- section chrome ---------- */
+section{padding:76px 0;border-top:1px solid var(--rule-soft)}
+section:first-of-type{border-top:none}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--dim);margin-bottom:14px;
+  display:flex;align-items:center;gap:12px;
+}
+.eyebrow b{color:var(--accent);font-weight:600}
+h2{
+  font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;
+  font-size:clamp(28px,3.6vw,44px);line-height:1.08;letter-spacing:-.028em;
+  text-wrap:balance;max-width:19ch;
+}
+h2.wide{max-width:26ch}
+h3{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+  font-size:22px;line-height:1.2;letter-spacing:-.018em;
+}
+.lede{font-size:19px;line-height:1.6;color:var(--muted);max-width:62ch;margin-top:18px}
+.lede strong{color:var(--paper);font-weight:500}
+p.note{font-size:15.5px;line-height:1.6;color:var(--muted);max-width:66ch;margin-top:16px}
+p.note strong{color:var(--paper);font-weight:500}
+.src{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--dim);
+  margin-top:18px;line-height:1.5;
+}
+
+/* ---------- hero + the reply block ---------- */
+.hero{padding-top:60px}
+.reply{
+  background:var(--ink);border:1px solid var(--accent-deep);border-radius:9px;
+  padding:24px 26px 22px;margin-top:22px;
+}
+.reply .rlabel{
+  font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);display:block;margin-bottom:12px;
+}
+.reply .q{
+  font-family:"IBM Plex Mono",monospace;font-weight:500;
+  font-size:clamp(24px,3.6vw,40px);line-height:1.15;letter-spacing:-.025em;
+}
+.reply .meta{
+  font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--dim);
+  margin-top:16px;display:flex;flex-wrap:wrap;gap:6px 26px;
+}
+
+/* ---------- the hero schematic: four phases, eight agents ---------- */
+h1{
+  font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;
+  font-size:clamp(34px,5.4vw,66px);line-height:1.02;letter-spacing:-.035em;
+  text-wrap:balance;
+}
+.phases{
+  display:grid;grid-template-columns:1fr 1.34fr .78fr 1fr;gap:16px;margin-top:40px;
+  align-items:stretch;
+}
+.phase{
+  display:flex;flex-direction:column;gap:9px;position:relative;
+  padding:18px 16px 16px;border:1px solid var(--rule);border-radius:10px;
+  background:rgba(19,27,38,.45);
+}
+.phase:not(:last-child)::after{
+  content:"";position:absolute;right:-11px;top:50%;width:6px;height:6px;
+  border-top:1.5px solid var(--drop);border-right:1.5px solid var(--drop);
+  transform:translateY(-50%) rotate(45deg);
+}
+.ph{display:flex;flex-direction:column;gap:2px;margin-bottom:3px}
+.ph .pn{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--accent)}
+.ph .pt{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:19px;letter-spacing:-.018em;line-height:1.1}
+.node{
+  background:var(--panel);border:1px solid var(--rule);border-radius:7px;
+  padding:13px 14px;display:flex;flex-direction:column;gap:4px;
+  text-decoration:none;color:inherit;transition:border-color .16s,background .16s;
+}
+.node:hover,.node:focus-visible{border-color:var(--accent-deep);background:var(--rise)}
+.node .n{font-family:"IBM Plex Mono",monospace;font-size:10.5px;color:var(--drop);letter-spacing:.12em}
+.node .t{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:15.5px;line-height:1.2;letter-spacing:-.012em}
+.node .d{font-size:13px;line-height:1.4;color:var(--muted)}
+.out{
+  margin-top:auto;padding-top:11px;border-top:1px dashed var(--rule);
+  display:flex;flex-direction:column;gap:2px;
+}
+.out span{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim)}
+.out b{font-size:14px;line-height:1.35;font-weight:500;color:var(--paper)}
+.out.win b{color:var(--accent)}
+@media (max-width:1000px){
+  .phases{grid-template-columns:1fr 1fr;gap:20px}
+  .phase::after{display:none}
+}
+@media (max-width:560px){.phases{grid-template-columns:1fr}}
+.chainnote{
+  font-size:16px;color:var(--muted);margin-top:26px;max-width:62ch;
+}
+.chainnote strong{color:var(--paper);font-weight:500}
+
+/* ---------- agent cards ---------- */
+.agent{
+  background:var(--panel);border:1px solid var(--rule);border-radius:10px;
+  padding:clamp(22px,3vw,34px);margin-top:20px;scroll-margin-top:78px;
+}
+.agent.key{border-color:var(--accent-deep);background:var(--rise)}
+.agent .head{display:flex;align-items:flex-start;gap:18px;flex-wrap:wrap}
+.agent .idx{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:38px;
+  line-height:.9;letter-spacing:-.05em;color:var(--drop);min-width:44px;
+}
+.agent.key .idx{color:var(--accent)}
+.agent .headtext{flex:1;min-width:240px}
+.agent .plain{
+  font-size:18px;line-height:1.5;color:var(--muted);margin-top:8px;max-width:60ch;
+}
+.agent .plain strong{color:var(--paper);font-weight:500}
+.toolrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.tool{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.06em;
+  color:var(--muted);background:var(--ink);border:1px solid var(--rule);
+  border-radius:5px;padding:5px 10px;
+}
+.agent ul{margin:20px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.agent li{
+  position:relative;padding-left:22px;font-size:16px;line-height:1.55;color:var(--muted);
+  max-width:70ch;
+}
+.agent li::before{
+  content:"";position:absolute;left:2px;top:.62em;width:7px;height:1.5px;background:var(--accent);
+}
+.agent li strong{color:var(--paper);font-weight:500}
+.scar{
+  margin-top:20px;padding:15px 18px;border-left:2px solid var(--drop);
+  background:var(--ink);border-radius:0 6px 6px 0;
+  font-size:15px;line-height:1.55;color:var(--muted);max-width:72ch;
+}
+.scar b{color:var(--paper);font-weight:600;font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;display:block;margin-bottom:6px}
+
+/* ---------- source table ---------- */
+.tablewrap{overflow-x:auto;margin-top:20px;border:1px solid var(--rule);border-radius:8px}
+table{border-collapse:collapse;width:100%;min-width:600px;font-size:15px}
+th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--rule-soft);vertical-align:top}
+th{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--dim);font-weight:500;background:var(--ink);
+}
+tr:last-child td{border-bottom:none}
+td strong{color:var(--paper);font-weight:500}
+td{color:var(--muted)}
+td.num{font-variant-numeric:tabular-nums;font-family:"IBM Plex Mono",monospace;font-size:14px}
+
+/* ---------- survival bars ---------- */
+.funnel{display:flex;flex-direction:column;gap:16px;margin-top:28px}
+.frow{display:grid;grid-template-columns:150px 1fr 190px;align-items:center;gap:20px}
+.flabel{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);text-align:right;line-height:1.35}
+.ftrack{height:34px;background:var(--rule-soft);border-radius:4px;position:relative;overflow:hidden}
+.fbar{
+  position:absolute;top:0;bottom:0;left:0;border-radius:4px;min-width:3px;
+  background:var(--accent-ghost);border-right:2px solid var(--accent);
+  width:0;transition:width .9s cubic-bezier(.22,1,.36,1);
+}
+.fbar.dead{background:transparent;border-right-color:var(--drop)}
+.fval{display:flex;align-items:baseline;gap:12px}
+.fval .n{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:26px;
+  letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums;
+  min-width:82px;text-align:right;
+}
+.fval.dead .n{color:var(--drop)}
+.fval .fn{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);line-height:1.35}
+.fval .fn b{color:var(--accent);font-weight:600}
+.fval.dead .fn b{color:var(--drop)}
+@media (max-width:760px){
+  .frow{grid-template-columns:1fr;gap:8px}
+  .flabel{text-align:left}
+  .fval{margin-top:2px}
+  .fval .n{min-width:0;text-align:left}
+}
+
+/* ---------- mail ---------- */
+.mail{background:var(--ink);border:1px solid var(--rule);border-radius:9px;overflow:hidden;margin-top:20px}
+.mail .hd{
+  display:flex;align-items:center;gap:12px;padding:13px 18px;
+  border-bottom:1px solid var(--rule-soft);background:var(--rise);flex-wrap:wrap;
+}
+.mail .subj{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--paper)}
+.mail .when{font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--dim);margin-left:auto}
+.mail .bd{
+  padding:22px 20px;font-family:"IBM Plex Mono",monospace;
+  font-size:15px;line-height:1.9;white-space:pre-wrap;color:var(--paper);
+  overflow-x:auto;
+}
+.mail .bd .var{color:var(--accent)}
+.copybtn{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:1px solid var(--rule);
+  border-radius:5px;padding:6px 12px;cursor:pointer;transition:border-color .16s,color .16s;
+}
+.copybtn:hover,.copybtn:focus-visible{border-color:var(--accent);color:var(--accent)}
+.copybtn.done{color:var(--accent);border-color:var(--accent-deep)}
+
+/* ---------- tiles ---------- */
+.tiles{display:grid;gap:16px;margin-top:28px;grid-template-columns:repeat(3,1fr)}
+.tiles.t2{grid-template-columns:repeat(2,1fr)}
+@media (max-width:780px){.tiles,.tiles.t2{grid-template-columns:1fr}}
+.tile{background:var(--panel);border:1px solid var(--rule);border-radius:9px;padding:24px 22px}
+.tile .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.tile .v{
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:38px;
+  line-height:1;letter-spacing:-.03em;margin:10px 0 10px;font-variant-numeric:tabular-nums;
+}
+.tile .v.blue{color:var(--accent)}
+.tile p{font-size:15px;line-height:1.5;color:var(--muted)}
+
+/* ---------- ranked ---------- */
+.rank{display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.ritem{
+  display:grid;grid-template-columns:52px 1fr 200px;gap:22px;align-items:center;
+  background:var(--panel);border:1px solid var(--rule);border-radius:9px;padding:22px 24px;
+}
+.ritem.one{border-color:var(--accent-deep);background:var(--rise)}
+.ritem .p{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;color:var(--drop);line-height:1;letter-spacing:-.04em}
+.ritem.one .p{color:var(--accent)}
+.ritem .d{font-size:15.5px;color:var(--muted);line-height:1.5;margin-top:5px}
+.ritem .ev{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--muted);text-align:right;line-height:1.45}
+.ritem .ev b{color:var(--paper);font-weight:600}
+@media (max-width:780px){
+  .ritem{grid-template-columns:44px 1fr;gap:16px}
+  .ritem .ev{grid-column:2;text-align:left;margin-top:8px}
+}
+
+/* ---------- checklist ---------- */
+.checks{display:flex;flex-direction:column;gap:2px;margin-top:26px}
+.check{
+  display:flex;gap:15px;align-items:flex-start;padding:15px 18px;
+  border:1px solid transparent;border-radius:8px;cursor:pointer;
+  transition:background .14s,border-color .14s;
+}
+.check:hover{background:var(--panel);border-color:var(--rule)}
+.check input{
+  appearance:none;width:19px;height:19px;flex:none;margin-top:2px;
+  border:1.5px solid var(--drop);border-radius:4px;background:transparent;cursor:pointer;
+  position:relative;transition:border-color .14s,background .14s;
+}
+.check input:checked{background:var(--accent);border-color:var(--accent)}
+.check input:checked::after{
+  content:"";position:absolute;left:6px;top:2px;width:5px;height:10px;
+  border:solid var(--ink);border-width:0 2px 2px 0;transform:rotate(45deg);
+}
+.check span{font-size:16.5px;line-height:1.5}
+.check input:checked + span{color:var(--dim);text-decoration:line-through}
+
+/* ---------- setup steps ---------- */
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:14px;margin-top:28px}
+.step{
+  counter-increment:s;position:relative;padding:20px 24px 20px 62px;
+  background:var(--panel);border:1px solid var(--rule);border-radius:9px;
+}
+.step::before{
+  content:counter(s);position:absolute;left:24px;top:19px;
+  font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--accent);font-weight:600;
+}
+.step b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:17.5px;letter-spacing:-.012em;margin-bottom:5px}
+.step p{font-size:15.5px;line-height:1.55;color:var(--muted);max-width:70ch}
+
+a.link{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--accent-deep)}
+a.link:hover,a.link:focus-visible{border-bottom-color:var(--accent)}
+
+/* ---------- cta ---------- */
+.cta{
+  background:var(--panel);border:1px solid var(--accent-deep);border-radius:12px;
+  padding:clamp(28px,4vw,48px);margin-top:30px;
+}
+.cta h3{font-size:clamp(21px,2.6vw,28px);max-width:24ch;letter-spacing:-.02em}
+.cta p{font-size:17px;line-height:1.6;color:var(--muted);max-width:60ch;margin-top:14px}
+.ctabtn{
+  display:inline-block;margin-top:24px;background:var(--accent);color:#06111F;
+  font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;
+  text-decoration:none;padding:14px 26px;border-radius:7px;letter-spacing:-.01em;
+  transition:filter .16s;
+}
+.ctabtn:hover,.ctabtn:focus-visible{filter:brightness(1.12)}
+
+footer{padding:56px 0 76px;border-top:1px solid var(--rule-soft);color:var(--dim);font-size:14.5px;line-height:1.6}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 40px;justify-content:space-between}
+
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+</style>
+
+<div class="topbar">
+  <div class="wrap">
+    <span class="brandmark">GAP &middot; Build Vault</span>
+    <div class="chips">
+      <div class="chip"><span class="v num" data-count="8">0</span><span class="k">agents in the chain</span></div>
+      <div class="chip"><span class="v num" data-count="2">0</span><span class="k">emails, never more</span></div>
+      <div class="chip"><span class="v">5 min</span><span class="k">to answer a reply</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ HERO — the chain IS the hook ============ -->
+<section class="hero"><div class="wrap">
+  <div class="eyebrow"><b>GAP's outbound agent stack</b><span>Updated Aug 2026</span></div>
+  <h1>The eight agents we run<br>on every campaign.</h1>
+  <p class="lede">Same eight, same order, whatever the client sells. What each one does, the public sources it reads, and the number it produces at every gate &mdash; with one campaign worked all the way through as the example. <strong>Free, no email wall, nothing held back for a call.</strong></p>
+
+  <div class="phases">
+    <div class="phase">
+      <div class="ph"><span class="pn">Phase 1</span><span class="pt">Learn</span></div>
+      <a class="node" href="#a1"><span class="n">01</span><span class="t">Market Researcher</span><span class="d">Who buys this, and what do they pay?</span></a>
+      <a class="node" href="#a2"><span class="n">02</span><span class="t">Buyer Psychologist</span><span class="d">What words do they use themselves?</span></a>
+      <div class="out"><span>Comes out</span><b>The exact phrase they use</b></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><span class="pn">Phase 2</span><span class="pt">Build the list</span></div>
+      <a class="node" href="#a3"><span class="n">03</span><span class="t">Offer Writer</span><span class="d">One promise, one kind of company.</span></a>
+      <a class="node" href="#a4"><span class="n">04</span><span class="t">List Builder</span><span class="d">Real firms in. Everything else out.</span></a>
+      <a class="node" href="#a5"><span class="n">05</span><span class="t">Contact Finder</span><span class="d">The right person, a checked address.</span></a>
+      <div class="out"><span>Comes out</span><b>Firms that actually exist</b></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><span class="pn">Phase 3</span><span class="pt">Time it</span></div>
+      <a class="node" href="#a6"><span class="n">06</span><span class="t">Signal Finder</span><span class="d">What changed at their company, and when?</span></a>
+      <div class="out"><span>Comes out</span><b>Who is worth emailing this week</b></div>
+    </div>
+    <div class="phase">
+      <div class="ph"><span class="pn">Phase 4</span><span class="pt">Send and answer</span></div>
+      <a class="node" href="#a7"><span class="n">07</span><span class="t">Email Writer</span><span class="d">Fills a script that already works.</span></a>
+      <a class="node" href="#a8"><span class="n">08</span><span class="t">Inbox Agent</span><span class="d">Answers every reply in five minutes.</span></a>
+      <div class="out win"><span>Comes out</span><b>A reply, then a signed client</b></div>
+    </div>
+  </div>
+
+  <p class="chainnote"><strong>The order is the product.</strong> Most people start at agent 7, write a clever email, send it to a list they bought, and wonder why nothing comes back. The email was never the problem.</p>
+</div></section>
+
+<!-- ============ THE RECEIPTS ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>What the chain produces</b><span>Three separate measurements, three different lists</span></div>
+  <h2 class="wide">Every number on this page carries the day it was measured.</h2>
+  <div class="tiles">
+    <div class="tile">
+      <span class="k">The worked example on this page</span>
+      <span class="v blue">$2,500<span style="font-size:.5em">/mo</span></span>
+      <p>A bookkeeping firm in San Diego signed a new client off the two emails below. They replied <strong>two days</strong> after the first one landed &mdash; four words, with a typo in the first.</p>
+      <div class="src">Campaign live 2026-07-30 &middot; reply 2026-08-07 &middot; signed inside two weeks</div>
+    </div>
+    <div class="tile">
+      <span class="k">Our own account, same eight agents</span>
+      <span class="v">0.49%</span>
+      <p>Positive reply rate on <strong>1,025 emails</strong> in about three days. Our best of the year. Six campaigns, 1,576 checked leads, built in <strong>2 minutes 1 second</strong>.</p>
+      <div class="src">Measured 2026-08-20</div>
+    </div>
+    <div class="tile">
+      <span class="k">What the gates threw out</span>
+      <span class="v blue">85%</span>
+      <p>Of leads that looked fine on paper and did not survive a real check. That number is the campaign. Both funnels are further down, with their own dates.</p>
+      <div class="src">Measured 2026-07-22 and 2026-08-20 &middot; two separate lists</div>
+    </div>
+  </div>
+  <p class="note">These are three <strong>separate</strong> measurements on three different lists, not one funnel. Anyone who shows you a single unbroken funnel from market size to signed client built it backwards.</p>
+</div></section>
+
+<!-- ============ AGENT 1 ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Agents 1 &amp; 2</b><span>Before a single word is written</span></div>
+  <h2>First you find out who buys, and what they actually say.</h2>
+
+  <div class="agent" id="a1">
+    <div class="head">
+      <span class="idx">01</span>
+      <div class="headtext">
+        <h3>The Market Researcher</h3>
+        <p class="plain">Works out <strong>who buys this, what they pay, and who else is selling to them</strong> &mdash; before anyone writes a word. Every fact comes from a public page you could open yourself, and every fact carries the date it was read.</p>
+      </div>
+    </div>
+    <div class="toolrow">
+      <span class="tool">skill: niche-market-research</span>
+      <span class="tool">Scrapling (free)</span>
+      <span class="tool">Serper</span>
+      <span class="tool">pytrends</span>
+    </div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Public source</th><th>What we take from it</th><th>Goes stale after</th></tr></thead>
+      <tbody>
+        <tr><td><strong>McKinsey, Deloitte, PwC, BCG, EY</strong></td><td>Market size, growth, what buyers are shifting toward</td><td class="num">18 months</td></tr>
+        <tr><td><strong>Statista, IBISWorld</strong></td><td>Revenue and forecast figures, cross-checked against a second source</td><td class="num">18 months</td></tr>
+        <tr><td><strong>Reddit</strong></td><td>What buyers say about the problem when nobody is selling to them</td><td class="num">90 days</td></tr>
+        <tr><td><strong>G2 and Capterra reviews</strong></td><td>What they hate about the tool they already pay for</td><td class="num">6 months</td></tr>
+        <tr><td><strong>Google Trends</strong></td><td>Whether the problem is growing or dying</td><td class="num">live</td></tr>
+        <tr><td><strong>Crunchbase</strong></td><td>Who raised money, who is growing headcount</td><td class="num">90 days</td></tr>
+        <tr><td><strong>Greenhouse, Lever, Ashby</strong></td><td>Who is hiring for the exact job our thing removes</td><td class="num">30 days</td></tr>
+        <tr><td><strong>News</strong></td><td>The thing that changed this month</td><td class="num">90 days</td></tr>
+      </tbody>
+    </table></div>
+    <ul>
+      <li>Search finds the page. <strong>Our own free scraper reads it.</strong> No paid research tool anywhere in this step.</li>
+      <li>A source past its window is marked <strong>unverified</strong> and does not get used as a fact.</li>
+    </ul>
+    <div class="scar"><b>The rule that makes it trustworthy</b>A blocked source has to <strong>fail loudly</strong>. Returning an empty list when a site blocks you is banned. One run had Reddit quietly blocked, the empty result looked like a finished report, and the whole buyer profile for accountants got built out of a subreddit for financial advisers. It shipped into live posts before anyone noticed. <strong>Empty must never look like blocked.</strong></div>
+  </div>
+
+  <div class="agent key" id="a2">
+    <div class="head">
+      <span class="idx">02</span>
+      <div class="headtext">
+        <h3>The Buyer Psychologist</h3>
+        <p class="plain">Finds <strong>the words the buyer uses themselves</strong> &mdash; what actually worries them at six in the evening, not what their job title says. Reads real threads and real reviews, and quotes them. Never invents a phrase.</p>
+      </div>
+    </div>
+    <div class="toolrow">
+      <span class="tool">skill: icp-psychographic-profiler</span>
+      <span class="tool">Reddit</span>
+      <span class="tool">forums</span>
+      <span class="tool">review bodies</span>
+      <span class="tool">comment threads</span>
+    </div>
+    <ul>
+      <li><strong>This is the agent that made the money on this campaign.</strong> The subject line that got the reply was <em>"who reconciles the trust account."</em> Nobody at our end wrote that phrase. It is what small law firms call it. That is the only reason the email did not read like a bookkeeping ad.</li>
+      <li>The fear underneath it: get the client trust ledger wrong and you can lose your licence. Not your money &mdash; your licence. No amount of clever writing gets you to that sentence. You have to go and read what they said.</li>
+      <li>Runs <strong>before</strong> any offer, email or deck exists. A shallow profile makes everything downstream shallow.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ============ AGENTS 3-5 ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Agents 3, 4 &amp; 5</b><span>The list is the campaign</span></div>
+  <h2>Then you build a list of firms that are actually real.</h2>
+
+  <div class="agent" id="a3">
+    <div class="head">
+      <span class="idx">03</span>
+      <div class="headtext">
+        <h3>The Offer Writer</h3>
+        <p class="plain">Turns all that research into <strong>one promise, for one kind of company, with one number in it.</strong> Then two or three different ways of saying that same promise.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">skill: b2b-client-acquisition</span><span class="tool">no API needed</span></div>
+    <ul>
+      <li>The test it has to pass: <strong>could two people fill this in two different ways and both be right?</strong> If yes, it is not nailed down, and it will get invented differently every time.</li>
+      <li>Written once, properly, by the best model you have. Then a cheap model fills it in hundreds of times. <strong>That split is the whole cost model</strong> &mdash; the judgment lives in the rules, not in the model.</li>
+    </ul>
+  </div>
+
+  <div class="agent" id="a4">
+    <div class="head">
+      <span class="idx">04</span>
+      <div class="headtext">
+        <h3>The List Builder</h3>
+        <p class="plain">Finds companies that match, and <strong>throws out everything that only looks like it matches.</strong> Picks the cheapest source that can do the job, automatically, and never asks which tool to use.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">skill: lead-list-builder</span><span class="tool">source waterfall</span><span class="tool">free engine first</span></div>
+    <ul>
+      <li><strong>Cheapest first, every time:</strong> a export you already paid for &rarr; the free scraper &rarr; a tool that came bundled with something else &rarr; prepaid credits &rarr; new money, last.</li>
+      <li>A source that has run out of credit is <strong>skipped, not fatal</strong>. Only running out of every source stops the build. This rule exists because one provider failed mid-build and the suggested fix was a new subscription &mdash; while thousands of already-paid credits sat unused somewhere else.</li>
+    </ul>
+    <p class="note" style="margin-top:26px"><strong>Here is what the gate actually did on one real list.</strong> This is the number that decides a campaign, and almost nobody measures it:</p>
+    <div class="funnel">
+      <div class="frow">
+        <div class="flabel">Bought from<br>a database</div>
+        <div class="ftrack"><div class="fbar" data-w="100"></div></div>
+        <div class="fval"><span class="n">1,642</span><span class="fn">raw leads</span></div>
+      </div>
+      <div class="frow">
+        <div class="flabel">Passed the<br>quick filters</div>
+        <div class="ftrack"><div class="fbar" data-w="23.1"></div></div>
+        <div class="fval"><span class="n">380</span><span class="fn">looked fine<br>on paper</span></div>
+      </div>
+      <div class="frow">
+        <div class="flabel">Passed a real read<br>of the business</div>
+        <div class="ftrack"><div class="fbar dead" data-w="0"></div></div>
+        <div class="fval dead"><span class="n">0</span><span class="fn"><b>27%</b> were not even<br>accounting firms</span></div>
+      </div>
+    </div>
+    <p class="note">They were software companies, marketplaces and recruiters with the right words on their website. A keyword filter cannot see that. Something that actually opens the site and reads it can. <strong>Confirmed a second time on a completely separate list, at 25%.</strong></p>
+    <div class="src">Measured 2026-07-22 &middot; 1,642-lead US list &middot; corroborated on an independent EU/UK list</div>
+  </div>
+
+  <div class="agent" id="a5">
+    <div class="head">
+      <span class="idx">05</span>
+      <div class="headtext">
+        <h3>The Contact Finder</h3>
+        <p class="plain">Finds <strong>the right person at each firm and an address that actually works.</strong> Uses a chain of sources, never a single one.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">contact chain</span><span class="tool">email chain</span><span class="tool">email verifier</span></div>
+    <ul>
+      <li><strong>Who they are:</strong> the company's own site &rarr; a search API &rarr; a person-search tool &rarr; a data provider.</li>
+      <li><strong>Their email:</strong> a match endpoint that returns a checked address &rarr; an enrichment tool &rarr; guessing the pattern, last and least.</li>
+      <li>Every address then goes through a verifier. <strong>If it cannot be verified it is dropped, never guessed.</strong> A guessed address is a bounce, and bounces cost you the whole inbox.</li>
+    </ul>
+    <div class="scar"><b>Why it is a chain and not one tool</b>One build went single-source and <strong>lost 744 firms</strong> that the other tools in the chain would have covered. One provider is a single point of failure wearing a budget line.</div>
+  </div>
+</div></section>
+
+<!-- ============ AGENT 6 ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Agent 6</b><span>The biggest lever, and the cheapest</span></div>
+  <h2>Then you work out who is worth emailing this week.</h2>
+
+  <div class="agent key" id="a6">
+    <div class="head">
+      <span class="idx">06</span>
+      <div class="headtext">
+        <h3>The Signal Finder</h3>
+        <p class="plain">A signal is <strong>something that changed at their company.</strong> They hired someone. They moved. They posted a job. They raised money. Your list tells you whether you could ever email them. The signal tells you whether to email them now.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">signal doctrine</span><span class="tool">job boards</span><span class="tool">dig TXT</span><span class="tool">free page scrape</span></div>
+    <ul>
+      <li><strong>No signal, no send.</strong> If you cannot name the thing that changed and put it in the first line of the email, that lead goes on a watch list, not into a campaign.</li>
+      <li><strong>Filter on fit BEFORE you spend a credit</strong>, using the free data the platform already gives you &mdash; title, headcount, industry, country. Enriching first burns money on people you were never going to email.</li>
+    </ul>
+    <div class="tablewrap"><table>
+      <thead><tr><th>The signal</th><th>Best used inside</th><th>Dead after</th></tr></thead>
+      <tbody>
+        <tr><td><strong>A public "anyone know a tool for this?" post</strong></td><td class="num">24 hours</td><td class="num">a few days</td></tr>
+        <tr><td><strong>A job ad for the role our thing replaces</strong></td><td class="num">3&ndash;5 days</td><td class="num">30 days</td></tr>
+        <tr><td><strong>A funding round closing</strong></td><td class="num">48 hours from spotting it</td><td class="num">60 days</td></tr>
+      </tbody>
+    </table></div>
+    <p class="note" style="margin-top:26px">Free places to find signals that most people already have access to and never use: <strong>job boards</strong> (Greenhouse, Lever, Ashby), a <strong>check for a dead blog</strong>, a <strong>DNS lookup</strong> that shows which email tool they run, and a page scrape that shows whether they have booking or chat installed.</p>
+    <div class="scar"><b>A date filter is a hint, not proof</b>On one "they are hiring" list, <strong>41% had no live job ad at all</strong> &mdash; and one supposedly fresh posting turned out to be ten months old. The platform's own date filter said otherwise. Go back to the record that carries the signal and check it yourself before you put it in line one.</div>
+    <p class="note" style="margin-top:26px"><strong>And here is the honest part nobody publishes.</strong> This is how much of a real market actually carries a usable signal:</p>
+    <div class="funnel">
+      <div class="frow">
+        <div class="flabel">People we<br>could email</div>
+        <div class="ftrack"><div class="fbar" data-w="100"></div></div>
+        <div class="fval"><span class="n">18,799</span><span class="fn">the whole market</span></div>
+      </div>
+      <div class="frow">
+        <div class="flabel">Something<br>had changed</div>
+        <div class="ftrack"><div class="fbar" data-w="7.6"></div></div>
+        <div class="fval"><span class="n">1,437</span><span class="fn">carried a signal</span></div>
+      </div>
+      <div class="frow">
+        <div class="flabel">The signal was<br>real and fresh</div>
+        <div class="ftrack"><div class="fbar" data-w="1.25"></div></div>
+        <div class="fval"><span class="n">235</span><span class="fn"><b>15%</b> of the ones<br>that looked good</span></div>
+      </div>
+    </div>
+    <p class="note">Finding signals, not writing better emails, is where the work actually is.</p>
+    <div class="src">Measured 2026-08-20 &middot; outsourced accounting and bookkeeping segment, US, 3&ndash;50 staff</div>
+  </div>
+</div></section>
+
+<!-- ============ AGENTS 7-8 + THE EMAILS ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Agents 7 &amp; 8</b><span>Only now does anyone write anything</span></div>
+  <h2>Then two emails go out. That is all. Ever.</h2>
+
+  <div class="agent" id="a7">
+    <div class="head">
+      <span class="idx">07</span>
+      <div class="headtext">
+        <h3>The Email Writer</h3>
+        <p class="plain">Fills in <strong>a script that already works.</strong> It does not write a new one. It names the template and the line it is using before it writes a word.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">skill: email-outreach</span><span class="tool">script library</span><span class="tool">cheap model fills it</span></div>
+    <ul>
+      <li>First email is <strong>under 64 words</strong>. The one below is 40.</li>
+      <li><strong>Cold outreach is two emails.</strong> The first, then one follow-up, then stop. No third. No fourth. No "just bumping this."</li>
+      <li>Plain text. No bullets, no bold, no formatting in the body. It has to read like a person typed it.</li>
+      <li>Line one is the signal. Line two is <strong>the result that signal implies</strong> &mdash; never a pain line, never the offer.</li>
+      <li><strong>No price, no case study, no proof numbers in the first email.</strong> Those belong in the follow-up.</li>
+    </ul>
+
+    <div class="mail">
+      <div class="hd">
+        <span class="subj">who reconciles the trust account</span>
+        <button class="copybtn" data-copy="e1">Copy</button>
+        <span class="when">Email 1</span>
+      </div>
+      <div class="bd" id="e1">Hi <span class="var">{first name}</span>,
+
+Saw <span class="var">{their firm}</span> handles <span class="var">{their practice area}</span> work out of <span class="var">{their city}</span>.
+
+We run the books and the monthly trust reconciliation for small law firms. Nobody there has to sit and check the ledger.
+
+Can I send some more info?</div>
+    </div>
+
+    <div class="mail">
+      <div class="hd">
+        <span class="subj">&#8627; same thread, no new subject</span>
+        <button class="copybtn" data-copy="e2">Copy</button>
+        <span class="when">Follow-up, day 2</span>
+      </div>
+      <div class="bd" id="e2">Hey <span class="var">{first name}</span>,
+
+Just got some time to get back to you.
+
+Pulled together a month-end trust account checklist &mdash; the red flags worth catching yourself before an auditor does.
+
+Want me to send it over?</div>
+    </div>
+
+    <p class="note">Four moves in the first email, in this order: a true fact about them, what we do in their own words, taking a person off a job they hate, and asking permission instead of asking for a meeting. <strong>The follow-up is the one that got the reply</strong> &mdash; it does not ask for anything, it offers something the reader would keep.</p>
+
+    <div class="reply">
+      <span class="rlabel">What came back, two days later</span>
+      <div class="q">"wha'ts your number"</div>
+      <div class="meta">
+        <span>a law firm in Maryland</span>
+        <span>replying to: who reconciles the trust account</span>
+      </div>
+    </div>
+    <p class="note">Four words. The typo is theirs. <strong>Nobody chased, nobody sent a third email</strong> &mdash; the follow-up went out on day two and that came back the same evening.</p>
+  </div>
+
+  <div class="agent" id="a8">
+    <div class="head">
+      <span class="idx">08</span>
+      <div class="headtext">
+        <h3>The Inbox Agent</h3>
+        <p class="plain">Reads <strong>every reply the minute it lands</strong>, sorts it, and writes the exact message to send back. A person presses send. Nobody sits and drafts.</p>
+      </div>
+    </div>
+    <div class="toolrow"><span class="tool">skill: inbox-management</span><span class="tool">webhook from the sender</span><span class="tool">notification carries the draft</span></div>
+    <ul>
+      <li>Sorts every reply <strong>green, yellow or red</strong> and sends it down the matching path.</li>
+      <li>A positive reply and an objection are <strong>different scripts</strong>, never the same one.</li>
+      <li>Books with <strong>two specific times</strong>. Never a calendar link.</li>
+      <li><strong>Never quotes a price.</strong> Not a figure, not a range, not even when pushed.</li>
+      <li>Answering inside <strong>five minutes</strong> tells a prospect they are dealing with a real operation. Every minute after five is leverage you gave away.</li>
+    </ul>
+  </div>
+</div></section>
+
+<!-- ============ THE SCALE ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>What the chain buys you</b><span>Measured on our own account, 2026-08-20</span></div>
+  <h2 class="wide">The point is not speed. It is being able to rebuild the same afternoon.</h2>
+  <p class="lede">Six campaigns, 1,576 checked leads, forty sending inboxes each &mdash; <strong>built in 2 minutes and 1 second.</strong> That used to be a full day of work.</p>
+  <p class="note">Speed is not the advantage. Here is the advantage: when a list is wrong, or the angle does not land, <strong>you find out in three days and you rebuild it that afternoon</strong> instead of next quarter. Most outbound dies because the feedback loop is a month long and by the time you know, nobody remembers what you changed.</p>
+  <p class="note">Run the chain once and you can run it again on a different niche before lunch. That is what makes a bad result cheap instead of fatal.</p>
+</div></section>
+
+<!-- ============ PRIORITY ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>If you fix one thing</b><span>In this order</span></div>
+  <h2>Most people fix these backwards.</h2>
+  <div class="rank">
+    <div class="ritem one">
+      <span class="p">1</span>
+      <div><h3>The signal</h3><div class="d">Can you name the thing that changed at their company? If not, you are guessing, and they can tell.</div></div>
+      <div class="ev">only <b>15%</b> of leads<br>survive this</div>
+    </div>
+    <div class="ritem">
+      <span class="p">2</span>
+      <div><h3>The list</h3><div class="d">Are these actually the businesses you think they are? Usually a quarter of them are not.</div></div>
+      <div class="ev"><b>27%</b> were the<br>wrong kind of company</div>
+    </div>
+    <div class="ritem">
+      <span class="p">3</span>
+      <div><h3>The words</h3><div class="d">Last. A great email to the wrong list still gets you nothing.</div></div>
+      <div class="ev">generic openers stall<br>around <b>0.4%</b></div>
+    </div>
+  </div>
+  <p class="note">Everyone rewrites the email first. It is the cheapest thing to change and the least likely to be the problem.</p>
+</div></section>
+
+<!-- ============ CHECKLIST ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Before you send anything</b><span>Tick these</span></div>
+  <h2 class="wide">Eight questions. If you cannot answer one, that is where your campaign is leaking.</h2>
+  <div class="checks">
+    <label class="check"><input type="checkbox"><span>Can you name the one kind of company you are writing to, in three words?</span></label>
+    <label class="check"><input type="checkbox"><span>Can you name the one thing they are afraid of, in their words, not yours?</span></label>
+    <label class="check"><input type="checkbox"><span>Did somebody actually open the websites on your list and read them?</span></label>
+    <label class="check"><input type="checkbox"><span>Is every email address on your list verified, or are some of them guesses?</span></label>
+    <label class="check"><input type="checkbox"><span>For each lead, can you name the thing that changed at their company?</span></label>
+    <label class="check"><input type="checkbox"><span>Is that thing still fresh, checked at the source, not at a filter?</span></label>
+    <label class="check"><input type="checkbox"><span>Is your first email under 64 words, with no price and no case study in it?</span></label>
+    <label class="check"><input type="checkbox"><span>Does someone answer a reply inside five minutes, or does it sit until tomorrow?</span></label>
+  </div>
+</div></section>
+
+<!-- ============ SETUP ============ -->
+<section><div class="wrap">
+  <div class="eyebrow"><b>Setting it up</b><span>The short version</span></div>
+  <h2 class="wide">You need five things, and the order matters more than the tools.</h2>
+  <div class="steps">
+    <div class="step"><b>Get the files</b><p>Everything is at <a class="link" href="https://github.com/gary-chakraborty/gap-build-vault">github.com/gary-chakraborty/gap-build-vault</a>, in the <code>builds/outbound-agent-stack</code> folder. Clone it, or just read it in the browser. There is no email wall and no sign-up.</p></div>
+    <div class="step"><b>The five things you need</b><p>A free scraper, a search API key, one contact provider you already pay for, an email verifier, and a sending tool. That is the entire stack. If you already run outbound, you probably have four of the five.</p></div>
+    <div class="step"><b>Run the agents in order</b><p>One to eight. Do not skip to the email. The research step is what produced the subject line that got the reply, and you cannot reverse-engineer it afterwards.</p></div>
+    <div class="step"><b>Your first run should be small</b><p>One kind of company. One signal. Two hundred leads. Not five thousand. You are finding out whether the signal exists, not chasing volume &mdash; and a bad list at five thousand costs you your sending domain.</p></div>
+    <div class="step"><b>Then measure by signal, never blended</b><p>Track reply rate for each signal type separately. A blended number hides the one lane that is working and the three that are not.</p></div>
+  </div>
+  <p class="note">The full walkthrough &mdash; keys, permissions, and every setting &mdash; is its own thing. It is coming as a separate video, because doing it properly takes longer than a section.</p>
+</div></section>
+
+<!-- ============ CTA ============ -->
+<section><div class="wrap">
+  <div class="cta">
+    <h3>That is the whole build. Take it.</h3>
+    <p>Every agent is on this page and in the repo. Copy it, put it in your own company, and run it. It is free and we are not gating it.</p>
+    <p>If you would rather we built it inside your company &mdash; or your pipeline is stuck and you want it fixed &mdash; that is what we do. One niche, one signal, two emails, and <strong>15 to 25 qualified sales calls a month</strong> with people who are actually looking for what you sell. No more waiting on referrals.</p>
+    <a class="ctabtn" href="#feedback">Tell us how this went &rarr;</a>
+  </div>
+</div></section>
+
+<footer id="feedback"><div class="wrap">
+  <span>GAP Build Vault &middot; the outbound agent stack &middot; updated August 2026</span>
+  <span>Every number on this page carries the date it was measured.</span>
+</div></footer>
+
+<script>
+(function(){
+  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* count-up on the sticky chips */
+  document.querySelectorAll(".chip .v[data-count]").forEach(function(el){
+    var target = parseInt(el.getAttribute("data-count"), 10);
+    if (reduce) { el.textContent = target; return; }
+    var n = 0, step = Math.max(1, Math.round(target / 18));
+    var t = setInterval(function(){
+      n += step;
+      if (n >= target) { n = target; clearInterval(t); }
+      el.textContent = n;
+    }, 45);
+  });
+
+  /* survival bars fill when scrolled into view */
+  var bars = document.querySelectorAll(".fbar");
+  function fill(bar){ bar.style.width = bar.getAttribute("data-w") + "%"; }
+  if (!("IntersectionObserver" in window) || reduce) {
+    bars.forEach(fill);
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) { fill(e.target); io.unobserve(e.target); }
+      });
+    }, {threshold: 0.35});
+    bars.forEach(function(b){ io.observe(b); });
+  }
+
+  /* copy the emails */
+  document.querySelectorAll(".copybtn").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      var src = document.getElementById(btn.getAttribute("data-copy"));
+      if (!src) return;
+      var text = src.innerText;
+      var done = function(){
+        btn.textContent = "Copied";
+        btn.classList.add("done");
+        setTimeout(function(){ btn.textContent = "Copy"; btn.classList.remove("done"); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function(){});
+      } else {
+        var ta = document.createElement("textarea");
+        ta.value = text; document.body.appendChild(ta); ta.select();
+        try { document.execCommand("copy"); done(); } catch (e) {}
+        document.body.removeChild(ta);
+      }
+    });
+  });
+
+  /* remember which checks are ticked, per viewer */
+  var boxes = document.querySelectorAll(".check input");
+  var KEY = "tac-checks";
+  try {
+    var saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+    boxes.forEach(function(b, i){ if (saved.indexOf(i) !== -1) b.checked = true; });
+  } catch (e) {}
+  boxes.forEach(function(b, i){
+    b.addEventListener("change", function(){
+      try {
+        var on = [];
+        boxes.forEach(function(x, j){ if (x.checked) on.push(j); });
+        localStorage.setItem(KEY, JSON.stringify(on));
+      } catch (e) {}
+    });
+  });
+})();
+</script>
