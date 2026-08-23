@@ -13,10 +13,7 @@ level: "No code"
 
 Eight agents. Same eight, same order, whatever you sell.
 
-- Agents 1 and 2 find out who buys this and what they call the problem.
-- Agents 3, 4 and 5 turn that into a list of real firms with a real person at each one.
-- Agent 6 works out which of them is worth emailing **this week**.
-- Agents 7 and 8 send two emails and answer the reply inside five minutes.
+**1** finds out who buys this. **2** finds the words they use for their own problem. **3** turns it into one promise with every blank pinned. **4** works out which companies are actually real. **5** finds one person and one working address. **6** decides who is worth emailing **this week**. **7** fills a script that already works. **8** answers the reply inside five minutes.
 
 Nothing here is software. It is eight prompts, run in order, plus the gates that stop
 each one handing rubbish to the next.
@@ -53,28 +50,15 @@ flowchart LR
 
 ```mermaid
 flowchart TD
-  K["Your business block<br/>claude-md-snippet.md"] --> P1
-
-  subgraph P1["Phase 1 — Learn"]
-    A1["1. Market Researcher<br/>Who buys this?"] --> A2["2. Buyer Psychologist<br/>What words do they use?"]
-  end
-  A2 -->|"their exact phrase"| P2
-
-  subgraph P2["Phase 2 — Build the list"]
-    A3["3. Offer Writer<br/>One promise"] --> A4["4. List Builder<br/>Real firms only"]
-    A4 --> A5["5. Contact Finder<br/>The right person"]
-  end
-  A5 -->|"firms that exist"| P3
-
-  subgraph P3["Phase 3 — Time it"]
-    A6["6. Signal Finder<br/>What changed there?"]
-  end
-  A6 -->|"who to email this week"| P4
-
-  subgraph P4["Phase 4 — Send and answer"]
-    A7["7. Email Writer<br/>Fills a proven script"] --> A8["8. Inbox Agent<br/>Replies in five minutes"]
-  end
-  A8 --> R["A reply, then a client"]
+  K["Your business block<br/>claude-md-snippet.md"] --> A1
+  A1["1 · Market Researcher<br/>who buys this"] --> A2["2 · Buyer Psychologist<br/>the words they use"]
+  A2 --> A3["3 · Offer Writer<br/>one promise, every blank pinned"]
+  A3 --> A4["4 · List Builder<br/>which companies are real"]
+  A4 --> A5["5 · Contact Finder<br/>one person, one working address"]
+  A5 --> A6["6 · Signal Finder<br/>who to email this week"]
+  A6 --> A7["7 · Email Writer<br/>fills a script that works"]
+  A7 --> A8["8 · Inbox Agent<br/>answers in five minutes"]
+  A8 --> R["A reply, then a conversation"]
 ```
 
 **The order is the product.** Most people start at agent 7, write a clever email, send it
@@ -138,7 +122,7 @@ page.
 
 ## Build it
 
-### Phase 1: Teach it your business
+### Step 0: Teach it your business
 
 1. Go to https://claude.ai and sign in.
 2. In the left sidebar, click **Projects**, then **New project**. Name it `Outbound Stack`.
@@ -153,10 +137,10 @@ page.
 > about your price, your guarantee, or a client result gets sent to a real buyer. If you
 > do not have the thing, write "no guarantee yet" so it has a rule to obey.
 
-**You know this phase worked when:** you open a new chat in the project, ask "what do I
+**You know this worked when:** you open a new chat in the project, ask "what do I
 sell and who do I sell it to", and it answers with your real offer and your real buyer.
 
-### Phase 2: Learn (agents 1 and 2)
+### Steps 1 and 2: Learn who buys, and what they call it
 
 1. New chat. Paste the whole code block from `01-market-researcher-prompt.md`. Press enter.
    - It should show you each step as it finishes, not all of it at the end.
@@ -169,10 +153,10 @@ sell and who do I sell it to", and it answers with your real offer and your real
 > A quote with no source is an invented quote. It will read as invented to the buyer too.
 > Make it produce the URL and the date for every one, and delete the ones it cannot.
 
-**You know this phase worked when:** one of the phrases makes you think "I would never
+**You know this worked when:** one of the phrases makes you think "I would never
 have written that". That is exactly the phrase to build on.
 
-### Phase 3: Build the list (agents 3, 4 and 5)
+### Steps 3, 4 and 5: Build the list
 
 1. Paste `03-offer-writer-prompt.md`. You want **one** promise back, with one number.
 2. Run the pin test on it: could two people fill this slot two ways and both be right?
@@ -186,9 +170,9 @@ have written that". That is exactly the phrase to build on.
 > A bad list at 5,000 costs you your sending domain. A bad list at 200 costs you an
 > afternoon. There is no version of this where going big first is the cheap option.
 
-**You know this phase worked when:** things got binned, and you agree with why.
+**You know this worked when:** things got binned, and you agree with why.
 
-### Phase 4: Time it (agent 6)
+### Step 6: Work out who to email this week
 
 1. Paste `06-signal-finder-prompt.md`.
 2. Check five of the signals at the source yourself. Open the job ad. **Read the date on
@@ -200,10 +184,10 @@ have written that". That is exactly the phrase to build on.
 > out of 18,799 people were worth emailing that week. The other 18,564 were not gone, they
 > were just not ready.
 
-**You know this phase worked when:** you can say out loud, for any lead on the send list,
+**You know this worked when:** you can say out loud, for any lead on the send list,
 what changed at their company and when.
 
-### Phase 5: Send and answer (agents 7 and 8)
+### Steps 7 and 8: Send, and answer
 
 1. Paste `07-email-writer-prompt.md`.
 2. Count the words on email 1 yourself. Under 64 or cut it.
@@ -220,7 +204,7 @@ what changed at their company and when.
 > describe, every enrichment credit you spent is wasted, and nothing tells you it happened.
 > One signal, one campaign, one list.
 
-**You know this phase worked when:** a test reply comes back with a colour and a draft you
+**You know this worked when:** a test reply comes back with a colour and a draft you
 would only change a word or two of.
 
 ## Run it the first time
