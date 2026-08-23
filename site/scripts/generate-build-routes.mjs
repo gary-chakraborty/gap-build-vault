@@ -2,6 +2,12 @@
 // Runs before every dev and build (see the prebuild script in package.json).
 // Static export needs a real route folder for each page, so these are made
 // from the builds folder every time. Nothing here is hand edited or committed.
+//
+// A build folder may ship its own dashboard.html. When it does, that file IS the
+// page: it gets copied into public/builds/<slug>/index.html and no markdown route
+// is generated for that slug. Both cannot exist at the same path. The README still
+// drives the gallery card and the metadata, and it stays the copy people read on
+// GitHub.
 
 import fs from "node:fs";
 import path from "node:path";
@@ -10,12 +16,26 @@ import { getAllBuilds } from "../lib/builds.mjs";
 
 const siteRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const routesRoot = path.join(siteRoot, "app", "builds");
+const publicRoot = path.join(siteRoot, "public", "builds");
+const buildsRoot = path.resolve(siteRoot, "..", "builds");
 
 fs.rmSync(routesRoot, { recursive: true, force: true });
+fs.rmSync(publicRoot, { recursive: true, force: true });
 
 const builds = getAllBuilds();
+const custom = [];
 
 for (const build of builds) {
+  const dashboard = path.join(buildsRoot, build.slug, "dashboard.html");
+
+  if (fs.existsSync(dashboard)) {
+    const dir = path.join(publicRoot, build.slug);
+    fs.mkdirSync(dir, { recursive: true });
+    fs.writeFileSync(path.join(dir, "index.html"), wrapDashboard(dashboard, build), "utf8");
+    custom.push(build.slug);
+    continue;
+  }
+
   const dir = path.join(routesRoot, build.slug);
   fs.mkdirSync(dir, { recursive: true });
   fs.writeFileSync(
@@ -33,6 +53,43 @@ for (const build of builds) {
   );
 }
 
+function escapeAttr(value) {
+  return value
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;");
+}
+
+// A dashboard.html is authored as an artifact fragment: no doctype, no head, no
+// viewport. Served raw it lands in quirks mode and breaks on a phone, which is where
+// most of this traffic comes from. Wrap it here, at copy time, so the source file
+// stays publishable as an artifact.
+function wrapDashboard(file, build) {
+  let body = fs.readFileSync(file, "utf8");
+
+  const titleMatch = body.match(/<title>([\s\S]*?)<\/title>/i);
+  const title = titleMatch ? titleMatch[1].trim() : build.title;
+  if (titleMatch) body = body.replace(titleMatch[0], "");
+
+  return (
+    `<!doctype html>\n` +
+    `<html lang="en">\n` +
+    `<head>\n` +
+    `<meta charset="utf-8">\n` +
+    `<meta name="viewport" content="width=device-width, initial-scale=1">\n` +
+    `<meta name="theme-color" content="#0d1117">\n` +
+    `<title>${escapeAttr(title)}</title>\n` +
+    (build.oneliner
+      ? `<meta name="description" content="${escapeAttr(build.oneliner)}">\n`
+      : "") +
+    `</head>\n` +
+    `<body>\n` +
+    body.trimStart() +
+    `\n</body>\n</html>\n`
+  );
+}
+
 console.log(
   builds.length === 0
     ? "generate-build-routes: 0 live builds, no build pages generated"
@@ -40,3 +97,9 @@ console.log(
         .map((build) => build.slug)
         .join(", ")}`
 );
+
+if (custom.length > 0) {
+  console.log(
+    `generate-build-routes: ${custom.length} served from their own dashboard.html -> ${custom.join(", ")}`
+  );
+}
