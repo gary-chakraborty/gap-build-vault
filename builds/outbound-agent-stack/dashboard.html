@@ -25,7 +25,8 @@ body{
   font-family:"IBM Plex Sans",ui-sans-serif,system-ui,sans-serif;
   font-size:17.5px;line-height:1.65;-webkit-font-smoothing:antialiased;
 }
-.wrap{max-width:1060px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1340px;margin:0 auto;padding:0 40px}
+@media (max-width:820px){.wrap{padding:0 22px}}
 .mono{font-family:"IBM Plex Mono",ui-monospace,monospace}
 
 /* ---------- top bar ---------- */
@@ -44,7 +45,7 @@ section:first-of-type{border-top:none;padding-top:62px}
 .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);margin-bottom:16px}
 .eyebrow b{color:var(--accent);font-weight:600}
 h1{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;font-size:clamp(34px,5.4vw,64px);line-height:1.02;letter-spacing:-.035em;text-wrap:balance}
-h2{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;font-size:clamp(27px,3.4vw,40px);line-height:1.1;letter-spacing:-.03em;text-wrap:balance;max-width:22ch}
+h2{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;font-size:clamp(27px,3.2vw,42px);line-height:1.1;letter-spacing:-.03em;text-wrap:balance;max-width:24ch}
 .sub{font-size:19px;line-height:1.55;color:var(--muted);max-width:52ch;margin-top:16px}
 .sub strong{color:var(--paper);font-weight:500}
 .after{font-size:16px;line-height:1.55;color:var(--muted);max-width:56ch;margin-top:22px}
@@ -73,8 +74,40 @@ h2{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;
 /* ---------- agent row (lean) ---------- */
 .agents{display:flex;flex-direction:column;gap:0;margin-top:30px}
 .arow{
-  display:grid;grid-template-columns:58px 1fr;gap:24px;
-  padding:30px 0;border-top:1px solid var(--rule-soft);scroll-margin-top:74px;
+  display:grid;grid-template-columns:64px 1fr;gap:26px;
+  padding:38px 0;border-top:1px solid var(--rule-soft);scroll-margin-top:74px;
+}
+.adetail{
+  display:grid;grid-template-columns:1.5fr 1fr;gap:0;margin-top:20px;
+  border:1px solid var(--rule);border-radius:11px;overflow:hidden;background:var(--panel);
+}
+.acol{padding:20px 24px}
+.acol + .acol{border-left:1px solid var(--rule)}
+.acol > h4{
+  font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--dim);font-weight:500;margin-bottom:14px;
+}
+.acol > h4 + .grp{margin-top:0}
+ol.steps{list-style:none;counter-reset:st;display:flex;flex-direction:column;gap:9px}
+ol.steps li{
+  counter-increment:st;position:relative;padding-left:30px;
+  font-size:16px;line-height:1.45;color:var(--muted);
+}
+ol.steps li::before{
+  content:counter(st);position:absolute;left:0;top:0;
+  font-family:"IBM Plex Mono",monospace;font-size:12px;color:var(--accent);
+  width:19px;height:19px;line-height:19px;text-align:center;
+  border:1px solid var(--accent-deep);border-radius:5px;
+}
+ol.steps li strong{color:var(--paper);font-weight:500}
+.grp{margin-top:18px}
+.grp > span{
+  display:block;font-family:"IBM Plex Mono",monospace;font-size:10.5px;
+  letter-spacing:.18em;text-transform:uppercase;color:var(--dim);margin-bottom:8px;
+}
+@media (max-width:900px){
+  .adetail{grid-template-columns:1fr}
+  .acol + .acol{border-left:none;border-top:1px solid var(--rule)}
 }
 .arow:first-child{border-top:none}
 .arow .idx{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:34px;line-height:.9;letter-spacing:-.05em;color:var(--dim)}
@@ -93,7 +126,7 @@ h2{font-family:"Bricolage Grotesque","IBM Plex Sans",sans-serif;font-weight:800;
 
 /* ---------- tables ---------- */
 .tablewrap{overflow-x:auto;margin-top:28px;border:1px solid var(--rule);border-radius:11px;background:var(--panel)}
-table{border-collapse:collapse;width:100%;min-width:520px;font-size:15.5px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:16px}
 th,td{text-align:left;padding:11px 16px;border-bottom:1px solid var(--rule-soft)}
 th{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim);font-weight:500;background:var(--panel)}
 tr:last-child td{border-bottom:none}
@@ -103,7 +136,7 @@ td.num{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--paper);w
 
 /* ---------- funnel ---------- */
 .funnel{display:flex;flex-direction:column;gap:14px;margin-top:30px}
-.frow{display:grid;grid-template-columns:140px 1fr 175px;align-items:center;gap:18px}
+.frow{display:grid;grid-template-columns:170px 1fr 210px;align-items:center;gap:22px}
 .flabel{font-family:"IBM Plex Mono",monospace;font-size:13.5px;color:var(--muted);text-align:right;line-height:1.35}
 .ftrack{height:32px;background:var(--rule-soft);border-radius:4px;position:relative}
 .fbar{position:absolute;top:0;bottom:0;left:0;border-radius:4px;min-width:3px;background:var(--accent-ghost);border-right:2px solid var(--accent);width:0;transition:width .9s cubic-bezier(.22,1,.36,1)}
@@ -134,7 +167,7 @@ td.num{font-family:"IBM Plex Mono",monospace;font-size:14px;color:var(--paper);w
 
 /* ---------- ranked ---------- */
 .rank{display:flex;flex-direction:column;gap:12px;margin-top:30px}
-.ritem{display:grid;grid-template-columns:44px 1fr 175px;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--rule);border-radius:11px;padding:22px 24px}
+.ritem{display:grid;grid-template-columns:52px 1fr 210px;gap:20px;align-items:center;background:var(--panel);border:1px solid var(--rule);border-radius:11px;padding:22px 24px}
 .ritem.one{border-color:var(--accent-deep);background:var(--rise)}
 .ritem .p{font-family:"Bricolage Grotesque",sans-serif;font-weight:800;font-size:30px;color:var(--dim);line-height:1;letter-spacing:-.04em}
 .ritem.one .p{color:var(--accent)}
@@ -234,8 +267,28 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Market Researcher</h3>
         <p class="does">Finds out who buys this, and what they pay.</p>
-        <p class="fact">Reads eight public sources. <strong>Nothing older than 90 days gets used as a fact.</strong> The list is below.</p>
-        <div class="toolrow"><span class="tool">free scraper</span><span class="tool">search API</span><span class="tool">Google Trends</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Check if the problem is <strong>growing or dying</strong> (Google Trends, last 3 months).</li>
+        <li>Pull the <strong>market size and where buyers are shifting</strong> from the consulting firms.</li>
+        <li>Read what buyers say about the problem <strong>where nobody is selling to them</strong>.</li>
+        <li>Check <strong>who is hiring</strong> for the exact job this replaces.</li>
+        <li>Write it up. <strong>Every fact carries the day it was read.</strong></li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Scrapling (free scraper)</span><span class="tool">Serper (search)</span><span class="tool">pytrends</span></div>
+            </div>
+        <div class="grp"><span>Where the data comes from</span>
+          <div class="toolrow" style="margin-top:0"><span class="tool">McKinsey</span><span class="tool">Deloitte</span><span class="tool">PwC</span><span class="tool">BCG</span><span class="tool">EY</span><span class="tool">Statista</span><span class="tool">IBISWorld</span><span class="tool">Reddit</span><span class="tool">G2</span><span class="tool">Capterra</span><span class="tool">Crunchbase</span><span class="tool">Greenhouse</span><span class="tool">Lever</span><span class="tool">Ashby</span></div>
+        </div>
+          </div>
+        </div>
+        <p class="fact">Nothing older than <strong>90 days</strong> gets used as a fact. The full freshness table is below.</p>
       </div>
     </div>
 
@@ -244,8 +297,27 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Buyer Psychologist</h3>
         <p class="does">Finds the words the buyer uses themselves.</p>
-        <p class="fact">This is where <strong>"who reconciles the trust account"</strong> came from. We did not write that line. It is what small law firms call it. That is the whole reason the email worked.</p>
-        <div class="toolrow"><span class="tool">Reddit</span><span class="tool">forums</span><span class="tool">reviews</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Find <strong>where they actually talk</strong> &mdash; their subreddits, their forums, their review pages.</li>
+        <li>Pull the threads and the <strong>review bodies</strong>, not the star ratings.</li>
+        <li>Lift the phrases <strong>word for word</strong>. Never paraphrase them.</li>
+        <li>Build one persona: what they do all day, what they are scared of, what they want instead.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Serper (finds the threads)</span><span class="tool">Scrapling (reads them)</span></div>
+            </div>
+        <div class="grp"><span>Where the data comes from</span>
+          <div class="toolrow" style="margin-top:0"><span class="tool">Reddit</span><span class="tool">Capterra</span><span class="tool">G2</span><span class="tool">LinkedIn comment threads</span><span class="tool">industry forums</span></div>
+        </div>
+          </div>
+        </div>
+        <p class="fact">This is where <strong>&ldquo;who reconciles the trust account&rdquo;</strong> came from. We did not write that line. It is what small law firms call it, and it is the whole reason the email worked.</p>
       </div>
     </div>
 
@@ -254,8 +326,24 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Offer Writer</h3>
         <p class="does">Turns it into one promise, for one kind of company.</p>
-        <p class="fact">Written once, properly, by the best model you have. Then <strong>filled in hundreds of times by a cheap one.</strong></p>
-        <div class="toolrow"><span class="tool">no API needed</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Write <strong>one promise</strong>: who it is for, what they get, one number.</li>
+        <li>List every blank the writer will have to fill in.</li>
+        <li><strong>Pin each blank</strong> &mdash; exact wording, or a short list of allowed answers.</li>
+        <li>Write two or three finished examples so nobody has to guess.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">No API needed</span><span class="tool">Best model writes it once</span><span class="tool">Cheap model fills it</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="fact">The test: <strong>could two people fill this in two different ways and both be right?</strong> If yes, it is not pinned, and it will get invented differently every time.</p>
       </div>
     </div>
 
@@ -264,8 +352,28 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>List Builder</h3>
         <p class="does">Finds real firms. Bins everything else.</p>
-        <p class="fact">Tries <strong>the cheapest source first</strong>, every time. A source that runs out of credit gets skipped, not escalated. The numbers are below.</p>
-        <div class="toolrow"><span class="tool">free scraper</span><span class="tool">whatever you already pay for</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Write the target down as <strong>one saved search</strong> &mdash; industry, size, country, job titles.</li>
+        <li>Run it down the sources, <strong>cheapest first</strong>. Out of credit means skip, not stop.</li>
+        <li><strong>Dedupe.</strong> One row per company, never one per person.</li>
+        <li><strong>Open each website and read it.</strong> This is the step everyone skips.</li>
+        <li>Drop anything that is not the business you thought it was.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Scrapling (free)</span><span class="tool">Apollo</span><span class="tool">Clay</span><span class="tool">Ocean</span><span class="tool">Smartlead Smart Prospect</span></div>
+            </div>
+        <div class="grp"><span>Where the data comes from</span>
+          <div class="toolrow" style="margin-top:0"><span class="tool">company websites</span><span class="tool">Crunchbase</span><span class="tool">LinkedIn company pages</span></div>
+        </div>
+          </div>
+        </div>
+        <p class="fact">The order is: an export you already paid for &rarr; the free scraper &rarr; a tool that came bundled &rarr; prepaid credits &rarr; <strong>new money, last.</strong> The numbers this gate produced are below.</p>
       </div>
     </div>
 
@@ -274,8 +382,28 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Contact Finder</h3>
         <p class="does">Gets the right person and an email that works.</p>
-        <p class="fact"><strong>If it cannot be verified, we drop it.</strong> A guessed address is a bounce, and bounces cost you the whole inbox.</p>
-        <div class="toolrow"><span class="tool">four sources in a row</span><span class="tool">email verifier</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Look for the person <strong>on the company's own website</strong> first. It is free and it is right.</li>
+        <li>Not there? Search for them.</li>
+        <li>Still not there? Try a people-search tool, then a data provider.</li>
+        <li>Now the email: a lookup that returns a <strong>checked</strong> address, then an enrichment tool, then guessing the pattern &mdash; last.</li>
+        <li><strong>Verify every address.</strong> If it fails, drop the lead.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Serper</span><span class="tool">Prospeo</span><span class="tool">Apollo</span><span class="tool">MillionVerifier</span></div>
+            </div>
+        <div class="grp"><span>Where the data comes from</span>
+          <div class="toolrow" style="margin-top:0"><span class="tool">company sites</span><span class="tool">Apollo contact database</span></div>
+        </div>
+          </div>
+        </div>
+        <p class="fact"><strong>Never one provider.</strong> One build went single-source and lost <strong>744 firms</strong> the others in the chain would have covered.</p>
       </div>
     </div>
 
@@ -284,8 +412,28 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Signal Finder</h3>
         <p class="does">Works out who is worth emailing this week.</p>
-        <p class="fact">A signal is <strong>something that changed at their company.</strong> They hired. They moved. They posted a job. <strong>No signal, no send.</strong> Ever.</p>
-        <div class="toolrow"><span class="tool">job boards</span><span class="tool">free site checks</span><span class="tool">DNS lookup</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li><strong>Filter for fit first</strong>, on the free data you already have &mdash; title, headcount, industry, country. Before you spend a credit.</li>
+        <li>Check the <strong>job boards</strong> for a role that means they have this problem right now.</li>
+        <li>Check their site and their DNS &mdash; dead blog, which email tool they run, booking software installed.</li>
+        <li><strong>Go back to the source and confirm it yourself.</strong> Do not trust a platform's date filter.</li>
+        <li>Stamp an <strong>expiry date</strong> on it. One signal per lead: the freshest and the most specific.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Greenhouse</span><span class="tool">Lever</span><span class="tool">Ashby</span><span class="tool">Apollo job postings</span><span class="tool">dig TXT (free)</span><span class="tool">Scrapling</span></div>
+            </div>
+        <div class="grp"><span>Where the data comes from</span>
+          <div class="toolrow" style="margin-top:0"><span class="tool">job boards</span><span class="tool">company websites</span><span class="tool">DNS records</span><span class="tool">Crunchbase</span><span class="tool">Reddit</span></div>
+        </div>
+          </div>
+        </div>
+        <p class="fact"><strong>No signal, no send. Ever.</strong> If you cannot name what changed and put it in line one, that lead goes on a watch list, not into a campaign.</p>
       </div>
     </div>
 
@@ -294,8 +442,25 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Email Writer</h3>
         <p class="does">Fills in a script that already works.</p>
-        <p class="fact">Under 64 words. <strong>Two emails, then we stop.</strong> No third, no fourth, no "just bumping this." Both are below, ready to copy.</p>
-        <div class="toolrow"><span class="tool">script library</span><span class="tool">cheap model fills it</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>Pick the script <strong>that matches the signal</strong>. Never write a new one.</li>
+        <li>Fill the blanks from the lead's own record.</li>
+        <li><strong>Count the words.</strong> Over 64 on the first email means cut, not send.</li>
+        <li>Load it as <strong>its own campaign</strong> &mdash; never as a variant. Tools rotate variants at random, so one signal's copy would go to the wrong leads.</li>
+        <li>Set it up as two emails. First, then one follow-up on day two. <strong>Then it stops.</strong></li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Smartlead (sending)</span><span class="tool">the script library</span><span class="tool">cheap model fills it</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="fact">No price, no case study, no proof numbers in the first email. Those belong in the follow-up. <strong>Both emails are below, ready to copy.</strong></p>
       </div>
     </div>
 
@@ -304,8 +469,25 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
       <div>
         <h3>Inbox Agent</h3>
         <p class="does">Answers every reply in five minutes.</p>
-        <p class="fact">Offers <strong>two specific times, never a calendar link.</strong> Never quotes a price, even when pushed. A person presses send. Nobody sits and drafts.</p>
-        <div class="toolrow"><span class="tool">webhook from the sender</span></div>
+        <div class="adetail">
+          <div class="acol">
+            <h4>How it runs</h4>
+            <ol class="steps">
+        <li>A reply lands. A <strong>webhook fires straight away</strong> &mdash; nothing waits for someone to check the inbox.</li>
+        <li>Sort it: <strong>green, yellow or red.</strong> Interested, unsure, or no.</li>
+        <li>Pick the matching script. A positive reply and an objection are <strong>different scripts</strong>.</li>
+        <li>Fill it in with what that lead actually said.</li>
+        <li>Send it to the team <strong>with the draft already written</strong>. A person reads it and presses send.</li>
+            </ol>
+          </div>
+          <div class="acol">
+            <h4>What it uses</h4>
+            <div class="grp"><span>Tools</span>
+              <div class="toolrow" style="margin-top:0"><span class="tool">Smartlead webhook</span><span class="tool">n8n</span><span class="tool">Slack</span><span class="tool">Notion (the scripts)</span><span class="tool">Airtable / Sheets (tracking)</span></div>
+            </div>
+          </div>
+        </div>
+        <p class="fact">Two specific times, <strong>never a calendar link.</strong> Never a price, even when pushed. Answering inside five minutes is what tells a prospect this is a real operation.</p>
       </div>
     </div>
 
