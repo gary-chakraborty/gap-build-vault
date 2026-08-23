@@ -275,7 +275,7 @@ footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim
           <tr><td><strong>A free scraper</strong></td><td>Opens and reads company sites, forums, review pages</td><td>Free</td></tr>
           <tr><td><strong>A search key</strong></td><td>Finds the threads, the job ads, the people</td><td>Free tier is enough to begin</td></tr>
           <tr><td><strong>One contact tool</strong></td><td>Finds the person and their email</td><td>You probably already pay for one</td></tr>
-          <tr><td><strong>An email verifier</strong></td><td>Checks every address before anything is sent to it</td><td>About $1 per 1,000</td></tr>
+          <tr><td><strong>An email verifier</strong></td><td>Checks every address before anything is sent to it</td><td>100 free, then about $1.80 per 1,000</td></tr>
           <tr><td><strong>A sending tool</strong></td><td>Sends the two emails, catches the replies</td><td>Whatever you already use</td></tr>
         </tbody>
       </table>
@@ -346,6 +346,41 @@ First email is under 64 words.
 Every number I state carries the day it was measured.</pre>
     </div>
     <p class="fact">Leave the <strong>&ldquo;words my buyers actually use&rdquo;</strong> line blank for now. Agent 2 fills it in, and it is the most valuable line on the page.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Step 0.5 &middot; <b>15 minutes, once</b></p>
+    <h2>Get the six logins first.</h2>
+    <p class="sub">Do this in one sitting, before agent 1. Stopping halfway through a build to go and make an account is how people put this page down and never come back.</p>
+    <p class="sub">Open a plain text file. Every time you get a key, paste it in with the name of the tool next to it. You will need four of them again later.</p>
+    <div class="setup">
+      <div class="sstep"><span class="sn">1</span><div><b>Claude &mdash; runs all eight</b>
+        <p><strong>Sign up:</strong> <a class="link" href="https://claude.ai">claude.ai</a>. <strong>Free tier:</strong> free works to start &mdash; you will hit limits on the long research runs. Pro is $20 a month, or $17 if you pay for the year, and buys you higher limits. <strong>No key needed:</strong> you use it in the browser. <strong>Check it worked:</strong> you can open a new chat and it answers.</p></div></div>
+      <div class="sstep"><span class="sn">2</span><div><b>Scrapling &mdash; the free scraper</b>
+        <p><strong>Get it:</strong> <a class="link" href="https://github.com/D4Vinci/Scrapling">github.com/D4Vinci/Scrapling</a>, free and open source. <strong>Install:</strong> <code>pip install "scrapling[fetchers]"</code> then <code>scrapling install</code>. <strong>No key.</strong> <strong>Check it worked:</strong> run <code>scrapling shell</code> &mdash; if it opens, you are done. If <code>pip</code> is not a command on your machine, install Python first from <a class="link" href="https://python.org">python.org</a>.</p></div></div>
+      <div class="sstep"><span class="sn">3</span><div><b>Serper &mdash; the search key</b>
+        <p><strong>Sign up:</strong> <a class="link" href="https://serper.dev">serper.dev</a>, no card. <strong>Free tier:</strong> 2,500 searches. That is plenty for the first niche. <strong>The key:</strong> log in, open the <strong>API Key</strong> page in the dashboard, copy the string. <strong>Where it goes:</strong> your text file, and later into the tool that does the searching. <strong>Check it worked:</strong> the dashboard shows your credit balance and it is not zero.</p></div></div>
+      <div class="sstep"><span class="sn">4</span><div><b>A contact tool &mdash; finds the person</b>
+        <p><strong>Use what you already pay for.</strong> Apollo, Clay, ZoomInfo, Lusha &mdash; any of them. Most people reading this already have one. <strong>If you have none:</strong> start with <a class="link" href="https://apollo.io">apollo.io</a>, which has a free plan you can search on. <strong>The key:</strong> in Apollo it is under <strong>Settings &rarr; Integrations &rarr; API</strong>; API access is not on every plan, so check yours before you plan to script it. <strong>Check it worked:</strong> search one company you know and see a real name come back.</p></div></div>
+      <div class="sstep"><span class="sn">5</span><div><b>MillionVerifier &mdash; the email verifier</b>
+        <p><strong>Sign up:</strong> <a class="link" href="https://www.millionverifier.com">millionverifier.com</a>. <strong>Free tier:</strong> 100 credits on signup, no card. <strong>Cost after that:</strong> from about $1.80 per 1,000, cheaper in bulk, and credits do not expire. <strong>The key:</strong> log in, open <strong>API</strong> in the left menu. <strong>Check it worked:</strong> paste your own email address into the single-email checker and it comes back good.</p>
+        <p>One thing that catches people out: if you call it from a script, send a normal browser user-agent header. It returns a 403 without one, and a 403 looks exactly like a dead key.</p></div></div>
+      <div class="sstep"><span class="sn">6</span><div><b>A sending tool &mdash; sends the two emails</b>
+        <p><strong>Whatever you already use</strong> &mdash; Smartlead, Instantly, Lemlist, Apollo. <strong>Two things have to be true of it:</strong> it can hold a sequence of two emails, and it can fire a webhook when somebody replies. Almost all of them can. <strong>Check it worked:</strong> send one email to yourself, reply to it, and confirm the reply shows up in the tool.</p></div></div>
+    </div>
+    <p class="eyebrow" style="margin-top:38px">Before agent 1 &middot; <b>tick all six</b></p>
+    <div class="checks">
+      <label class="check"><input type="checkbox"><span>Claude account, signed in, project made</span></label>
+      <label class="check"><input type="checkbox"><span>Scrapling installed &mdash; <code>scrapling shell</code> opens</span></label>
+      <label class="check"><input type="checkbox"><span>Serper key copied, balance shows 2,500</span></label>
+      <label class="check"><input type="checkbox"><span>Contact tool logged in, one test search returned a real name</span></label>
+      <label class="check"><input type="checkbox"><span>MillionVerifier key copied, my own address came back good</span></label>
+      <label class="check"><input type="checkbox"><span>Sending tool connected, test reply landed in it</span></label>
+      <label class="check"><input type="checkbox"><span>All my keys are in one text file with the tool name beside each</span></label>
+    </div>
+    <p class="fact">Six boxes ticked and the rest of this page is just pasting prompts. <strong>Agents 1, 2, 3 and 8 need nothing but the first box</strong> &mdash; if you only have 20 minutes tonight, do box one and go to agent 8.</p>
   </div>
 </section>
 

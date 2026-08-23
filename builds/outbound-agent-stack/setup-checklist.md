@@ -4,6 +4,37 @@ The order matters more than the tools. Follow it once, then it is a routine.
 
 ---
 
+## Before day one — the six logins, 15 minutes
+
+Do these in one sitting. Stopping halfway through a build to go and make an account is
+how people put this down and never come back. Open a plain text file and paste each key
+into it with the tool name beside it.
+
+- [ ] **Claude** — sign up at https://claude.ai. Free works to start. Pro is $20/month,
+      $17 if you pay yearly, and buys higher limits. No key: you use it in the browser.
+- [ ] **Scrapling** (free scraper) — https://github.com/D4Vinci/Scrapling.
+      `pip install "scrapling[fetchers]"` then `scrapling install`. No key.
+      Works when `scrapling shell` opens.
+- [ ] **Serper** (search key) — https://serper.dev, no card, 2,500 free searches.
+      Key is on the **API Key** page in the dashboard. Works when the balance is not zero.
+- [ ] **A contact tool** — use what you already pay for (Apollo, Clay, ZoomInfo, Lusha).
+      If you have none, start free at https://apollo.io. In Apollo the key is under
+      **Settings → Integrations → API**, and API access is not on every plan — check yours.
+      Works when one company you know returns a real name.
+- [ ] **MillionVerifier** (verifier) — https://www.millionverifier.com, 100 free credits,
+      then from about $1.80 per 1,000, cheaper in bulk, credits never expire. Key is under
+      **API** in the left menu. Works when your own address comes back good.
+      If you call it from a script, send a normal browser user-agent header — it returns
+      403 without one, and a 403 looks exactly like a dead key.
+- [ ] **A sending tool** — whatever you use (Smartlead, Instantly, Lemlist, Apollo).
+      Two things have to be true: it holds a two-email sequence, and it fires a webhook on
+      reply. Works when you send yourself one email, reply, and see the reply in the tool.
+
+**Agents 1, 2, 3 and 8 need nothing but the Claude account.** If you only have 20 minutes
+tonight, do that box and go to agent 8.
+
+---
+
 ## Day one — 25 minutes, no tools
 
 - [ ] Open https://claude.ai and sign in. A free account works to start.
