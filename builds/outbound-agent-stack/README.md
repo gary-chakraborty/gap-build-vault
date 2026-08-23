@@ -1,6 +1,6 @@
 ---
 title: "The Eight Agents"
-oneliner: "The whole outbound stack, in order: who buys, what they say, who to email this week, and what to send back."
+oneliner: "Set up all eight agents yourself — the steps, the prompt to paste, and the one thing that breaks, for each one."
 tags: [outbound, cold-email, lists, signals, agents]
 date: 2026-08-23
 keyword: LEDGER
@@ -134,6 +134,7 @@ page.
 | `the-two-emails.md` | The whole worked campaign, both emails | Copy the shape, not the words |
 | `pre-send-checklist.md` | Eight questions before anything goes out | Read it out loud before every launch |
 | `setup-checklist.md` | The install order and your first week | Follow it day one |
+| `dashboard.html`, `page.css`, `build_page.py` | Build machinery for the web version of this page | Ignore, unless you are editing the page. If you change a prompt file, run `python3 build_page.py` so the page matches |
 
 ## Build it
 

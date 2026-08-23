@@ -208,539 +208,876 @@ code{font-family:"IBM Plex Mono",monospace;font-size:.92em;color:var(--paper)}
 
 footer{padding:48px 0 72px;border-top:1px solid var(--rule-soft);color:var(--dim);font-size:14.5px}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+/* ---------- walkthrough additions ---------- */
+.navgrid{grid-template-columns:repeat(4,1fr);gap:12px}
+.navgrid .node{padding:15px 16px}
+.navgrid .node .t{font-size:16px}
+@media (max-width:900px){.navgrid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){.navgrid{grid-template-columns:1fr}}
+
+.promptbox{background:var(--panel);border:1px solid var(--rule);border-radius:11px;overflow:hidden;margin-top:20px}
+.promptbox .hd{display:flex;align-items:center;gap:12px;padding:11px 17px;border-bottom:1px solid var(--rule-soft);background:var(--rise);flex-wrap:wrap}
+.promptbox .subj{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--dim)}
+.promptbox .hd .copybtn{margin-left:auto}
+.promptbox .bd{
+  padding:20px;font-family:"IBM Plex Mono",monospace;font-size:14px;line-height:1.7;
+  white-space:pre-wrap;color:var(--muted);max-height:300px;overflow:auto;
+}
+.promptbox .bd::-webkit-scrollbar{width:10px}
+.promptbox .bd::-webkit-scrollbar-thumb{background:var(--rule);border-radius:5px}
+
+.wintext{font-size:16px;line-height:1.5;color:var(--paper)}
 </style>
 
-<div class="topbar"><div class="wrap">
-  <span class="brandmark">GAP &middot; Build Vault</span>
-  <div class="chips">
-    <div class="chip"><span class="v num" data-count="8">0</span><span class="k">agents</span></div>
-    <div class="chip"><span class="v num" data-count="2">0</span><span class="k">emails, never more</span></div>
-    <div class="chip"><span class="v">5 min</span><span class="k">to answer a reply</span></div>
-  </div>
-</div></div>
 
-<!-- ============ HERO ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>GAP's outbound agent stack</b> &middot; updated Aug 2026</div>
-  <h1>The eight agents we run<br>on every campaign.</h1>
-  <p class="sub">Same eight. Same order. Whatever the client sells.</p>
-
-  <div class="phases">
-    <div class="phase">
-      <div class="ph"><span class="pn">Phase 1</span><span class="pt">Learn</span></div>
-      <a class="node" href="#a1"><span class="n">01</span><span class="t">Market Researcher</span><span class="d">Who buys this?</span></a>
-      <a class="node" href="#a2"><span class="n">02</span><span class="t">Buyer Psychologist</span><span class="d">What words do they use?</span></a>
-      <div class="out"><span>Comes out</span><b>Their exact phrase</b></div>
-    </div>
-    <div class="phase">
-      <div class="ph"><span class="pn">Phase 2</span><span class="pt">Build the list</span></div>
-      <a class="node" href="#a3"><span class="n">03</span><span class="t">Offer Writer</span><span class="d">One promise.</span></a>
-      <a class="node" href="#a4"><span class="n">04</span><span class="t">List Builder</span><span class="d">Real firms only.</span></a>
-      <a class="node" href="#a5"><span class="n">05</span><span class="t">Contact Finder</span><span class="d">The right person.</span></a>
-      <div class="out"><span>Comes out</span><b>Firms that exist</b></div>
-    </div>
-    <div class="phase">
-      <div class="ph"><span class="pn">Phase 3</span><span class="pt">Time it</span></div>
-      <a class="node" href="#a6"><span class="n">06</span><span class="t">Signal Finder</span><span class="d">What changed there?</span></a>
-      <div class="out"><span>Comes out</span><b>Who to email this week</b></div>
-    </div>
-    <div class="phase">
-      <div class="ph"><span class="pn">Phase 4</span><span class="pt">Send and answer</span></div>
-      <a class="node" href="#a7"><span class="n">07</span><span class="t">Email Writer</span><span class="d">Fills a proven script.</span></a>
-      <a class="node" href="#a8"><span class="n">08</span><span class="t">Inbox Agent</span><span class="d">Replies in five minutes.</span></a>
-      <div class="out win"><span>Comes out</span><b>A reply, then a client</b></div>
+<div class="topbar">
+  <div class="wrap">
+    <span class="brandmark">GAP &middot; Build Vault</span>
+    <div class="chips">
+      <div class="chip"><span class="v">8</span><span class="k">agents</span></div>
+      <div class="chip"><span class="v">25 min</span><span class="k">to the first one</span></div>
+      <div class="chip"><span class="v">No code</span><span class="k">nothing to install</span></div>
     </div>
   </div>
+</div>
 
-  <p class="after"><strong>The order is the product.</strong> Most people start at agent 7, write a clever email, send it to a list they bought, and wonder why nothing comes back.</p>
-</div></section>
+<main>
 
-<!-- ============ THE EIGHT ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>The eight</b> &middot; one line each</div>
-  <h2>What each one actually does.</h2>
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Build it yourself &middot; <b>free, no sign-up</b></p>
+    <h1>Set up all eight.<br>One at a time.</h1>
+    <p class="sub">This is the install, not the pitch. Every agent below has the steps, the prompt to paste, and the one thing that goes wrong. <strong>Start at the top and do them in order</strong> &mdash; agent 7 does not work without agent 2.</p>
+    <p class="sub">Nothing to install. No code. Four of the six tools you need, you almost certainly already pay for.</p>
+    <div class="phases navgrid">
+        <a class="node" href="#a1"><span class="n">01</span><span class="t">Market Researcher</span><span class="d">15 min</span></a>
+        <a class="node" href="#a2"><span class="n">02</span><span class="t">Buyer Psychologist</span><span class="d">20 min</span></a>
+        <a class="node" href="#a3"><span class="n">03</span><span class="t">Offer Writer</span><span class="d">20 min</span></a>
+        <a class="node" href="#a4"><span class="n">04</span><span class="t">List Builder</span><span class="d">45 min</span></a>
+        <a class="node" href="#a5"><span class="n">05</span><span class="t">Contact Finder</span><span class="d">30 min</span></a>
+        <a class="node" href="#a6"><span class="n">06</span><span class="t">Signal Finder</span><span class="d">45 min</span></a>
+        <a class="node" href="#a7"><span class="n">07</span><span class="t">Email Writer</span><span class="d">30 min</span></a>
+        <a class="node" href="#a8"><span class="n">08</span><span class="t">Inbox Agent</span><span class="d">10 min</span></a>
+    </div>
+  </div>
+</section>
 
-  <div class="agents">
+<section>
+  <div class="wrap">
+    <p class="eyebrow">First &middot; <b>15 minutes, once</b></p>
+    <h2>What you need open before you start.</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Tool</th><th>What it does here</th><th>Cost</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Claude</strong></td><td>Runs all eight prompts</td><td>Free to start</td></tr>
+          <tr><td><strong>A free scraper</strong></td><td>Opens and reads company sites, forums, review pages</td><td>Free</td></tr>
+          <tr><td><strong>A search key</strong></td><td>Finds the threads, the job ads, the people</td><td>Free tier is enough to begin</td></tr>
+          <tr><td><strong>One contact tool</strong></td><td>Finds the person and their email</td><td>You probably already pay for one</td></tr>
+          <tr><td><strong>An email verifier</strong></td><td>Checks every address before anything is sent to it</td><td>About $1 per 1,000</td></tr>
+          <tr><td><strong>A sending tool</strong></td><td>Sends the two emails, catches the replies</td><td>Whatever you already use</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="after"><strong>You can run agents 1, 2, 3 and 8 with nothing but a Claude account.</strong> That is half the stack, and agent 8 is the fastest win on this page. Start there if you want to see it work before you set anything else up.</p>
+  </div>
+</section>
 
-    <div class="arow" id="a1">
-      <span class="idx">01</span>
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Step 0 &middot; <b>do this before agent 1</b></p>
+    <h2>Teach it your business, once.</h2>
+    <p class="sub">Every one of the eight reads this block. Fill it in one time and you never type any of it again.</p>
+    <div class="setup">
+      <div class="sstep"><span class="sn">1</span><div><b>Make the project</b><p>Open <a class="link" href="https://claude.ai">claude.ai</a>, sign in, click <strong>Projects</strong> in the left sidebar, then <strong>New project</strong>. Name it <code>Outbound Stack</code>.</p></div></div>
+      <div class="sstep"><span class="sn">2</span><div><b>Fill in the block below</b><p>Every bracket. If you do not have the thing, write what you do have. An empty slot is where an agent invents a price or a client result, and that reaches a real buyer.</p></div></div>
+      <div class="sstep"><span class="sn">3</span><div><b>Paste it in as knowledge</b><p>Inside the project, find <strong>Project knowledge</strong> on the right. Click <strong>Add content</strong>, then <strong>Add text</strong>. Paste it. Save.</p></div></div>
+      <div class="sstep"><span class="sn">4</span><div><b>Check it took</b><p>Open a new chat in the project and ask &ldquo;what do I sell and who do I sell it to&rdquo;. It should answer with your real offer and your real buyer, not a generic description.</p></div></div>
+    </div>
+    <div class="promptbox">
+      <div class="hd">
+        <span class="subj">your business block</span>
+        <button class="copybtn" type="button">Copy</button>
+      </div>
+      <pre class="bd">MY BUSINESS
+
+Company name: [your company]
+What I sell, in one sentence a buyer would say back to me: [not &quot;we help businesses
+grow&quot; — the sentence you would say out loud on a call]
+What it costs: [real number, or a real range, or &quot;we never quote before a call&quot;]
+How I charge: [one off, monthly retainer, per project, revenue share]
+
+WHO I SELL TO
+
+The kind of company: [industry, in the words they use for themselves]
+How big: [headcount range and revenue range]
+Where: [countries, states, cities]
+The exact job titles who sign: [3 to 5 titles, not departments]
+Who is NOT a buyer, even though they look like one: [the lookalikes that waste your
+time — write them down, agent 4 uses this to bin them]
+
+MY PROOF
+
+Result 1: [client type, what changed, the real number, how long it took]
+Result 2: [same shape]
+Result 3: [same shape, or write &quot;only two so far&quot;]
+What I am allowed to say publicly: [named clients, anonymous only, or numbers only.
+This is a permission list. If a client has not said yes in writing, they are anonymous]
+
+MY GUARANTEE
+
+[The exact words. If you have none, write &quot;no guarantee yet&quot; so nothing gets invented]
+
+HOW I SOUND
+
+Reading level: 7th grade. Short sentences. No corporate words.
+Words I never use: [your banned list — &quot;solutions&quot;, &quot;leverage&quot;, &quot;synergy&quot;, whatever
+makes you cringe]
+Words my buyers actually use for their own problem: [leave this blank for now.
+Agent 2 fills it in, and it is the most valuable line on this page]
+
+MY RULES
+
+Never put a price in a first email.
+Never send a calendar link. Offer two real times instead.
+Cold outreach is two messages. First one, then one follow-up. Then stop.
+First email is under 64 words.
+Every number I state carries the day it was measured.</pre>
+    </div>
+    <p class="fact">Leave the <strong>&ldquo;words my buyers actually use&rdquo;</strong> line blank for now. Agent 2 fills it in, and it is the most valuable line on the page.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The eight &middot; <b>in order</b></p>
+    <h2>Each one, start to finish.</h2>
+    <p class="sub">Do not skip to agent 7. The research is what produced the subject line, and you cannot work backwards to it.</p>
+    <div class="agents">
+    <article class="arow" id="a1">
+      <div class="idx">01</div>
       <div>
         <h3>Market Researcher</h3>
-        <p class="does">Finds out who buys this, and what they pay.</p>
+        <p class="does">Answers who buys this, what they pay, and whether the problem is growing or dying.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 15 min</h4>
             <ol class="steps">
-        <li>Check if the problem is <strong>growing or dying</strong> (Google Trends, last 3 months).</li>
-        <li>Pull the <strong>market size and where buyers are shifting</strong> from the consulting firms.</li>
-        <li>Read what buyers say about the problem <strong>where nobody is selling to them</strong>.</li>
-        <li>Check <strong>who is hiring</strong> for the exact job this replaces.</li>
-        <li>Write it up. <strong>Every fact carries the day it was read.</strong></li>
+            <li>Open a <strong>new chat</strong> inside your Outbound Stack project.</li>
+            <li>Copy the prompt below and paste it in. Press enter.</li>
+            <li>It works in five steps and shows each one as it finishes. Let it run.</li>
+            <li>Read the brief. <strong>Delete every fact that has no date on it.</strong></li>
+            <li>Keep the top three sub-segments. You build for one of them at a time.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Scrapling (free scraper)</span><span class="tool">Serper (search)</span><span class="tool">pytrends</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">A Claude account</span>
+            <span class="tool">Free scraper</span>
+            <span class="tool">Search key</span>
             </div>
-        <div class="grp"><span>Where the data comes from</span>
-          <div class="toolrow" style="margin-top:0"><span class="tool">McKinsey</span><span class="tool">Deloitte</span><span class="tool">PwC</span><span class="tool">BCG</span><span class="tool">EY</span><span class="tool">Statista</span><span class="tool">IBISWorld</span><span class="tool">Reddit</span><span class="tool">G2</span><span class="tool">Capterra</span><span class="tool">Crunchbase</span><span class="tool">Greenhouse</span><span class="tool">Lever</span><span class="tool">Ashby</span></div>
-        </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">Every number in the brief has a source and a date you can click.</p>
+            </div>
           </div>
         </div>
-        <p class="fact">Nothing older than <strong>90 days</strong> gets used as a fact. The full freshness table is below.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my market researcher. I sell what is in my business block above.
 
-    <div class="arow key" id="a2">
-      <span class="idx">02</span>
+Research the market I named there and come back with a brief. Do the work in this
+order, and tell me which step each fact came from.
+
+1. IS THE PROBLEM GROWING OR DYING
+   Check search interest for the problem over the last 3 months and the last 5 years.
+   Say growing, flat, or dying, and by roughly how much.
+
+2. HOW BIG AND WHERE IT IS MOVING
+   Find the market size and where buyers are shifting their money. Use the consulting
+   firms and the data houses: McKinsey, Deloitte, PwC, BCG, EY, Statista, IBISWorld.
+   Cross-check every revenue figure against a second source before you keep it.
+
+3. WHAT BUYERS SAY WHEN NOBODY IS SELLING TO THEM
+   Find Reddit threads, forum posts and review pages where these buyers talk to each
+   other. Not marketing pages. Not vendor blogs. Pull what they complain about.
+
+4. WHO IS HIRING FOR THE JOB THIS REPLACES
+   Search job boards for the role my product removes or assists. Count roughly how many
+   open roles there are and quote three real ads.
+
+5. WRITE IT UP
+   Give me: the size, the direction, the top 5 problems in the buyer&#x27;s own words, the
+   3 sub-segments most worth going after and why, and what people already pay to fix it.
+
+RULES YOU MUST FOLLOW
+
+- Every fact carries the date it was published AND the date you read it. A number with
+  no date is not a fact, it is a rumour.
+- Nothing older than 90 days counts as a current fact. Older material can be background,
+  and you must label it as background.
+- If you cannot find something, write &quot;not found&quot; and say where you looked. Never fill
+  a gap with something that sounds right.
+- If a site blocks you, say so loudly in the output. Do not return an empty section and
+  let me think there was nothing there.
+- No round numbers unless the source says a round number.
+
+Start with step 1. Show me each step as you finish it, do not save it all for the end.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> A section that comes back empty and calm means a site blocked it. Ask which sources returned data and which refused.</p>
+      </div>
+    </article>
+    <article class="arow" id="a2">
+      <div class="idx">02</div>
       <div>
         <h3>Buyer Psychologist</h3>
-        <p class="does">Finds the words the buyer uses themselves.</p>
+        <p class="does">Answers the words the buyer uses for their own problem.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 20 min</h4>
             <ol class="steps">
-        <li>Find <strong>where they actually talk</strong> &mdash; their subreddits, their forums, their review pages.</li>
-        <li>Pull the threads and the <strong>review bodies</strong>, not the star ratings.</li>
-        <li>Lift the phrases <strong>word for word</strong>. Never paraphrase them.</li>
-        <li>Build one persona: what they do all day, what they are scared of, what they want instead.</li>
+            <li>New chat, same project. The agent 1 brief has to be above it in the same conversation.</li>
+            <li>Paste the prompt.</li>
+            <li><strong>Open three of the quotes it returns.</strong> Check they exist.</li>
+            <li>Copy the top five phrases into your business block, on the &ldquo;words my buyers actually use&rdquo; line.</li>
+            <li>Update the project knowledge so every later agent reads them.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Serper (finds the threads)</span><span class="tool">Scrapling (reads them)</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">A Claude account</span>
+            <span class="tool">Free scraper</span>
+            <span class="tool">Search key</span>
             </div>
-        <div class="grp"><span>Where the data comes from</span>
-          <div class="toolrow" style="margin-top:0"><span class="tool">Reddit</span><span class="tool">Capterra</span><span class="tool">G2</span><span class="tool">LinkedIn comment threads</span><span class="tool">industry forums</span></div>
-        </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">One phrase makes you think &ldquo;I would never have written that.&rdquo; That is the one to build on.</p>
+            </div>
           </div>
         </div>
-        <p class="fact">This is where <strong>&ldquo;who reconciles the trust account&rdquo;</strong> came from. We did not write that line. It is what small law firms call it, and it is the whole reason the email worked.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my buyer psychologist. Read the market brief from agent 1 above.
 
-    <div class="arow" id="a3">
-      <span class="idx">03</span>
+Your job is to come back with the words these buyers use themselves. Not my words for
+their problem. Theirs.
+
+Work in this order.
+
+1. FIND WHERE THEY ACTUALLY TALK
+   Their subreddits. Their trade forums. The review pages for the tools they already
+   pay for. Their LinkedIn comment threads, not the posts. List where you looked.
+
+2. READ THE BODIES, NOT THE RATINGS
+   On G2 and Capterra, ignore the star scores. Read what people wrote in the 3-star
+   reviews. That is where the real complaint lives.
+
+3. LIFT THE PHRASES WORD FOR WORD
+   Pull at least 15 direct quotes. Never tidy them up. Never paraphrase. Keep the
+   typos. Give me the source and the date for each one.
+
+4. SORT THEM INTO FOUR PILES
+   - What their day actually looks like
+   - What they are scared of
+   - What they want instead
+   - What they have already tried that did not work
+
+5. BUILD ONE PERSON
+   Not a demographic. One person: their job, their week, the thing that keeps them up,
+   the sentence they would say out loud about this problem.
+
+6. GIVE ME THE TOP 5 PHRASES
+   The five that a buyer would recognise as their own. These go into my business block
+   and every email after this reads from them.
+
+RULES
+
+- A quote you cannot source is not a quote. Drop it.
+- If you cannot find real threads, say so. Do not write plausible-sounding quotes. An
+  invented quote in an email is the fastest way to sound like every other cold sender.
+- Nothing older than 90 days counts as current. Older is background, and label it.
+- Do not clean up their language into industry terms. The whole point is that they do
+  not talk the way vendors talk.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> A quote with no URL is an invented quote. Delete it and make it redo that section.</p>
+      </div>
+    </article>
+    <article class="arow" id="a3">
+      <div class="idx">03</div>
       <div>
         <h3>Offer Writer</h3>
-        <p class="does">Turns it into one promise, for one kind of company.</p>
+        <p class="does">Answers one promise, for one kind of company, with one number in it.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 20 min</h4>
             <ol class="steps">
-        <li>Write <strong>one promise</strong>: who it is for, what they get, one number.</li>
-        <li>List every blank the writer will have to fill in.</li>
-        <li><strong>Pin each blank</strong> &mdash; exact wording, or a short list of allowed answers.</li>
-        <li>Write two or three finished examples so nobody has to guess.</li>
+            <li>New chat, same project.</li>
+            <li>Paste the prompt.</li>
+            <li>You want <strong>one</strong> promise back, with one number. If it gives you three, tell it to pick.</li>
+            <li>Read every slot it pinned. Ask: could two people fill this two ways and both be right?</li>
+            <li>Any slot that fails, send it back to be pinned harder before you move on.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">No API needed</span><span class="tool">Best model writes it once</span><span class="tool">Cheap model fills it</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">A Claude account</span>
+            </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">You could hand the slot list to somebody else and get the same email back.</p>
             </div>
           </div>
         </div>
-        <p class="fact">The test: <strong>could two people fill this in two different ways and both be right?</strong> If yes, it is not pinned, and it will get invented differently every time.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my offer writer. Read my business block, the market brief from agent 1, and
+the buyer language from agent 2.
 
-    <div class="arow" id="a4">
-      <span class="idx">04</span>
+Write me ONE promise. Not three options. One.
+
+1. THE PROMISE
+   One sentence with three parts: who it is for, what they get, and one number.
+   Use the buyer&#x27;s own words from agent 2, not mine.
+   The number has to be one I can actually stand behind. Ask me for it if you do not
+   have it. Never invent one.
+
+2. LIST EVERY BLANK
+   Go through the promise and every message that will be built from it, and list every
+   single slot a writer would have to fill in per lead. Their firm name, their city,
+   their signal, the number, all of it.
+
+3. PIN EACH BLANK
+   For every slot, write down exactly how it gets filled. A pin is one of these:
+   - the exact wording, verbatim
+   - the shape it must take (&quot;a city name, no state&quot;)
+   - a short list of the only allowed answers
+   - a banned list of what it must never say
+   An instruction like &quot;make it relevant&quot; is not a pin. Rewrite it until it is.
+
+4. RUN THE PIN TEST ON YOUR OWN WORK
+   For each slot, ask: could two people fill this in two different ways and both be
+   right? If yes, it is not pinned. Go back and pin it harder. Tell me which slots
+   failed the test the first time.
+
+5. WRITE THREE FINISHED EXAMPLES
+   Three real, complete versions with every blank filled, using three different made-up
+   but realistic leads. Nobody should ever have to guess what &quot;good&quot; looks like.
+
+RULES
+
+- One number in the promise. Never two. A second number weakens the first.
+- No price in the promise.
+- 7th grade reading level. Read it out loud. If it sounds like a brochure, rewrite it.
+- Never use a result I did not give you.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> &ldquo;Personalise this&rdquo; is not a pin. An unpinned slot gets invented differently every single time.</p>
+      </div>
+    </article>
+    <article class="arow" id="a4">
+      <div class="idx">04</div>
       <div>
         <h3>List Builder</h3>
-        <p class="does">Finds real firms. Bins everything else.</p>
+        <p class="does">Answers which of these are real firms, and which just have the right words</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 45 min</h4>
             <ol class="steps">
-        <li>Write the target down as <strong>one saved search</strong> &mdash; industry, size, country, job titles.</li>
-        <li>Run it down the sources, <strong>cheapest first</strong>. Out of credit means skip, not stop.</li>
-        <li><strong>Dedupe.</strong> One row per company, never one per person.</li>
-        <li><strong>Open each website and read it.</strong> This is the step everyone skips.</li>
-        <li>Drop anything that is not the business you thought it was.</li>
+            <li>New chat, same project.</li>
+            <li>Paste the prompt. Give it your target: industry, size, country, job titles.</li>
+            <li><strong>Start with 200 leads. Not 5,000.</strong></li>
+            <li>When it comes back, read the BIN list first. That is where your search was wrong.</li>
+            <li>Fix the search, run it again, then keep the KEEP list.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Scrapling (free)</span><span class="tool">Apollo</span><span class="tool">Clay</span><span class="tool">Ocean</span><span class="tool">Smartlead Smart Prospect</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">Free scraper</span>
+            <span class="tool">One contact tool</span>
             </div>
-        <div class="grp"><span>Where the data comes from</span>
-          <div class="toolrow" style="margin-top:0"><span class="tool">company websites</span><span class="tool">Crunchbase</span><span class="tool">LinkedIn company pages</span></div>
-        </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">Things got binned, and you agree with why.</p>
+            </div>
           </div>
         </div>
-        <p class="fact">The order is: an export you already paid for &rarr; the free scraper &rarr; a tool that came bundled &rarr; prepaid credits &rarr; <strong>new money, last.</strong> The numbers this gate produced are below.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my list builder. Read my business block and the sub-segments from agent 1.
 
-    <div class="arow" id="a5">
-      <span class="idx">05</span>
+1. WRITE THE TARGET DOWN AS ONE SAVED SEARCH
+   Industry, headcount range, country or state, job titles. One search, written down,
+   so I can run the exact same thing again next month and get a comparable list.
+   Show it to me before you run anything.
+
+2. RUN IT DOWN THE SOURCES, CHEAPEST FIRST
+   In this order, and never out of order:
+   a. an export I have already paid for and already have on disk
+   b. the free scraper
+   c. a tool that came bundled with something I already pay for
+   d. prepaid credits I have sitting there
+   e. new money — last, and only after you tell me what it will cost
+   If a source is out of credit, that is a SKIP, not a stop. Move to the next one and
+   tell me it was skipped.
+
+3. DEDUPE
+   One row per COMPANY, never one per person. Two people at the same firm is one lead
+   with two contacts, not two leads. Merge on domain, not on company name — company
+   names are spelled five ways.
+
+4. OPEN EVERY WEBSITE AND READ IT
+   This is the step everyone skips and it is the whole agent.
+   For each company, open the site and answer three questions from what is actually
+   written there:
+   - Is this the kind of business I said I was targeting? Yes or no.
+   - What do they say they do, in their own words on their own page?
+   - Anything that disqualifies them? (they sell the thing I sell, they are a
+     marketplace, they are a recruiter, they are an agency for that industry rather
+     than a firm in it)
+
+5. BIN EVERYTHING THAT IS NOT WHAT I THOUGHT IT WAS
+   Give me two lists: KEEP and BINNED. For every binned row, one line saying why.
+   I want to read the bin. That is where I find out my search was wrong.
+
+6. GIVE ME THE COUNTS
+   Started with X. Passed the filters, Y. Passed a real read of the business, Z.
+   Show me the drop at each step as a percentage.
+
+RULES
+
+- A keyword filter cannot tell a software company from an accounting firm when both
+  say &quot;accounting&quot; forty times. Something has to open the page and read it. That is you.
+- Never keep a row you could not open. Mark it UNVERIFIED and put it in its own list.
+  Unverified is not the same as binned and it is not the same as kept.
+- If a site blocks you, say so out loud, per site. An empty result must never look
+  like &quot;nothing to find&quot;.
+- Never fill a missing field from a guess. Blank means unknown, never zero.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> A bad list at 5,000 costs you your sending domain. At 200 it costs you an afternoon.</p>
+      </div>
+    </article>
+    <article class="arow" id="a5">
+      <div class="idx">05</div>
       <div>
         <h3>Contact Finder</h3>
-        <p class="does">Gets the right person and an email that works.</p>
+        <p class="does">Answers who at that company, and an email address that actually works.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 30 min</h4>
             <ol class="steps">
-        <li>Look for the person <strong>on the company's own website</strong> first. It is free and it is right.</li>
-        <li>Not there? Search for them.</li>
-        <li>Still not there? Try a people-search tool, then a data provider.</li>
-        <li>Now the email: a lookup that returns a <strong>checked</strong> address, then an enrichment tool, then guessing the pattern &mdash; last.</li>
-        <li><strong>Verify every address.</strong> If it fails, drop the lead.</li>
+            <li>New chat, same project. Paste the KEEP list from agent 4.</li>
+            <li>Paste the prompt.</li>
+            <li>Check the source column. If every email came from one tool it never ran the order &mdash; send it back.</li>
+            <li><strong>Run every address through a verifier.</strong> Not just the guessed ones.</li>
+            <li>Drop the invalids. Park catch-alls in their own list, never mixed into the main send.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Serper</span><span class="tool">Prospeo</span><span class="tool">Apollo</span><span class="tool">MillionVerifier</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">One contact tool</span>
+            <span class="tool">Email verifier</span>
+            <span class="tool">Search key</span>
             </div>
-        <div class="grp"><span>Where the data comes from</span>
-          <div class="toolrow" style="margin-top:0"><span class="tool">company sites</span><span class="tool">Apollo contact database</span></div>
-        </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">Every row can tell you where the person came from and where the email came from.</p>
+            </div>
           </div>
         </div>
-        <p class="fact"><strong>Never one provider.</strong> One build went single-source and lost <strong>744 firms</strong> the others in the chain would have covered.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my contact finder. Take the KEEP list from agent 4.
 
-    <div class="arow key" id="a6">
-      <span class="idx">06</span>
+For each company, find ONE person and ONE working email address.
+
+FINDING THE PERSON — in this order, stop at the first one that works
+
+1. The company&#x27;s own website. Team page, about page, contact page, the footer.
+   This is free and it is right. Always try it first.
+2. A search for the person by role at that company.
+3. A people-search tool.
+4. A paid data provider. Last.
+
+Take the job titles from my business block. If more than one person matches, take the
+one who signs, not the one who researches. One person per company. Never two.
+
+FINDING THE EMAIL — in this order
+
+1. A lookup that returns a CHECKED address.
+2. An enrichment tool.
+3. Guessing the company&#x27;s pattern from other addresses at that domain. Last, and mark
+   it as a guess.
+
+THEN VERIFY EVERY ADDRESS
+
+Run every single address through a verifier, including the ones a paid tool handed you.
+- Valid: keep.
+- Risky or catch-all: put it in its own list. Do not mix it into the main send.
+- Invalid: drop the lead. Do not send to it &quot;just in case&quot;. One bounce costs you more
+  than one lead is worth.
+
+GIVE ME BACK
+
+A table: company, person, title, email, where the person came from, where the email
+came from, verifier result, and whether the email was a guess.
+
+RULES
+
+- Never rely on one provider. If the first one misses, go to the next.
+- A field you inherited from a tool is still a claim. If you cannot say where it came
+  from, drop it rather than carry it.
+- Never trust a single name match. If two people at that company share a name, or the
+  name matched on a partial, say UNSURE and let me look.
+- Blank means unknown. Never write &quot;unknown&quot; into a field that gets merged into an email.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> <code>info@</code> is not a person. Find the named human or drop the row.</p>
+      </div>
+    </article>
+    <article class="arow" id="a6">
+      <div class="idx">06</div>
       <div>
         <h3>Signal Finder</h3>
-        <p class="does">Works out who is worth emailing this week.</p>
+        <p class="does">Answers out of everyone who could be emailed, who is worth emailing this week.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 45 min</h4>
             <ol class="steps">
-        <li><strong>Filter for fit first</strong>, on the free data you already have &mdash; title, headcount, industry, country. Before you spend a credit.</li>
-        <li>Check the <strong>job boards</strong> for a role that means they have this problem right now.</li>
-        <li>Check their site and their DNS &mdash; dead blog, which email tool they run, booking software installed.</li>
-        <li><strong>Go back to the source and confirm it yourself.</strong> Do not trust a platform's date filter.</li>
-        <li>Stamp an <strong>expiry date</strong> on it. One signal per lead: the freshest and the most specific.</li>
+            <li>New chat, same project. Paste the verified list.</li>
+            <li>Paste the prompt.</li>
+            <li>It filters for fit on free data <strong>first</strong>. Check that it did, before anything got enriched.</li>
+            <li><strong>Open five signals yourself.</strong> Read the date on the page, not the date on the filter.</li>
+            <li>Split the list. Live signal &rarr; campaign. No signal &rarr; watch list. Re-run it weekly.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Greenhouse</span><span class="tool">Lever</span><span class="tool">Ashby</span><span class="tool">Apollo job postings</span><span class="tool">dig TXT (free)</span><span class="tool">Scrapling</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">Free scraper</span>
+            <span class="tool">Search key</span>
+            <span class="tool">One contact tool</span>
             </div>
-        <div class="grp"><span>Where the data comes from</span>
-          <div class="toolrow" style="margin-top:0"><span class="tool">job boards</span><span class="tool">company websites</span><span class="tool">DNS records</span><span class="tool">Crunchbase</span><span class="tool">Reddit</span></div>
-        </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">Most of your list did not make it, and you can name what changed at every company that did.</p>
+            </div>
           </div>
         </div>
-        <p class="fact"><strong>No signal, no send. Ever.</strong> If you cannot name what changed and put it in line one, that lead goes on a watch list, not into a campaign.</p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my signal finder. Take the verified list from agent 5.
 
-    <div class="arow" id="a7">
-      <span class="idx">07</span>
+A signal is a thing that CHANGED at that company, recently, that means they have this
+problem right now. Not a fact about them. A change.
+
+WORK IN THIS ORDER. THE ORDER IS THE POINT.
+
+1. FILTER FOR FIT FIRST, ON FREE DATA
+   Before you spend a single credit: title, headcount, industry, country. Anything that
+   is not my buyer gets dropped now, not after I paid to enrich it.
+   Tell me how many dropped here.
+
+2. LOOK FOR WHAT CHANGED
+   Check, per company:
+   - Job boards: are they hiring for the role this replaces or assists?
+   - Their site: dead blog, a new page, a new service line, a new office?
+   - Their DNS and their page source: which email tool do they run, which booking
+     software is installed, did it change?
+   - Funding, an acquisition, a new exec, an office opening.
+   - A public post asking for help with exactly this problem.
+
+3. CONFIRM IT AT THE SOURCE
+   Go back to the original page and check it yourself. Do not trust a platform&#x27;s date
+   filter. Open the job ad. Read the date on the page.
+
+4. STAMP AN EXPIRY ON IT
+   Every signal gets a use-by date:
+
+   | The signal | Use it inside | Dead after |
+   |---|---|---|
+   | A public &quot;anyone know a tool for this?&quot; post | 24 hours | a few days |
+   | A job ad for the role you replace | 3 to 5 days | 30 days |
+   | A funding round closing | 48 hours | 60 days |
+   | A new exec in the seat | 2 weeks | 90 days |
+
+5. ONE SIGNAL PER LEAD
+   The freshest and the most specific one. Not three stacked into a paragraph. One,
+   because it has to fit in line one of an email.
+
+6. SPLIT THE LIST
+   - HAS A LIVE SIGNAL → goes to agent 7.
+   - NO SIGNAL → goes on a watch list. Not into a campaign. Not &quot;we&#x27;ll send anyway&quot;.
+   Give me the counts at every step.
+
+RULES
+
+- No signal, no send. Ever. If you cannot name what changed and put it in line one,
+  that lead is not ready.
+- A date on a platform&#x27;s filter is not a date. The date on the page is the date.
+- If you cannot confirm it at the source, it does not count as a signal.
+- Say out loud how many leads you checked, not just how many passed.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> &ldquo;They are an accounting firm&rdquo; is not a signal. A signal is a change, with a date.</p>
+      </div>
+    </article>
+    <article class="arow" id="a7">
+      <div class="idx">07</div>
       <div>
         <h3>Email Writer</h3>
-        <p class="does">Fills in a script that already works.</p>
+        <p class="does">Answers what goes in the two emails.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 30 min</h4>
             <ol class="steps">
-        <li>Pick the script <strong>that matches the signal</strong>. Never write a new one.</li>
-        <li>Fill the blanks from the lead's own record.</li>
-        <li><strong>Count the words.</strong> Over 64 on the first email means cut, not send.</li>
-        <li>Load it as <strong>its own campaign</strong> &mdash; never as a variant. Tools rotate variants at random, so one signal's copy would go to the wrong leads.</li>
-        <li>Set it up as two emails. First, then one follow-up on day two. <strong>Then it stops.</strong></li>
+            <li>New chat, same project. Paste the signalled list.</li>
+            <li>Paste the prompt.</li>
+            <li><strong>Count the words on email 1 yourself.</strong> Under 64, or cut.</li>
+            <li>Make the thing your follow-up offers, <strong>before</strong> you send. It has to actually exist.</li>
+            <li>Load it as its own campaign with its own list. Two emails, day one and day two. Then it stops.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Smartlead (sending)</span><span class="tool">the script library</span><span class="tool">cheap model fills it</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">A Claude account</span>
+            <span class="tool">Sending tool</span>
+            </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">Line one names what changed. Line two is what that means for them.</p>
             </div>
           </div>
         </div>
-        <p class="fact">No price, no case study, no proof numbers in the first email. Those belong in the follow-up. <strong>Both emails are below, ready to copy.</strong></p>
-      </div>
-    </div>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my email writer. Take the signalled list from agent 6, the pinned offer from
+agent 3, and the buyer&#x27;s own words from agent 2.
 
-    <div class="arow" id="a8">
-      <span class="idx">08</span>
+You are NOT writing new copy. You are filling in a script that already works. If no
+script fits the signal, stop and tell me. Never invent a new shape and call it a script.
+
+FOR EACH LEAD
+
+1. PICK THE SCRIPT THAT MATCHES THE SIGNAL
+   Different signals get different scripts. A hiring signal and a funding signal are
+   not the same email. Name which script you picked and why.
+
+2. FILL THE BLANKS FROM THAT LEAD&#x27;S OWN RECORD
+   Their firm name as it appears on their own site. Their city. Their practice area in
+   their words. The signal, in one clause.
+   Every blank comes from the record. Nothing comes from your imagination.
+
+3. LINE ONE IS THE SIGNAL. LINE TWO IS WHAT IT MEANS FOR THEM.
+   Line two is the end result that signal implies, with their real detail in it.
+   Line two is NOT a pain line (&quot;most firms your size struggle with...&quot;). It is NOT the
+   offer (&quot;we run the books&quot;). It is what they get.
+
+4. COUNT THE WORDS
+   First email must be under 64 words. Count them. Over 64 means cut, not send.
+   The follow-up must be under 100.
+
+5. NO PROOF IN EMAIL 1
+   No price. No case study. No client numbers. No links. Those live in the follow-up
+   and on the call. Email 1 earns a reply, it does not close.
+
+6. THE FOLLOW-UP OFFERS SOMETHING THEY WOULD KEEP
+   One follow-up, day two, same thread, no new subject line. It asks for nothing. It
+   offers a thing they would want even if they never replied — a checklist, a short
+   list, the thing you already made.
+
+7. THEN IT STOPS
+   Two emails. There is no third. No &quot;just bumping this&quot;. No &quot;did you see my last&quot;.
+
+HOW TO LOAD IT
+
+Each signal is its OWN CAMPAIGN, with its own list. Never load signal-specific copy as
+variants of one campaign. Sending tools rotate variants at random across the whole list,
+so one signal&#x27;s copy goes to leads it does not describe, and every enrichment credit you
+spent is thrown away silently.
+
+Say &quot;campaign&quot;, name the list, and write the routing rule next to it.
+
+RULES
+
+- Plain text. No bold, no bullets, no formatting inside the body.
+- One sentence per line.
+- Subject line: max 5 words, lower case, in the buyer&#x27;s words.
+- Never a calendar link. Two real times, or a soft ask.
+- 7th grade reading level. Read it out loud first.</pre>
+      </div>
+        <p class="fact"><strong>The trap:</strong> Never load signal-routed copy as variants. Sending tools rotate variants at random, so the wrong email reaches the wrong lead and nothing tells you.</p>
+      </div>
+    </article>
+    <article class="arow" id="a8">
+      <div class="idx">08</div>
       <div>
         <h3>Inbox Agent</h3>
-        <p class="does">Answers every reply in five minutes.</p>
+        <p class="does">Answers what to send back, within five minutes.</p>
         <div class="adetail">
           <div class="acol">
-            <h4>How it runs</h4>
+            <h4>Set it up &mdash; 10 min</h4>
             <ol class="steps">
-        <li>A reply lands. A <strong>webhook fires straight away</strong> &mdash; nothing waits for someone to check the inbox.</li>
-        <li>Sort it: <strong>green, yellow or red.</strong> Interested, unsure, or no.</li>
-        <li>Pick the matching script. A positive reply and an objection are <strong>different scripts</strong>.</li>
-        <li>Fill it in with what that lead actually said.</li>
-        <li>Send it to the team <strong>with the draft already written</strong>. A person reads it and presses send.</li>
+            <li>New chat, same project. Paste the prompt. Leave the tab open all day.</li>
+            <li>Paste your two real open call times in each morning.</li>
+            <li>When a reply lands, paste it in with the email it answers.</li>
+            <li>Read the colour and the draft. Change what you want. <strong>You</strong> press send.</li>
+            <li>Only once that works by hand: wire the webhook so the draft is already waiting.</li>
             </ol>
           </div>
           <div class="acol">
-            <h4>What it uses</h4>
-            <div class="grp"><span>Tools</span>
-              <div class="toolrow" style="margin-top:0"><span class="tool">Smartlead webhook</span><span class="tool">n8n</span><span class="tool">Slack</span><span class="tool">Notion (the scripts)</span><span class="tool">Airtable / Sheets (tracking)</span></div>
+            <h4>What you need open</h4>
+            <div class="toolrow">
+            <span class="tool">A Claude account</span>
+            <span class="tool">Sending tool</span>
+            </div>
+            <div class="grp">
+              <span>You know it worked when</span>
+              <p class="wintext">You paste a reply and would only change a word or two of what comes back.</p>
             </div>
           </div>
         </div>
-        <p class="fact">Two specific times, <strong>never a calendar link.</strong> Never a price, even when pushed. Answering inside five minutes is what tells a prospect this is a real operation.</p>
+      <div class="promptbox">
+        <div class="hd">
+          <span class="subj">the prompt &mdash; paste it whole</span>
+          <button class="copybtn" type="button">Copy</button>
+        </div>
+        <pre class="bd">You are my inbox agent. Read my business block above.
+
+I am going to paste a reply from a lead, with the email they were replying to.
+
+Give me three things.
+
+1. THE COLOUR
+   GREEN — they are leaning in. Interested, asking how it works, asking a question with
+   no objection attached.
+   YELLOW — they have not said yes or no. Vague, a soft stall (&quot;check back in Q1&quot;), or
+   a real objection (price, trust, &quot;we already have someone&quot;).
+   RED — a flat no. &quot;Not interested&quot;, &quot;remove me&quot;, &quot;unsubscribe&quot;, with nothing else.
+
+2. ONE LINE ON WHY
+
+3. THE DRAFT TO SEND
+   Pick the script that matches the colour AND what they actually said. A positive
+   reply and an objection are different scripts. Do not use one for the other.
+   Fill it in with their own words, from their own reply.
+
+RULES
+
+- Judge what they said, not how it sounded. A blunt one-liner that asks a real question
+  is GREEN, not RED.
+- A &quot;no&quot; with a reason attached is YELLOW. They told you something.
+- If you genuinely cannot tell, say YELLOW and give me the one question to ask.
+- Never put a price in a reply, even when they ask directly. Answer the question
+  honestly (&quot;it depends on scope, that is what the call is for&quot;) and move to the times.
+- Never a calendar link. Two specific times: a day and an hour, both real.
+- If they ask three questions, answer all three, in order, then ask for the call.
+- If they say the wrong person handles this, do not pitch them. Ask for the name.
+
+Here is the reply:
+
+[PASTE: what you sent, then what they said back]</pre>
       </div>
-    </div>
-
-  </div>
-</div></section>
-
-<!-- ============ THE SOURCES ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Agent 1</b> &middot; where the research comes from</div>
-  <h2 style="max-width:24ch">Eight public sources. You could open every one yourself.</h2>
-  <div class="tablewrap"><table>
-    <thead><tr><th>Source</th><th>What we take</th><th>Stale after</th></tr></thead>
-    <tbody>
-      <tr><td><strong>McKinsey, Deloitte, PwC, BCG, EY</strong></td><td>Market size and where buyers are shifting</td><td class="num">18 months</td></tr>
-      <tr><td><strong>Statista, IBISWorld</strong></td><td>Revenue figures, checked against a second source</td><td class="num">18 months</td></tr>
-      <tr><td><strong>Reddit</strong></td><td>What buyers say when nobody is selling to them</td><td class="num">90 days</td></tr>
-      <tr><td><strong>G2 and Capterra</strong></td><td>What they hate about the tool they already pay for</td><td class="num">6 months</td></tr>
-      <tr><td><strong>Google Trends</strong></td><td>Is the problem growing or dying</td><td class="num">live</td></tr>
-      <tr><td><strong>Crunchbase</strong></td><td>Who raised money, who is growing</td><td class="num">90 days</td></tr>
-      <tr><td><strong>Greenhouse, Lever, Ashby</strong></td><td>Who is hiring for the job we remove</td><td class="num">30 days</td></tr>
-      <tr><td><strong>News</strong></td><td>What changed this month</td><td class="num">90 days</td></tr>
-    </tbody>
-  </table></div>
-  <p class="after"><strong>One rule holds all of this up.</strong> When a site blocks us, it has to fail loudly. Returning an empty result is banned &mdash; empty looks exactly like "nothing to find," and once you ship a report built on it, nobody catches it.</p>
-</div></section>
-
-<!-- ============ THE LIST GATE ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Agent 4</b> &middot; one real list</div>
-  <h2>380 leads looked fine. None of them were real firms.</h2>
-  <div class="funnel">
-    <div class="frow">
-      <div class="flabel">Bought from<br>a database</div>
-      <div class="ftrack"><div class="fbar" data-w="100"></div></div>
-      <div class="fval"><span class="n">1,642</span><span class="fn">raw leads</span></div>
-    </div>
-    <div class="frow">
-      <div class="flabel">Passed the<br>quick filters</div>
-      <div class="ftrack"><div class="fbar" data-w="23.1"></div></div>
-      <div class="fval"><span class="n">380</span><span class="fn">looked fine<br>on paper</span></div>
-    </div>
-    <div class="frow">
-      <div class="flabel">Passed a real read<br>of the business</div>
-      <div class="ftrack"><div class="fbar dead" data-w="0"></div></div>
-      <div class="fval dead"><span class="n">0</span><span class="fn"><b>27%</b> were not even<br>accounting firms</span></div>
+        <p class="fact"><strong>The trap:</strong> Set every automated message step to create a <strong>draft</strong>, never to send.</p>
+      </div>
+    </article>
     </div>
   </div>
-  <p class="after">They were software companies, marketplaces and recruiters with the right words on their website. <strong>A keyword filter cannot see that.</strong> Something that opens the site and reads it can.</p>
-  <div class="src">Measured 2026-07-22 &middot; same pattern on a second, separate list</div>
-</div></section>
+</section>
 
-<!-- ============ THE SIGNAL GATE ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Agent 6</b> &middot; the biggest lever, and the cheapest</div>
-  <h2>Out of 18,799 people, 235 were worth emailing.</h2>
-  <div class="funnel">
-    <div class="frow">
-      <div class="flabel">People we<br>could email</div>
-      <div class="ftrack"><div class="fbar" data-w="100"></div></div>
-      <div class="fval"><span class="n">18,799</span><span class="fn">the whole market</span></div>
-    </div>
-    <div class="frow">
-      <div class="flabel">Something<br>had changed</div>
-      <div class="ftrack"><div class="fbar" data-w="7.6"></div></div>
-      <div class="fval"><span class="n">1,437</span><span class="fn">carried a signal</span></div>
-    </div>
-    <div class="frow">
-      <div class="flabel">The signal was<br>real and fresh</div>
-      <div class="ftrack"><div class="fbar" data-w="1.25"></div></div>
-      <div class="fval"><span class="n">235</span><span class="fn"><b>15%</b> of the ones<br>that looked good</span></div>
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Your first week &middot; <b>four days</b></p>
+    <h2>Do it in this order and it takes four evenings.</h2>
+    <div class="setup">
+      <div class="sstep"><span class="sn">1</span><div><b>Day one &mdash; the block, then learn</b><p>Step 0, then agents 1 and 2. Delete every fact with no date. Check three quotes yourself. Put the top five phrases back in your block.</p></div></div>
+      <div class="sstep"><span class="sn">2</span><div><b>Day two &mdash; build the list</b><p>Agents 3, 4 and 5. Two hundred leads, not five thousand. Read the bin list. Verify every address.</p></div></div>
+      <div class="sstep"><span class="sn">3</span><div><b>Day three &mdash; time it</b><p>Agent 6. Check five signals at the source. Split the list into campaign and watch list.</p></div></div>
+      <div class="sstep"><span class="sn">4</span><div><b>Day four &mdash; send and answer</b><p>Agents 7 and 8. Count the words. Make the follow-up&rsquo;s offer before you send. Test a reply on yourself.</p></div></div>
+      <div class="sstep"><span class="sn">5</span><div><b>Then, every Friday &mdash; 20 minutes</b><p>Reply rate <strong>per signal type</strong>, never blended. Re-run agent 6 on the watch list, because signals expire. Write down what you changed and the date you changed it.</p></div></div>
     </div>
   </div>
-  <div class="tablewrap"><table>
-    <thead><tr><th>The signal</th><th>Use it inside</th><th>Dead after</th></tr></thead>
-    <tbody>
-      <tr><td><strong>A public "anyone know a tool for this?" post</strong></td><td class="num">24 hours</td><td class="num">a few days</td></tr>
-      <tr><td><strong>A job ad for the role you replace</strong></td><td class="num">3&ndash;5 days</td><td class="num">30 days</td></tr>
-      <tr><td><strong>A funding round closing</strong></td><td class="num">48 hours</td><td class="num">60 days</td></tr>
-    </tbody>
-  </table></div>
-  <p class="after">And check it yourself. On one "they are hiring" list, <strong>41% had no live job ad at all</strong> &mdash; one supposedly fresh posting was ten months old. The platform's own date filter said otherwise.</p>
-  <div class="src">Measured 2026-08-20 &middot; US bookkeeping and accounting firms, 3&ndash;50 staff</div>
-</div></section>
+</section>
 
-<!-- ============ THE EMAILS ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Agent 7</b> &middot; the whole campaign, both emails</div>
-  <h2>Forty words. Then one follow-up. Then nothing.</h2>
-
-  <div class="mail">
-    <div class="hd">
-      <span class="subj">who reconciles the trust account</span>
-      <button class="copybtn" data-copy="e1">Copy</button>
-      <span class="when">Email 1</span>
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Do not skip these &middot; <b>the gates</b></p>
+    <h2>Seven checks, and one that holds up the rest.</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Gate</th><th>Where</th><th>What happens without it</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Every fact carries its date</strong></td><td class="num">Agent 1</td><td>You act on an 18-month-old market as if it were today</td></tr>
+          <tr><td><strong>Quotes are sourced or dropped</strong></td><td class="num">Agent 2</td><td>An invented phrase reaches a buyer and reads as invented</td></tr>
+          <tr><td><strong>Every slot is pinned</strong></td><td class="num">Agent 3</td><td>The same line ships four different ways and it looks like a writer problem</td></tr>
+          <tr><td><strong>Somebody opens and reads the sites</strong></td><td class="num">Agent 4</td><td>A quarter of your list is the wrong kind of company</td></tr>
+          <tr><td><strong>Every address verified</strong></td><td class="num">Agent 5</td><td>Bounces, then your domain</td></tr>
+          <tr><td><strong>Signal confirmed at the source</strong></td><td class="num">Agent 6</td><td>You open with a change that never happened</td></tr>
+          <tr><td><strong>Word count on email 1</strong></td><td class="num">Agent 7</td><td>It becomes a pitch, and it gets deleted</td></tr>
+          <tr><td><strong>A human presses send</strong></td><td class="num">Agent 8</td><td>Eventually it sends something you would not have</td></tr>
+          <tr><td><strong>A block fails loudly</strong></td><td class="num">All eight</td><td>An empty result looks exactly like &ldquo;nothing to find&rdquo;, and you ship a decision built on it</td></tr>
+        </tbody>
+      </table>
     </div>
-    <div class="bd" id="e1">Hi <span class="var">{first name}</span>,
-
-Saw <span class="var">{their firm}</span> handles <span class="var">{their practice area}</span> work out of <span class="var">{their city}</span>.
-
-We run the books and the monthly trust reconciliation for small law firms. Nobody there has to sit and check the ledger.
-
-Can I send some more info?</div>
+    <p class="after">That last one holds up everything else. When a site blocks an agent, it has to say so out loud. An agent that returns an empty list on a block is the most expensive thing in this build, because <strong>nothing looks wrong</strong>.</p>
   </div>
+</section>
 
-  <div class="mail">
-    <div class="hd">
-      <span class="subj">&#8627; same thread, no new subject</span>
-      <button class="copybtn" data-copy="e2">Copy</button>
-      <span class="when">Day 2</span>
-    </div>
-    <div class="bd" id="e2">Hey <span class="var">{first name}</span>,
-
-Just got some time to get back to you.
-
-Pulled together a month-end trust account checklist &mdash; the red flags worth catching yourself before an auditor does.
-
-Want me to send it over?</div>
-  </div>
-
-  <div class="reply">
-    <span class="rlabel">What came back, that evening</span>
-    <div class="q">"wha'ts your number"</div>
-    <div class="meta">a law firm in Maryland &middot; replying to the second email</div>
-  </div>
-
-  <p class="after"><strong>The follow-up is the one that worked.</strong> It asks for nothing. It offers something they would keep. Inside two weeks that firm had signed with our client &mdash; a bookkeeping firm in San Diego &mdash; at <strong>$2,500 a month</strong>.</p>
-</div></section>
-
-<!-- ============ ORDER ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>If you only fix one thing</b> &middot; in this order</div>
-  <h2>Most people fix these backwards.</h2>
-  <div class="rank">
-    <div class="ritem one">
-      <span class="p">1</span>
-      <div><h3>The signal</h3><div class="d">Can you name what changed at their company? If not, you are guessing, and they can tell.</div></div>
-      <div class="ev">only <b>15%</b> of leads<br>survive this</div>
-    </div>
-    <div class="ritem">
-      <span class="p">2</span>
-      <div><h3>The list</h3><div class="d">Are these really the businesses you think they are? Usually a quarter are not.</div></div>
-      <div class="ev"><b>27%</b> were the<br>wrong kind of company</div>
-    </div>
-    <div class="ritem">
-      <span class="p">3</span>
-      <div><h3>The words</h3><div class="d">Last. A great email to the wrong list still gets you nothing.</div></div>
-      <div class="ev">generic openers stall<br>around <b>0.4%</b></div>
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2>That is the whole build. Take it.</h2>
+      <p>Every prompt on this page is also a file in the public folder, with the troubleshooting tables that did not fit here. No sign-up, no email wall, nothing to unsubscribe from.</p>
+      <p><strong>The folder:</strong> <a class="link" href="https://github.com/gary-chakraborty/gap-build-vault/tree/main/builds/outbound-agent-stack">github.com/gary-chakraborty/gap-build-vault</a> &rarr; <code>builds/outbound-agent-stack</code></p>
+      <p>If you would rather we built it inside your company &mdash; or your pipeline is stuck &mdash; that is what we do. One niche, one signal, two emails, and <strong>15 to 25 qualified sales calls a month</strong> with people actually looking for what you sell.</p>
+      <a class="ctabtn" href="https://form.jotform.com/262194392563059">Tell us how this went &rarr;</a>
     </div>
   </div>
-  <p class="after">Everyone rewrites the email first. It is the cheapest thing to change and the least likely to be the problem.</p>
-</div></section>
+</section>
 
-<!-- ============ CHECKLIST ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Before you send anything</b> &middot; tick these</div>
-  <h2 style="max-width:26ch">Eight questions. A blank one is where your campaign leaks.</h2>
-  <div class="checks">
-    <label class="check"><input type="checkbox"><span>Can you name the one kind of company you are writing to, in three words?</span></label>
-    <label class="check"><input type="checkbox"><span>Can you name what they are afraid of, in their words?</span></label>
-    <label class="check"><input type="checkbox"><span>Did somebody actually open the websites on your list and read them?</span></label>
-    <label class="check"><input type="checkbox"><span>Is every email address verified, or are some of them guesses?</span></label>
-    <label class="check"><input type="checkbox"><span>For each lead, can you name what changed at their company?</span></label>
-    <label class="check"><input type="checkbox"><span>Is that still fresh &mdash; checked at the source, not at a filter?</span></label>
-    <label class="check"><input type="checkbox"><span>Is your first email under 64 words, with no price in it?</span></label>
-    <label class="check"><input type="checkbox"><span>Does someone answer a reply inside five minutes?</span></label>
-  </div>
-</div></section>
+</main>
 
-<!-- ============ SETUP ============ -->
-<section><div class="wrap">
-  <div class="eyebrow"><b>Setting it up</b> &middot; the short version</div>
-  <h2>Five things. The order matters more than the tools.</h2>
-  <div class="setup">
-    <div class="sstep"><span class="sn">1</span><div><b>Get the files</b><p>All of it is at <a class="link" href="https://github.com/gary-chakraborty/gap-build-vault">github.com/gary-chakraborty/gap-build-vault</a>, folder <code>builds/outbound-agent-stack</code>. No sign-up.</p></div></div>
-    <div class="sstep"><span class="sn">2</span><div><b>What you need</b><p>A free scraper, a search key, one contact tool you already pay for, an email verifier, a sending tool. If you run outbound you probably have four of the five.</p></div></div>
-    <div class="sstep"><span class="sn">3</span><div><b>Run them in order</b><p>One to eight. Do not skip to the email. The research is what produced the subject line, and you cannot work backwards to it.</p></div></div>
-    <div class="sstep"><span class="sn">4</span><div><b>Start small</b><p>One kind of company. One signal. Two hundred leads, not five thousand. A bad list at five thousand costs you your sending domain.</p></div></div>
-    <div class="sstep"><span class="sn">5</span><div><b>Measure by signal, not blended</b><p>A blended reply rate hides the one lane that works and the three that do not.</p></div></div>
-  </div>
-  <p class="after">The full install &mdash; keys, permissions, every setting &mdash; is its own video. Doing it properly takes longer than a section.</p>
-</div></section>
-
-<!-- ============ CTA ============ -->
-<section><div class="wrap">
-  <div class="cta">
-    <h2>That is the whole build. Take it.</h2>
-    <p>Copy it, put it in your own company, run it. It is free and we are not gating it.</p>
-    <p>If you would rather we built it inside your company &mdash; or your pipeline is stuck &mdash; that is what we do. One niche, one signal, two emails, and <strong>15 to 25 qualified sales calls a month</strong> with people actually looking for what you sell. No more waiting on referrals.</p>
-    <a class="ctabtn" href="#feedback">Tell us how this went &rarr;</a>
-  </div>
-</div></section>
-
-<footer id="feedback"><div class="wrap">
-  GAP Build Vault &middot; the outbound agent stack &middot; every number here carries the day it was measured
-</div></footer>
+<footer>
+  <div class="wrap">GAP Build Vault &middot; the outbound agent stack &middot; the prompts on this page are the same text as the files in the folder</div>
+</footer>
 
 <script>
-(function(){
-  var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  document.querySelectorAll(".chip .v[data-count]").forEach(function(el){
-    var target = parseInt(el.getAttribute("data-count"), 10);
-    if (reduce) { el.textContent = target; return; }
-    var n = 0;
-    var t = setInterval(function(){
-      n += 1;
-      if (n >= target) { n = target; clearInterval(t); }
-      el.textContent = n;
-    }, 90);
-  });
-
-  var bars = document.querySelectorAll(".fbar");
-  function fill(b){ b.style.width = b.getAttribute("data-w") + "%"; }
-  if (!("IntersectionObserver" in window) || reduce) {
-    bars.forEach(fill);
-  } else {
-    var io = new IntersectionObserver(function(es){
-      es.forEach(function(e){ if (e.isIntersecting){ fill(e.target); io.unobserve(e.target); } });
-    }, {threshold: 0.35});
-    bars.forEach(function(b){ io.observe(b); });
-  }
-
-  document.querySelectorAll(".copybtn").forEach(function(btn){
-    btn.addEventListener("click", function(){
-      var src = document.getElementById(btn.getAttribute("data-copy"));
-      if (!src) return;
-      var done = function(){
-        btn.textContent = "Copied"; btn.classList.add("done");
-        setTimeout(function(){ btn.textContent = "Copy"; btn.classList.remove("done"); }, 1800);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(src.innerText).then(done, function(){});
-      } else {
-        var ta = document.createElement("textarea");
-        ta.value = src.innerText; document.body.appendChild(ta); ta.select();
-        try { document.execCommand("copy"); done(); } catch (e) {}
-        document.body.removeChild(ta);
-      }
-    });
-  });
-
-  var boxes = document.querySelectorAll(".check input"), KEY = "oas-checks";
-  try {
-    var saved = JSON.parse(localStorage.getItem(KEY) || "[]");
-    boxes.forEach(function(b, i){ if (saved.indexOf(i) !== -1) b.checked = true; });
-  } catch (e) {}
-  boxes.forEach(function(b){
-    b.addEventListener("change", function(){
-      try {
-        var on = [];
-        boxes.forEach(function(x, j){ if (x.checked) on.push(j); });
-        localStorage.setItem(KEY, JSON.stringify(on));
-      } catch (e) {}
+(function () {
+  document.querySelectorAll(".copybtn").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var pre = btn.closest(".promptbox").querySelector(".bd");
+      navigator.clipboard.writeText(pre.innerText).then(function () {
+        btn.textContent = "Copied";
+        btn.classList.add("done");
+        setTimeout(function () {
+          btn.textContent = "Copy";
+          btn.classList.remove("done");
+        }, 1600);
+      }).catch(function () {});
     });
   });
 })();
