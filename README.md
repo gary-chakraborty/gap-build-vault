@@ -12,6 +12,16 @@ Every build lives in its own folder under [`builds/`](builds/). Each one has:
 
 Browse the cards on the site, or dig through the folders right here.
 
+## The whole GTM stack, in order
+
+1. [`signal-prospecting-system`](builds/signal-prospecting-system): who changed something this week
+2. [`outbound-agent-stack`](builds/outbound-agent-stack): eight agents, research to the two emails
+3. [`reply-to-booked-call`](builds/reply-to-booked-call): the LinkedIn lane
+4. [`ai-inbox-manager`](builds/ai-inbox-manager): sorts every reply and drafts the answer
+5. [`reply-to-booked-call`](builds/reply-to-booked-call): warm replies, the booking desk, and the weekly scoreboard
+
+Side builds: [`claude-md-starter`](builds/claude-md-starter), [`named-lead-signal-deck`](builds/named-lead-signal-deck), [`enterprise-breakdown`](builds/enterprise-breakdown).
+
 ## Who makes this
 
 These are working systems from [GAP](https://www.linkedin.com/in/garychakraborty), where we build outbound client-acquisition engines for B2B service businesses. The builds here are real pieces of that work, packaged so they run on their own.
