@@ -18,13 +18,21 @@ Every build is prompts and checklists, not software. [SETUP-WITH-CLAUDE.md](SETU
 run one: in your browser on claude.ai, or in your editor with Claude Code (VS Code, Cursor, Antigravity or a terminal),
 where it reads the folder and runs the scripts for you.
 
-## The whole GTM stack, in order
+## The whole system, in order
 
-1. [`signal-prospecting-system`](builds/signal-prospecting-system): who changed something this week
-2. [`outbound-agent-stack`](builds/outbound-agent-stack): eight agents, research to the two emails
-3. [`reply-to-booked-call`](builds/reply-to-booked-call): the LinkedIn lane
-4. [`ai-inbox-manager`](builds/ai-inbox-manager): sorts every reply and drafts the answer
-5. [`reply-to-booked-call`](builds/reply-to-booked-call): warm replies, the booking desk, and the weekly scoreboard
+The vault has two halves. The first half gets somebody to reply to you. The second half turns that reply into a call
+that actually happens.
+
+**Getting replies:**
+
+1. [`signal-prospecting-system`](builds/signal-prospecting-system): finds who just changed something worth talking about
+2. [`outbound-agent-stack`](builds/outbound-agent-stack): eight agents, from research to the two emails you send
+3. [`reply-to-booked-call`](builds/reply-to-booked-call): the LinkedIn side, in two messages
+4. [`ai-inbox-manager`](builds/ai-inbox-manager): reads every reply and writes your answer
+
+**Turning replies into calls:**
+
+5. [`reply-to-booked-call`](builds/reply-to-booked-call): what to say after somebody replies, the booking desk, and your real numbers every Monday
 
 Side builds: [`claude-md-starter`](builds/claude-md-starter), [`named-lead-signal-deck`](builds/named-lead-signal-deck), [`enterprise-breakdown`](builds/enterprise-breakdown).
 

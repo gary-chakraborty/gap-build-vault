@@ -1,33 +1,44 @@
-# The warm reply ladder
+# What to say to somebody who replied
 
-For anyone who is already talking to you: they replied, they commented, they messaged first. The mistake that loses
-most of these is sending the calendar in the first reply. A warm person gets a conversation before a calendar.
+This is for anybody who is already talking to you. They answered your email, they commented on a post, they sent you a
+message first.
 
-## The four turns
+The mistake that loses most of these is sending the calendar in your first reply. Somebody who is warm wants a
+conversation before they want a calendar. So you have a short one, and the call comes up at the end of it.
 
-| Turn | What you send | What you never send |
-|---|---|---|
-| 1 | Answer what they said. Then **one** question about their business | A case study, a number, the offer, a link |
-| 2 | React to their answer with something specific. **One** question that needs a fact (a count, a name, a month) | A case study, a number, the offer, a link |
-| 3 | Show you understood: say their problem back in their words. One short proof point that matches it | A calendar link |
-| 4 | Offer the call. Two real times, for example "Tuesday at 2pm or Wednesday at 11am?" | A booking page as the only option |
+## The four messages
 
-One question per message. Two questions in one message and they answer the easy one.
+**Message 1.** Answer what they actually said. Then ask one question about their business. No case study, no numbers,
+no pitch, no link.
 
-## When they dodge
+**Message 2.** React to their answer with something specific, so they can see you read it. Then ask one more question,
+and make it one that needs a fact to answer: a number, a month, a name. Still nothing about you.
 
-"Yes" to an either/or question is a dodge, not an answer. Do not decide for them that they meant both. Ask again with a
-question that "yes" cannot answer:
+**Message 3.** Show them you understood. Say their problem back to them in their own words. Now you can bring in one
+short piece of proof, but only if it matches the problem they just described.
 
-> Them: "Yes, we're looking at that."
-> You: "How many new clients did you sign in August?"
+**Message 4.** Offer the call, with two real times. "Are you free Tuesday at 2pm, or Wednesday at 11am?" Not a
+booking link.
 
-## When they ask for the number
+One question per message. Put two in and they answer the easy one.
 
-"How much is it?" early on is the hottest signal you will get. It means they are already picturing buying. Answer
-honestly and move to the call in the same message. Never dodge the question to protect the call.
+## When they give you a non-answer
 
-## When the call is booked
+If you ask "is it the time or the money?" and they say "yes", that is a dodge. Do not decide for them that they meant
+both. Ask again, with a question that "yes" cannot answer.
 
-Hand it to the [booking desk](booking-desk.md): the reminder, the no-show plan, and the call list all start the moment
-the time is set.
+> **Them:** "Yes, we're looking at that."
+>
+> **You:** "How many new clients did you sign in August?"
+
+## When they ask what it costs
+
+Somebody asking about money early is the best signal you will get all week. It means they are already picturing buying
+it. Answer them honestly, and offer the call in the same message.
+
+Never dodge the price question to protect the call. Dodging is what makes people stop replying.
+
+## Once the call is booked
+
+Hand it over to the [booking desk](booking-desk.md). The reminder, the no-show plan and the call list all start the
+moment a time is agreed.
