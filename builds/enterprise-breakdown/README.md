@@ -15,7 +15,7 @@ A guide to the four specific reasons an enterprise deal stalls, and what you cha
 
 - Maps everyone who has to say yes, before you pitch one person.
 - Sizes your proof to the buyer instead of to your own comfort.
-- Splits the money ask from the vendor approval ask, so procurement cannot park you.
+- Splits the money ask from the vendor approval ask, so procurement (the department that signs off on new vendors) cannot park you.
 
 ## The problem
 
@@ -159,7 +159,7 @@ What you are aiming at is a signed pilot, not the full deal. A pilot is real mon
 
 | What you see | What it means | What to do |
 |---|---|---|
-| Your champion goes quiet after a good call | She hit an internal blocker she cannot solve, or she was moved off the project. Silence is almost never about your price | Send one email that gives her something to forward, not something to answer: the one page proof pack and the pilot terms. Then ask directly who else needs to be comfortable and offer to answer them yourself |
+| Your champion (the person on the inside pushing for you) goes quiet after a good call | She hit an internal blocker she cannot solve, or she was moved off the project. Silence is almost never about your price | Send one email that gives her something to forward, not something to answer: the one page proof pack and the pilot terms. Then ask directly who else needs to be comfortable and offer to answer them yourself |
 | Procurement adds a step you did not plan for, like a security questionnaire or an insurance certificate | You are being processed as a vendor, which is progress, but their checklist is running in parallel and nobody told you | Ask for the full list of steps and who owns each one, in one email. Fill in what you can this week. Say plainly which items you do not have yet and what you will do instead. A named gap moves. A dodged question stops the file |
 | They ask for three reference clients their own size and you do not have them | Your proof is sized to your comfort, not to the buyer. This is Phase 2 arriving as a demand instead of a choice | Offer what is real: your closest client by scale, named, with a number, plus a paid pilot that makes the reference unnecessary. Never pad the list with a client who will not take the call |
 | The pilot gets scoped down until it cannot prove anything | Somebody inside is protecting a budget, or the success measure was never agreed | Rewrite the pilot around one measure both sides can check. If the scope drops below what can move that measure, say so and pause rather than accept a test designed to fail |

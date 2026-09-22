@@ -13,13 +13,13 @@ level: "No code"
 
 A five-step check that turns one real, dated event into the reason you reach out this week.
 
-- Writes one signal sentence you can point to a public page for
+- Writes one sentence about the signal, backed by a public page you can point to
 - Builds the company list from the signal source instead of an industry filter
 - Kills any row you cannot verify yourself in three minutes
 
 ## The problem
 
-- → 217 emails sent. Every one opens with a merge tag.
+- → 217 emails sent. Every one opens with a merge tag, the auto-filled "[First Name]" that does not make it personal.
 - → Four opens. Zero replies.
 - → The list came from an industry filter, not a dated event.
 - → Line one proves nothing, so nobody reads line two.

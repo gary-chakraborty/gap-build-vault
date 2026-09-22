@@ -100,7 +100,7 @@ You do not need a GitHub account and you do not need any git software. On that p
 
 1. **Who I am and what my business does.** Two or three sentences, written the way you would say it out loud to a stranger at a bar.
 2. **My offer and pricing rules.** The exact price, the exact guarantee, and the rules around them: what you never discount, what you never quote over email.
-3. **My ICP.** Who you sell to and, just as important, who you refuse. A one line refusal rule saves more bad drafts than the whole rest of the file.
+3. **My ideal customer.** Who you sell to and, just as important, who you refuse. A one line refusal rule saves more bad drafts than the whole rest of the file.
 4. **Writing rules.** Three real examples of how you talk: a sentence you would actually send, a word you never use, and a phrase you are tired of seeing from AI tools.
 5. **Output standards.** Format rules you genuinely care about. Length caps, no bullet points inside emails, subject line limits.
 6. **Things Claude should never do.** The section people skip and regret. List the specific mistakes that already reached a client.

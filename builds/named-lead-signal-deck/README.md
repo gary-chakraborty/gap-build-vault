@@ -52,7 +52,7 @@ flowchart TD
 Not a proposal. Not a pitch deck. It never states your price and it never goes out cold.
 
 - **The gate** stops you burning an afternoon on a lead who was never going to buy.
-- **The research prompt** hunts five signal types and is written to drop a company rather than invent an event for it.
+- **The research prompt** hunts five signal types, and drops a company rather than invent an event for it.
 - **Verification** is yours, by hand, on the real page. No exceptions.
 - **The opener prompt** turns one verified signal into a message under 64 words.
 - **The deck** is four columns: company, live signal, why it matters, the opener.
@@ -210,7 +210,7 @@ Made-up example, invented to show the shape. Harrow Point Logistics is not a rea
 
 **One verified row:**
 
-> Company: Harrow Point Logistics, regional 3PL, around 184 staff, Reno NV.
+> Company: Harrow Point Logistics, a regional shipping and warehousing firm, around 184 staff, Reno NV.
 > Signal: opened a new 138,500-square-foot distribution center in Reno, covered in the local business journal, March 2026.
 > Why it matters: a site that size usually outpaces the hiring channels that filled the smaller one.
 
@@ -238,7 +238,7 @@ That is one slide. Repeat until you have 6 to 8.
 | The signal is real but the date is old, or written as "recently" | Stale signal. It reads as homework done months ago | Delete the row. For a new hire only, 12 months is still inside the window; everything else is 90 days |
 | Two slides are the same company under different names, or a parent and its subsidiary | Duplicate rows from two sources | Sort the sheet by Company before you build slides. Keep the row with the stronger source. A duplicate in a deck of six is the first thing a prospect notices |
 | The company exists but the event belonged to a similarly named one | Name collision. Common with regional firms | Compare the domain on the source page with the company's own website. If they differ, delete the row and check the rest of the sheet the same way |
-| The lead replies "these are not really our market" | The ICP sentence in Phase 1 was wider than the lead's actual market | Ask them which two of the six are closest, then rebuild around those. That reply is a live qualifying answer, not a rejection |
+| The lead replies "these are not really our market" | The sentence you wrote in Phase 1 about who they sell to was wider than their real market | Ask them which two of the six are closest, then rebuild around those. That reply is a live qualifying answer, not a rejection |
 | The opener comes back at 90 words with a meeting ask in it | The tool ignored rules 1 and 3 | Cut it yourself to under 64 words and delete the ask. Openers over the cap read as a pitch, which is the exact thing the deck exists to avoid |
 
 ## Tell me how it went
