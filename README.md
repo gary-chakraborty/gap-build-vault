@@ -12,6 +12,12 @@ Every build lives in its own folder under [`builds/`](builds/). Each one has:
 
 Browse the cards on the site, or dig through the folders right here.
 
+## Set it up without coding
+
+Every build is prompts and checklists, not software. [SETUP-WITH-CLAUDE.md](SETUP-WITH-CLAUDE.md) shows both ways to
+run one: in your browser on claude.ai, or in your editor with Claude Code (VS Code, Cursor, Antigravity or a terminal),
+where it reads the folder and runs the scripts for you.
+
 ## The whole GTM stack, in order
 
 1. [`signal-prospecting-system`](builds/signal-prospecting-system): who changed something this week

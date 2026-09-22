@@ -696,10 +696,11 @@ video {
   gap: 6px 14px;
 }
 
-/* The reading column keeps its own narrower page so the nav sits beside the
-   text instead of drifting to the far edge of the screen. */
+/* The reading column keeps its own page so the nav sits beside the text. Wide
+   enough that a diagram and a table fit without sideways scrolling; paragraphs
+   are held to --measure below, so the extra width goes to tables and diagrams. */
 .build-shell {
-  max-width: 1010px;
+  max-width: 1320px;
 }
 
 .build-layout {
@@ -711,7 +712,7 @@ video {
   .build-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 196px;
-    gap: 60px;
+    gap: 56px;
     align-items: start;
   }
 }
@@ -777,9 +778,19 @@ video {
 
 .prose {
   padding: 40px 0 8px;
-  max-width: var(--measure);
   font-size: 1.06rem;
   line-height: 1.72;
+}
+
+/* Text keeps the reading measure. Tables, diagrams and code use the full
+   column, so a row fits on one line and a diagram fits on one screen. */
+.prose > p,
+.prose > ul,
+.prose > ol,
+.prose > h2,
+.prose > h3,
+.prose > blockquote {
+  max-width: var(--measure);
 }
 
 .prose > *:first-child {
@@ -1192,12 +1203,18 @@ video {
   text-align: center;
 }
 
-/* Let a wide diagram keep its real size and scroll, rather than shrinking to
-   an unreadable thumbnail on a phone. */
+/* On a phone a diagram keeps its real size and scrolls, rather than shrinking
+   to an unreadable thumbnail. On a laptop it fits the frame instead. */
 .diagram-body svg {
   width: auto;
   max-width: none;
   height: auto;
+}
+
+@media (min-width: 760px) {
+  .diagram-body svg {
+    max-width: 100%;
+  }
 }
 
 .diagram-pending {

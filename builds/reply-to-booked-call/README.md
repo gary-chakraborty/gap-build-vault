@@ -33,13 +33,12 @@ happens instead of the day it was booked, tells you the wrong story about what i
 
 ```mermaid
 flowchart LR
-  A["Email: two touches<br/>outbound-agent-stack"] --> R["Someone replies"]
-  L["LinkedIn: two touches<br/>linkedin-two-touches.md"] --> R
-  R --> W["Warm reply ladder<br/>4 turns, 1 question each"]
+  E["Email<br/>two touches"] --> R["A reply"]
+  L["LinkedIn<br/>two touches"] --> R
+  R --> W["Warm ladder<br/>four turns"]
   W --> B["Booked"]
-  B --> D["Booking desk<br/>owner, call list, no-show plan"]
-  D --> C["The call happens"]
-  B --> S["Weekly scoreboard<br/>counted the day they book"]
+  B --> D["Booking desk<br/>reminder, no-show plan"]
+  B --> S["Scoreboard<br/>counted on booking day"]
 ```
 
 ## The whole stack, in order
@@ -48,12 +47,12 @@ This build is the last piece. Run the others first.
 
 | Step | Build | What it does |
 |---|---|---|
-| 1 | [`signal-prospecting-system`](../signal-prospecting-system) | Finds who changed something this week |
-| 2 | [`outbound-agent-stack`](../outbound-agent-stack) | Eight agents, research to the two emails |
-| 3 | [`reply-to-booked-call`](.) · `linkedin-two-touches.md` | The LinkedIn lane |
-| 4 | [`ai-inbox-manager`](../ai-inbox-manager) | Sorts every reply and drafts the answer |
-| 5 | [`reply-to-booked-call`](.) · `warm-reply-ladder.md`, `booking-desk.md` | Reply to booked call to call that happens |
-| 6 | [`reply-to-booked-call`](.) · `weekly_scoreboard.py` | The numbers, every Monday |
+| 1 | [`signal-prospecting-system`](../signal-prospecting-system) | Who changed something this week |
+| 2 | [`outbound-agent-stack`](../outbound-agent-stack) | Eight agents, research to two emails |
+| 3 | [`reply-to-booked-call`](.) | The LinkedIn lane |
+| 4 | [`ai-inbox-manager`](../ai-inbox-manager) | Sorts replies, drafts the answer |
+| 5 | [`reply-to-booked-call`](.) | Warm replies and the booking desk |
+| 6 | [`reply-to-booked-call`](.) | The numbers, every Monday |
 
 ## What you need first
 
@@ -80,44 +79,64 @@ This build is the last piece. Run the others first.
 | `booking-desk.md` | Owner, call list, reminders, no-shows | Give it to whoever owns the calls |
 | `weekly_scoreboard.py` | Prints the two tables | Run it every Monday |
 
-## Build it
+## Build it, by talking to Claude
 
-### Step 1: Split your LinkedIn list by lane
+You do not split the LinkedIn list by hand, and you do not type the call list yourself. You hand Claude this folder and
+answer its questions. Full setup, both ways in, is in [SETUP-WITH-CLAUDE.md](https://github.com/gary-chakraborty/gap-build-vault/blob/main/SETUP-WITH-CLAUDE.md). The short
+version:
 
-1. Export your LinkedIn list. Mark who is Open Profile.
-2. Open Profile → the free message sequence. Everyone else → the Connect sequence.
-3. Two touches each. Write touch 2 as one question that needs a fact to answer.
+- **In your browser:** claude.ai, new project, add these four files to Project knowledge.
+- **In your editor:** open this folder in Claude Code (VS Code, Cursor, Antigravity or the terminal) and it reads the
+  files itself.
 
-**You know this worked when:** no send shows as cancelled or failed in your LinkedIn tool after the first day.
+Then three prompts, in order. Paste each one as it is written.
 
-### Step 2: Put one name on the calls
+### Job 1: split the LinkedIn list, and write both sequences
 
-1. Pick the one person who owns every booked call.
-2. Give them `booking-desk.md` and the warm reply ladder.
-3. Build today's call list with the two columns: What happened, and Their last message.
+```text
+Read linkedin-two-touches.md.
 
-**You know this worked when:** you can ask that person "who is booked for Tuesday and why" and they answer without
-opening five tabs.
+Here is my export of the people I want to reach on LinkedIn (CSV attached). For each
+person, decide which lane they belong in: the InMail lane only if the profile is an
+Open Profile, the connection-request lane for everyone else. If you cannot tell from
+the row, put them in the connection lane and say why.
 
-### Step 3: Run the scoreboard
-
-1. Get three API keys: Smartlead (Settings, API key), HeyReach (Integrations, API), Calendly (Integrations, API and
-   webhooks, personal access token).
-2. In a terminal:
-
-```bash
-export SMARTLEAD_API_KEY="..."
-export HEYREACH_API_KEY="..."
-export CALENDLY_API_KEY="..."
-export CALENDLY_EVENT_NAME="Intro call with Acme"
-python3 weekly_scoreboard.py
+Give me back two CSVs, one per lane, and for each lane the two touches written out:
+touch 1, touch 2, and the wait between them. Touch 2 asks one question that needs a
+fact to answer. Nothing over 64 words. Then tell me what you were unsure about.
 ```
 
-3. Optional: keep a `positives.csv` with `date,channel,name` for every positive reply and add
-   `export POSITIVES_CSV=positives.csv`. That fills the positive reply rows and tells the script which channel each
-   booking came from.
+**You know this worked when:** you get two files, and nothing in your LinkedIn tool shows as cancelled after day one.
 
-**You know this worked when:** you get two tables, and the booked count this week includes calls that are set for
+### Job 2: build today's call list
+
+```text
+Read booking-desk.md.
+
+Here are the threads for everyone with a call booked this week (pasted below).
+Build today's call list. One row per person, and exactly two context columns:
+"What happened" in 2 to 4 plain sentences, ending with the first line I say on the
+phone, and "Their last message" in their own words with one line of context.
+
+Where something is missing, write what is missing. Never leave a cell blank.
+Then list who has no reminder scheduled yet and draft the reminder for each.
+```
+
+**You know this worked when:** you can read one row out loud and know how to open the call.
+
+### Job 3: switch the scoreboard on
+
+```text
+Read weekly_scoreboard.py.
+
+Walk me through getting the three API keys it needs, one at a time, and wait for me
+after each one. Then run it and explain the two tables it prints in plain English:
+what each row means, and which number I should be trying to move next week.
+
+After that, set it to run every Monday morning and tell me where the output will land.
+```
+
+**You know this worked when:** you get two tables, and this week's booked count includes the calls that are set for
 next week.
 
 ## Run it the first time
@@ -129,16 +148,6 @@ A real run on GAP's own numbers, week of 14 September 2026, read on the 18th:
 - 9 calls booked in total, counting rebooks. 5 of them take place the week after.
 
 A scoreboard that counted by call day would have shown 4 calls that week.
-
-## When it breaks
-
-| What you see | What it means | What to do |
-|---|---|---|
-| `STOPPED: Calendly returned no bookings` | The event name does not match exactly | Copy the event name from Calendly, including capitals |
-| Smartlead read fails with 403 | Cloudflare blocked the request | Keep the browser user agent line in the script |
-| Your email rate looks half of what you expected | Something is dividing by emails sent | Only Email 1 sends count as new people. Check your follow-up sequences are named with "follow-up" or "chase" |
-| A person shows twice as booked | They rebooked with a different email | Merge them in your positives file by name |
-| LinkedIn sends show as cancelled | Free messages went to people without Open Profile | Move them to the Connect lane |
 
 ## Tell me how it went
 
