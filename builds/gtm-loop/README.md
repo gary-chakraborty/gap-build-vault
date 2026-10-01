@@ -79,11 +79,12 @@ with one file about your business and grows every week.
 | 09 | Reply Desk | Labels every reply and drafts the answer in Slack | Slack | How each kind of reply was answered before |
 | 10 | Booker | Gets the call on the calendar, counts every reminder | Calendly | What reminders already went out |
 | 11 | Call Prep | A brief the morning of every call | Claude | Every past call with a buyer like this one |
-| 12 | Scoreboard | One table every Monday: people reached, calls booked, by reason | Your sending tools + calendar | Last week's table, to show the change |
-| 13 | Call Coach | Scores every call and writes the fix for next time | Claude | The scoring rubric and your last scored calls |
+| 12 | Call Coach | Scores every call and writes the fix for next time | Claude | The scoring rubric and your last scored calls |
+| 13 | Metrics Agent | Measures every step: people reached, replies, calls booked, call scores, which offer and which reason. Posts one table every Monday | Your sending tools, calendar, call scores | Last week's numbers, to show the change |
 
-**The loop closes in two places.** Call Coach writes what worked on each call back into the
-brain. Scoreboard writes the week's numbers back in. Next week, every agent above reads them.
+**The loop closes through the Metrics Agent.** It measures every other agent: which reason for
+writing got replies, which offer booked calls, how each call scored. It writes those numbers back
+into the brain every week. Next week, every agent above reads them before it moves.
 
 ## What you need
 
