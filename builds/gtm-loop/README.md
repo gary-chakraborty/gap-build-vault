@@ -1,6 +1,6 @@
 ---
 title: "The GTM Loop"
-oneliner: "Nine steps, an agent on every one, and the last step feeds the first. The full install: tools, connections, keys, and what breaks."
+oneliner: "13 agents, one shared brain, and the last step feeds the first. The full install: tools, connections, keys, and what breaks."
 tags: [outbound, agents, signals, calls, scoreboard, setup]
 date: 2026-10-02
 keyword: STACK
@@ -55,6 +55,35 @@ flowchart TD
 
 **The order is the product.** Step 10 is the one almost everyone skips. Without it you run the
 same loop with the same mistakes every month and call it consistency.
+
+## The 13 agents and the brain they share
+
+Every agent below is a Claude skill: one folder with its instructions, its rules and its examples.
+None of them start from zero. Each one reads the brain first.
+
+**The brain** is one folder of plain notes (Obsidian works well) that every agent can search:
+what buyers said on calls, which reasons for writing got replies, which offers booked calls, and
+what went wrong last time. Ours holds 1,237 notes with 3,955 links between them. Yours starts
+with one file about your business and grows every week.
+
+| # | Agent | What it does | Runs on | Reads first, from the brain |
+|---|---|---|---|---|
+| 01 | Market Scout | Learns the market: what is changing, who is buying, in dated facts | Web search, Reddit, review sites | Past research on this market, so it only adds what is new |
+| 02 | Buyer Mapper | Maps the buyer in their own words | Claude | Buyer quotes from past calls and replies |
+| 03 | Offer Builder | One promise, one number, every blank pinned | Claude | Which offers booked calls before, and which did not |
+| 04 | Signal Hunter | Finds who needs it this week: new hires, funding, new leaders | Job boards, funding news, Apify | Which reasons for writing got replies last month |
+| 05 | List Builder | One right person per company, every email checked | Apollo, MillionVerifier | Who is already on a list or already said no |
+| 06 | Researcher | One line on each person's week, from a public source | Web, Claude | What a good line looked like on past sends |
+| 07 | Email Writer | Two touches, then stop | Smartlead | The written templates that worked, line by line |
+| 08 | LinkedIn Writer | Connect, then one message and one bump | HeyReach | Same as the Email Writer |
+| 09 | Reply Desk | Labels every reply and drafts the answer in Slack | Slack | How each kind of reply was answered before |
+| 10 | Booker | Gets the call on the calendar, counts every reminder | Calendly | What reminders already went out |
+| 11 | Call Prep | A brief the morning of every call | Claude | Every past call with a buyer like this one |
+| 12 | Scoreboard | One table every Monday: people reached, calls booked, by reason | Your sending tools + calendar | Last week's table, to show the change |
+| 13 | Call Coach | Scores every call and writes the fix for next time | Claude | The scoring rubric and your last scored calls |
+
+**The loop closes in two places.** Call Coach writes what worked on each call back into the
+brain. Scoreboard writes the week's numbers back in. Next week, every agent above reads them.
 
 ## What you need
 
