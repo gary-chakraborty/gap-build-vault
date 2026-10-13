@@ -9,6 +9,38 @@ setup: "One afternoon for the first loop"
 level: "Some setup. No code needed to start"
 ---
 
+## Your first 10 minutes
+
+Before you install anything, see the scoring step work on your own market.
+
+Pick 5 companies you already want to sell to. For each one, find one thing that changed there
+lately: a job ad, a new leader, a funding round, a tool they use got sold. Then paste this into
+Claude with your 5 companies under it:
+
+```text
+I sell [what you sell] to [who you sell to].
+For each company below, I give you one thing that changed there.
+Ask three questions of each change:
+1. Does it have a date?
+2. Can we list who it hit?
+3. Does my result fix it?
+Answer each question yes or no, with the reason in one line.
+Then mark the company KEEP if all three are yes, or WATCH if any one is no.
+For every WATCH, say what would have to happen to make it a KEEP.
+
+Companies:
+1. [company] - [what changed, and the link where you saw it]
+2.
+3.
+4.
+5.
+```
+
+**You know this worked when:** you have a KEEP or WATCH next to all 5 companies, and you can say
+why for each one. The KEEPs are who you write to this week. The WATCHes you check again next week.
+
+That is step 2 of the four steps below. The rest of this page is how to make it run every week.
+
 ## What this is
 
 Most AI sales setups are a straight line. Find people, write, send, done.
@@ -63,6 +95,12 @@ those doubts before anyone asks.
 Where each one lives in the build: steps 1 and 2 are
 [Steps 1 to 6](#steps-1-to-6-research-offer-list-send), step 3 is
 [Steps 7 and 8](#steps-7-and-8-reply-and-book), step 4 is [Step 10](#step-10-feed-it-back).
+
+## When you build the full loop
+
+Everything from here down is the full build: all ten steps, the agents, every account, the
+files, and what breaks. You do not need it for your first 10 minutes. The links to other builds
+in this vault are next steps, not required.
 
 ## The loop
 
