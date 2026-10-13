@@ -48,7 +48,7 @@ flowchart TD
 | 4 · Find who needs it now | One dated reason to write to each company this week. No reason, no message | [Signal Check](../signal-prospecting-system/) and The Eight Agents · agent 6 |
 | 5 · Build and check the list | Real companies only, one person each, every address verified | The Eight Agents · agents 4 and 5 |
 | 6 · Write and send | Two touches from a script that already works, then stop | The Eight Agents · agent 7 |
-| 7 · Answer every reply | Sort it, draft the answer, a person sends it within minutes | [The Reply Desk](../ai-inbox-manager/) |
+| 7 · Answer every reply | Read it, work out what they mean, send the answer | [The Reply Desk](../ai-inbox-manager/) |
 | 8 · Book the call | Two real times, booked for them, reminders that do not double up | [Reply to Booked Call](../reply-to-booked-call/) |
 | 9 · Run the call | A brief before, a score after | `09-call-brief-prompt.md`, `10-call-score-prompt.md` here |
 | 10 · Feed it back | Count the week properly. What clearly won goes everywhere that week. What you are not sure about changes on its own | `11-weekly-loop-prompt.md` here |
