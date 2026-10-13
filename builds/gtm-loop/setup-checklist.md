@@ -54,6 +54,6 @@ Tick each box only when its check passed, not when the account exists.
 
 - [ ] Count last week: new people reached, by reason and by channel. Booked from the calendar
 - [ ] Any tool that would not load is written as UNKNOWN, not 0
-- [ ] `11-weekly-loop-prompt.md` run. One change chosen, with the number that will prove it
-- [ ] Business file updated with the change and this week's buyer words
+- [ ] `11-weekly-loop-prompt.md` run. Clear wins rolled out everywhere. One unsure thing changed on its own, with the number that will prove it
+- [ ] Business file updated with the changes and this week's buyer words
 - [ ] Next week's list, offer or reason for writing is different because of it

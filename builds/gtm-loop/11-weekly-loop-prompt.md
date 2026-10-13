@@ -27,9 +27,13 @@ Do this:
    "too small to call" and do not call a winner.
 3. From the replies and the call scores, pull the exact words buyers used this week that are
    not already in my business file.
-4. Give me ONE change for next week, in exactly one of these places:
+4. Sort what this week showed into two groups. The places a change can go are:
    step 1 (who we research), step 3 (the offer line), step 4 (which reason we write about).
-   Say what to change, the new wording, and what number would tell us it worked.
+   - CLEAR WINS: beat the rest by a clear margin on a big enough sample (see 2). Each one
+     goes everywhere this same week. Tell me where it goes and the new wording.
+   - NOT SURE: might be working, but the sample is small or mixed. Pick one and change it
+     on its own next week, so we can tell what moved. Say what to change, the new wording,
+     and what number would tell us it worked.
 5. Write the 3 lines I should add to my business file, so next week's agents start from it.
 ```
 

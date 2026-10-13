@@ -51,7 +51,7 @@ flowchart TD
 | 7 · Answer every reply | Sort it, draft the answer, a person sends it within minutes | [The Reply Desk](../ai-inbox-manager/) |
 | 8 · Book the call | Two real times, booked for them, reminders that do not double up | [Reply to Booked Call](../reply-to-booked-call/) |
 | 9 · Run the call | A brief before, a score after | `09-call-brief-prompt.md`, `10-call-score-prompt.md` here |
-| 10 · Feed it back | Count the week properly, then change one thing in step 1, 3 or 4 | `11-weekly-loop-prompt.md` here |
+| 10 · Feed it back | Count the week properly. What clearly won goes everywhere that week. What you are not sure about changes on its own | `11-weekly-loop-prompt.md` here |
 
 **The order is the product.** Step 10 is the one almost everyone skips. Without it you run the
 same loop with the same mistakes every month and call it consistency.
@@ -127,7 +127,7 @@ Everything is in a public folder on GitHub. No account, no sign-up.
 | `03b-competitor-ads-prompt.md` | Reads what competitors are running and how long it has lasted | Run it before you lock the offer |
 | `09-call-brief-prompt.md` | A one-page brief before every sales call | Run it the morning of the call |
 | `10-call-score-prompt.md` | Scores a recorded call and names where it slipped | Run it within a day of the call |
-| `11-weekly-loop-prompt.md` | Turns the week's numbers into one change for next week | Run it every Monday |
+| `11-weekly-loop-prompt.md` | Turns the week's numbers into next week's changes: clear wins go everywhere, anything unsure is tested on its own | Run it every Monday |
 | `llm_router_example.py` | A small script: Claude first, then Gemini, then OpenAI, and it fails loudly | Use it for any step you automate |
 | `setup-checklist.md` | The install order and your first two weeks | Follow it day one |
 
@@ -189,7 +189,9 @@ should have said, not a general tip.
    [Reply to Booked Call](../reply-to-booked-call/) (`weekly_scoreboard.py`) or count by hand
    from the tools.
 2. Paste the numbers into `11-weekly-loop-prompt.md`.
-3. Make the **one** change it gives you. Update your business file so step 1 starts from it.
+3. Make the changes it gives you. Anything that clearly won goes everywhere that same week.
+   Only a thing you are **not** sure about gets changed on its own, so you can tell what moved.
+   Update your business file so step 1 starts from it.
 
 > [!WARNING]
 > Count **new people reached**, never emails sent. Emails sent counts every follow-up again,
