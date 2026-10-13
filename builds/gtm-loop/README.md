@@ -24,6 +24,46 @@ and where a connection stops short so you have to call the tool's API directly.
 **2. What breaks, and the guard for each one.** Most of these failures are quiet. Nothing errors.
 The numbers just come out wrong, or nothing sends, and it looks fine.
 
+## The four steps from the post
+
+The post names four steps. Here is each one, the way we run it. The full build further down adds
+the install, the keys and the guards.
+
+**1. Sort the market into three groups.** Every week, look for changes in three places.
+
+- What the market does to the buyer. A tool they rely on gets sold.
+- What the buyer is doing. A job ad for the problem you fix, a new leader, a funding round.
+- How their market is changing. A trend with no date and no names.
+
+Never write to anyone over a trend alone. The trend shapes what you say. The first two groups
+pick who you write to.
+
+**2. Score every change before you write.** Ask three questions of each change, and write the
+answers down so two people get the same score.
+
+- Does it have a date?
+- Can you list who it hit?
+- Does your result fix it?
+
+A change that scores low goes on a watch list, and you check it again next week. Nothing gets
+thrown away. Move fast on a new leader. Most new leaders pick their tools and vendors in their
+first 60 to 90 days.
+
+**3. What happens to every reply.** Each reply gets a tag before anyone answers it: interested,
+wants info, wrong person, or out of office. Each tag has one written answer, and the agent sends
+the answer that matches the tag. When the reply is an objection, sort it by what is behind it:
+trust, money, or another vendor. Keep one written answer per objection. The first time a new
+objection shows up, write its answer and add it, so the next reply finds it.
+
+**4. What feeds back.** Every Monday, paste the week's objections and call scores into
+`11-weekly-loop-prompt.md`. It pulls out the exact words buyers pushed back with and writes them
+into your business file. Step 1 starts from that file, so next week's first messages answer
+those doubts before anyone asks.
+
+Where each one lives in the build: steps 1 and 2 are
+[Steps 1 to 6](#steps-1-to-6-research-offer-list-send), step 3 is
+[Steps 7 and 8](#steps-7-and-8-reply-and-book), step 4 is [Step 10](#step-10-feed-it-back).
+
 ## The loop
 
 ```mermaid
