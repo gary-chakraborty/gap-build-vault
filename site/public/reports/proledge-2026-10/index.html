@@ -1,0 +1,192 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>ProLedge Owner Search</title><style>:root{color-scheme:light}html,body{margin:0}img{max-width:100%}</style><title>ProLedge Owner Search</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: one reading column. Who we looked for, how we found them, what we sent, what is still missing. */
+:root{
+  --paper:#fbfaf8; --ink:#1a1a18; --muted:#6b6862; --rule:#e2ded6;
+  --card:#ffffff; --live:#2f6f4f; --live-bg:#e8f1ec; --past:#8a8176; --past-bg:#f0ece5;
+  --accent:#8a5a2b; --accent-soft:#f3ece3;
+  --display:"Newsreader",Georgia,serif; --body:"IBM Plex Sans",system-ui,sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#16150f; --ink:#ece8df; --muted:#9a948a; --rule:#302d26;
+  --card:#1d1c16; --live:#86c9a4; --live-bg:#1b2e24; --past:#8a8176; --past-bg:#24221c;
+  --accent:#d6a06a; --accent-soft:#2a241b; color-scheme:dark;}}
+:root[data-theme="dark"]{
+  --paper:#16150f; --ink:#ece8df; --muted:#9a948a; --rule:#302d26;
+  --card:#1d1c16; --live:#86c9a4; --live-bg:#1b2e24; --past:#8a8176; --past-bg:#24221c;
+  --accent:#d6a06a; --accent-soft:#2a241b; color-scheme:dark;}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--ink);font-family:var(--body);line-height:1.55;margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-block:40px;padding-left:20px;padding-right:20px}
+.eyebrow{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(30px,5vw,42px);line-height:1.12;margin:0 0 14px;text-wrap:balance}
+.sub{font-size:17px;color:var(--muted);margin:0 0 6px;max-width:62ch}
+.asof{font-size:13px;color:var(--muted);margin:18px 0 0}
+hr{border:0;border-top:1px solid var(--rule);margin:36px 0}
+h2{font-family:var(--display);font-weight:600;font-size:23px;margin:0 0 6px;text-wrap:balance}
+.lede{color:var(--muted);margin:0 0 20px;max-width:62ch}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.tile{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px;min-width:0}
+.tile .n{font-family:var(--display);font-size:33px;font-weight:600;line-height:1;font-variant-numeric:tabular-nums}
+.tile .l{font-size:13px;color:var(--muted);margin-top:7px}
+.steps{display:grid;gap:12px;margin:0}
+.step{display:grid;grid-template-columns:30px 1fr;gap:14px;background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:15px 16px;min-width:0}
+.step .num{font-family:var(--display);font-size:16px;font-weight:600;color:var(--accent);font-variant-numeric:tabular-nums;padding-top:1px}
+.step h3{font-family:var(--body);font-size:15px;font-weight:600;margin:0 0 3px}
+.step p{font-size:14px;color:var(--muted);margin:0}
+.sig{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.sigcard{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:16px;min-width:0}
+.sigcard h3{font-family:var(--body);font-size:15px;font-weight:600;margin:0 0 4px}
+.sigcard .cnt{font-family:var(--display);font-size:27px;font-weight:600;font-variant-numeric:tabular-nums}
+.sigcard p{font-size:13.5px;color:var(--muted);margin:7px 0 0}
+.sigcard .ex{font-size:13px;color:var(--ink);background:var(--accent-soft);border-radius:7px;padding:9px 11px;margin-top:11px;font-style:italic}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:640px){.two{grid-template-columns:1fr}}
+.col{background:var(--card);border:1px solid var(--rule);border-radius:10px;padding:17px;min-width:0}
+.col h3{font-family:var(--body);font-size:14px;font-weight:600;margin:0 0 11px;letter-spacing:.02em}
+.col ul{margin:0;padding-left:17px}
+.col li{font-size:14px;margin-bottom:8px;color:var(--muted)}
+.col li strong{color:var(--ink);font-weight:500}
+.tablewrap{overflow-x:auto;border:1px solid var(--rule);border-radius:10px;background:var(--card)}
+table{border-collapse:collapse;width:100%;font-size:14px;min-width:560px}
+th{text-align:left;font-size:11.5px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:12px 14px;border-bottom:1px solid var(--rule);white-space:nowrap}
+td{padding:11px 14px;border-bottom:1px solid var(--rule);vertical-align:top}
+tr:last-child td{border-bottom:0}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.pill.on{background:var(--live-bg);color:var(--live)}
+.pill.off{background:var(--past-bg);color:var(--past)}
+.co{font-weight:600}
+.ti{font-size:12.5px;color:var(--muted)}
+.note{background:var(--card);border:1px solid var(--rule);border-left:3px solid var(--accent);border-radius:8px;padding:16px 18px;margin:22px 0}
+.note p{margin:0;font-size:15px}
+.note p+p{margin-top:9px}
+ul.plain{padding-left:19px;margin:12px 0;max-width:62ch}
+ul.plain li{margin-bottom:7px}
+.foot{font-size:13px;color:var(--muted);margin-top:14px;max-width:62ch}
+@media(max-width:430px){.wrap{padding-block:28px}.tile .n{font-size:29px}}
+</style>
+
+<div class="wrap">
+  <p class="eyebrow">ProLedge Bookkeeping &middot; Free introduction round</p>
+  <h1>What we did, and what we found</h1>
+  <p class="sub">You asked us to find owner-run companies in Texas and Florida that had just done something a bookkeeper would notice. Then you asked us to write to them, founder to founder.</p>
+  <p class="sub">Below you will find who we looked for, how we found them, what we wrote to them, and the four things you never sent us.</p>
+  <p class="asof">Figures read 14 October 2026.</p>
+
+  <hr>
+
+  <h2>The work in four steps</h2>
+  <p class="lede">We found every name in public records. We checked each one by hand before we wrote to anybody.</p>
+  <div class="steps">
+    <div class="step"><div class="num">1</div><div><h3>Set the rules</h3><p>We wrote down your filters from our calls: the owner only, no government work, nobody who wants a bookkeeper in their office, under 100 staff, firms the size that pays $750 to $2,000 a month.</p></div></div>
+    <div class="step"><div class="num">2</div><div><h3>Watch for the moment</h3><p>We tracked four public records that say a company just got busier. Each one has a date on it, so we know how fresh it is.</p></div></div>
+    <div class="step"><div class="num">3</div><div><h3>Find the owner, check the address</h3><p>We found the owner by name and title, then verified every email address before use. No guessed addresses, no bought lists.</p></div></div>
+    <div class="step"><div class="num">4</div><div><h3>Write to them as a founder</h3><p>Two short emails each, naming the specific thing we noticed. Nothing went out until you approved the wording.</p></div></div>
+  </div>
+
+  <hr>
+
+  <h2>What we searched for</h2>
+  <p class="lede">We watched for four things that tell us a company just got busier. We can look each one up in a public record, and we can see the date it happened. We are not guessing who might be interested.</p>
+  <div class="sig" id="sigcards"></div>
+
+  <hr>
+
+  <h2>Where it got to</h2>
+  <div class="tiles">
+    <div class="tile"><div class="n">66</div><div class="l">Owners found</div></div>
+    <div class="tile"><div class="n">46</div><div class="l">Written to</div></div>
+    <div class="tile"><div class="n">91</div><div class="l">Emails sent</div></div>
+    <div class="tile"><div class="n">$0</div><div class="l">Spent on data</div></div>
+  </div>
+  <div class="note">
+    <p><strong>Nobody has replied yet.</strong> We expected that at this size. When you write to 46 people, you normally get back nothing or one reply. So this round cannot tell you whether the idea works.</p>
+    <p>Two things also hold us back. We had open tracking switched off, so we cannot see who read the emails. And we have not written to 20 of the owners we found.</p>
+  </div>
+
+  <hr>
+
+  <h2>What we had, and what we did not</h2>
+  <p class="lede">On a free round we use whatever is already public. When you hire us properly, we start from inside your business, and that is where the sharper targeting comes from.</p>
+  <div class="two">
+    <div class="col">
+      <h3>What we worked from</h3>
+      <ul>
+        <li><strong>Your rules.</strong> You gave us these on our calls.</li>
+        <li><strong>Public records.</strong> We read permits, state filings and job ads.</li>
+        <li><strong>Your approval.</strong> You signed off every email before we sent it.</li>
+        <li><strong>What ProLedge does.</strong> You described it to us in your own words.</li>
+      </ul>
+    </div>
+    <div class="col">
+      <h3>What we never had</h3>
+      <ul>
+        <li><strong>A sample monthly report.</strong> Our second email offers one. You never sent us a page, so we had nothing to offer them. When we offer our other clients' prospects something useful, they reply.</li>
+        <li><strong>Your current client list.</strong> We wanted to be certain we never wrote to somebody you already look after.</li>
+        <li><strong>Which clients you like most.</strong> You told us they run from $6,000 to $25,000 a year. We did not know which end to hunt for.</li>
+        <li><strong>How many new clients you can take.</strong> You never gave us a number.</li>
+      </ul>
+    </div>
+  </div>
+
+  <hr>
+
+  <h2>What we are aiming at</h2>
+  <p class="lede">You told us one client is worth $6,000 to $25,000 a year to ProLedge. So you cover most of a year of our fee with one new client.</p>
+  <ul class="plain">
+    <li>We write to enough owners each month that the reply rate means something. Not 46 in total.</li>
+    <li>We keep whichever of the four reasons brings replies, and we drop the ones that do not.</li>
+    <li>We send your sample report page in the second email, so it carries something worth opening.</li>
+    <li>You talk to owners who look like the clients you already like.</li>
+  </ul>
+  <p class="sub">We find names by hand, so we only add about five owners a week. Until a machine does the finding, you will never get a list big enough to judge.</p>
+
+  <hr>
+
+  <h2>Everyone we found</h2>
+  <p class="lede">Here are all 66, with the reason we picked each one and when it happened. We can still mention the ones marked &ldquo;still current&rdquo;. The others went stale while we waited.</p>
+  <div class="tablewrap">
+    <table>
+      <thead><tr><th>Company</th><th>Why we picked them</th><th>Date</th><th>Status</th></tr></thead>
+      <tbody id="tb"></tbody>
+    </table>
+  </div>
+  <p class="foot">We read city permit records, Texas Comptroller filings, Florida business records and public job ads. We checked every email address before we used it. We did not buy any data for this round.</p>
+</div>
+
+<script>const ROWS=[{"company": "Innovative Air Solutions", "title": "Owner", "signal": "Bookkeeper-Ad", "date": "2026-09-27", "expiry": "2026-10-27", "live": true, "line": "I noticed Innovative Air Solutions is hiring a bookkeeper in Orange."}, {"company": "J-Tech Digital, Inc", "title": "Founder and CEO", "signal": "Bookkeeper-Ad", "date": "2026-09-28", "expiry": "2026-10-28", "live": true, "line": "I noticed J-Tech Digital is hiring an AP specialist in Sugar Land."}, {"company": "Permian Basin Materials", "title": "CEO", "signal": "Bookkeeper-Ad", "date": "2026-09-16", "expiry": "2026-10-16", "live": true, "line": "I noticed Permian Basin Materials is hiring an AP clerk in Odessa."}, {"company": "URBN Dental Implants & Invisalign", "title": "Co-Founder", "signal": "Bookkeeper-Ad", "date": "2026-09-20", "expiry": "2026-10-20", "live": true, "line": "I saw URBN Dental is hiring an office manager in Houston."}, {"company": "Walker Property Services", "title": "Company Owner", "signal": "Bookkeeper-Ad", "date": "2026-09-15", "expiry": "2026-10-15", "live": true, "line": "I noticed Walker Property Services is hiring an accounting assistant."}, {"company": "Almighty Cleaning, Inc.", "title": "President", "signal": "New-Location", "date": "2026-09-02", "expiry": "2026-11-30", "live": true, "line": "I noticed Almighty Cleaning registered a new location in Euless."}, {"company": "CenTech Automation", "title": "Chief Executive Officer", "signal": "New-Location", "date": "2026-09-08", "expiry": "2026-10-30", "live": true, "line": "I noticed CenTech Automation registered a new location in Garrison."}, {"company": "Half Baked Goodness", "title": "Founder", "signal": "New-Location", "date": "2026-09-18", "expiry": "2026-11-30", "live": true, "line": "I noticed Half Baked Goodness registered a new location in Cypress."}, {"company": "Tech Safety Lines, Inc.", "title": "CEO and President", "signal": "New-Location", "date": "2026-09-18", "expiry": "2026-10-30", "live": true, "line": "I noticed Tech Safety Lines registered a new location in Carrollton."}, {"company": "Tiny Grocer", "title": "Owner", "signal": "New-Location", "date": "2026-08-26", "expiry": "2026-12-30", "live": true, "line": "I noticed Tiny Grocer registered a new location in Austin."}, {"company": "netGenius, Inc. - Managed IT Services", "title": "Owner/Co-founder", "signal": "New-Location", "date": "2026-08-28", "expiry": "2026-11-26", "live": true, "line": "I noticed netGenius registered a new location in Arlington."}, {"company": "Carlson Forest Products", "title": "President", "signal": "New-State", "date": "2026-09-01", "expiry": "2026-11-30", "live": true, "line": "I noticed Carlson Forest Products recently registered to do business in Texas."}, {"company": "Congruit Inc", "title": "Founder and President", "signal": "New-State", "date": "2026-07-31", "expiry": "2026-10-29", "live": true, "line": "I noticed Congruit recently registered to do business in Texas."}, {"company": "Converge IoT", "title": "CEO/Founder", "signal": "New-State", "date": "2026-08-01", "expiry": "2026-10-30", "live": true, "line": "I noticed Converge IoT recently registered to do business in Texas."}, {"company": "A&P Air Conditioning Corporation", "title": "President / Qualifier / Owner", "signal": "Permit-Velocity", "date": "2026-09-17", "expiry": "2026-12-16", "live": true, "line": "I noticed A&P Air Conditioning has new commercial projects around Miami."}, {"company": "A1 DURAN ROOFING INC", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-21", "expiry": "2026-11-19", "live": true, "line": "I noticed A1 Duran Roofing has new commercial projects around Miami."}, {"company": "AC Electrical Inc.", "title": "CEO", "signal": "Permit-Velocity", "date": "2026-09-04", "expiry": "2026-10-19", "live": true, "line": "I noticed AC Electrical has new commercial projects around Miami."}, {"company": "AC QUALITY ELECTRIC LLC", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-09-09", "expiry": "2026-12-08", "live": true, "line": "I noticed AC Quality Electric has new commercial projects around Miami."}, {"company": "ACCURATE ELECTRICAL CONNECTION INC", "title": "President", "signal": "Permit-Velocity", "date": "2026-07-31", "expiry": "2026-10-29", "live": true, "line": "I noticed Accurate Electrical Connection has new commercial projects around Orlando."}, {"company": "ACS Fire and Security", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-16", "expiry": "2026-10-31", "live": true, "line": "I noticed ACS Fire and Security has new commercial projects around Orlando."}, {"company": "ATX Environmental Solutions, LLC", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-12", "expiry": "2026-11-10", "live": true, "line": "I noticed ATX Environmental Solutions has new commercial projects around Austin."}, {"company": "Affordable Air & Heat Inc", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-09-24", "expiry": "2026-12-23", "live": true, "line": "I noticed Affordable Air & Heat has new commercial projects around Miami."}, {"company": "Air At Your Door, Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-02", "expiry": "2026-12-01", "live": true, "line": "I noticed Air At Your Door has new commercial projects around Miami."}, {"company": "All Pro Plumbing Services, Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-02", "expiry": "2026-12-01", "live": true, "line": "I noticed All Pro Plumbing has new commercial projects around Orlando."}, {"company": "Alpha Roofing and Sheet Metal, LLC", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-23", "expiry": "2026-12-22", "live": true, "line": "I noticed Alpha Roofing and Sheet Metal has new commercial projects around Orlando."}, {"company": "Ampology Electrical Services, LLC", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-08-31", "expiry": "2026-11-29", "live": true, "line": "I noticed Ampology Electrical Services has new commercial projects around Austin."}, {"company": "CapStar Electric", "title": "Managing Member", "signal": "Permit-Velocity", "date": "2026-08-05", "expiry": "2026-11-03", "live": true, "line": "I noticed CapStar Electric has new commercial projects around Austin."}, {"company": "Capital Industries, LLC.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-23", "expiry": "2026-12-22", "live": true, "line": "I noticed Capital Industries has new commercial projects around Austin."}, {"company": "Chi Alarms Inc", "title": "Business Owner", "signal": "Permit-Velocity", "date": "2026-08-26", "expiry": "2026-11-24", "live": true, "line": "I noticed Chi Alarms has new commercial projects around Miami."}, {"company": "Colvin Electric Inc", "title": "President", "signal": "Permit-Velocity", "date": "2026-07-31", "expiry": "2026-10-29", "live": true, "line": "I noticed Colvin Electric has new commercial projects around Austin."}, {"company": "Creative Signs Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-23", "expiry": "2026-12-22", "live": true, "line": "I noticed Creative Signs has new commercial projects around Orlando."}, {"company": "Dillon Pools, Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-25", "expiry": "2026-11-23", "live": true, "line": "I noticed Dillon Pools has new commercial projects around Miami."}, {"company": "Epoch Construction", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-27", "expiry": "2026-11-25", "live": true, "line": "I noticed Epoch Construction has new commercial projects around Austin."}, {"company": "FIRE-LINK Technologies, Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-14", "expiry": "2026-11-12", "live": true, "line": "I noticed Fire-Link Technologies has new commercial projects around Miami."}, {"company": "Foley5 Construction, Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-04", "expiry": "2026-12-03", "live": true, "line": "I noticed Foley5 Construction has new commercial projects around Orlando."}, {"company": "HEICHEL PLUMBING, INC.", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-08-31", "expiry": "2026-11-29", "live": true, "line": "I noticed Heichel Plumbing has new commercial projects around Orlando."}, {"company": "Hamker Enterprises, Corporation", "title": "President", "signal": "Permit-Velocity", "date": "2026-07-29", "expiry": "2026-10-27", "live": true, "line": "I noticed Hamker Enterprises has new commercial projects around Miami."}, {"company": "JEMS ELECTRIC, CORP.", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-09-04", "expiry": "2026-12-03", "live": true, "line": "I noticed JEMS Electric has new commercial projects around Miami."}, {"company": "Koala Cooling & Plumbing", "title": "Chief Executive Officer", "signal": "Permit-Velocity", "date": "2026-07-29", "expiry": "2026-10-27", "live": true, "line": "I noticed Koala Cooling & Plumbing has new commercial projects around Austin."}, {"company": "Lift-Texas Construction, LLC", "title": "Co-Founder & Managing Partner", "signal": "Permit-Velocity", "date": "2026-07-23", "expiry": "2026-10-21", "live": true, "line": "I noticed Lift-Texas Construction has new commercial projects around Austin."}, {"company": "MAD Company Mechanical, LLC", "title": "Business Owner", "signal": "Permit-Velocity", "date": "2026-09-25", "expiry": "2026-11-09", "live": true, "line": "I noticed MAD Company Mechanical has new commercial projects around Austin."}, {"company": "MC Aquatic Construction", "title": "President | Founder", "signal": "Permit-Velocity", "date": "2026-08-26", "expiry": "2026-11-24", "live": true, "line": "I noticed MC Aquatic Construction has new commercial projects around Austin."}, {"company": "Metro Dade Security Systems, Inc.", "title": "CEO", "signal": "Permit-Velocity", "date": "2026-08-24", "expiry": "2026-11-22", "live": true, "line": "I noticed Metro Dade Security Systems has new commercial projects around Miami."}, {"company": "Navejas Electric, LLC", "title": "Managing Partner", "signal": "Permit-Velocity", "date": "2026-09-21", "expiry": "2026-11-05", "live": true, "line": "I noticed Navejas Electric has new commercial projects around Austin."}, {"company": "Oscar Air Conditioning Inc", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-04", "expiry": "2026-10-19", "live": true, "line": "I noticed Oscar Air Conditioning has new commercial projects around Miami."}, {"company": "PRAVO Construction", "title": "Chief Executive Officer", "signal": "Permit-Velocity", "date": "2026-09-16", "expiry": "2026-10-31", "live": true, "line": "I noticed Pravo Construction has new commercial projects around Austin."}, {"company": "Precision Reconstruction Group", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-17", "expiry": "2026-11-01", "live": true, "line": "I noticed Precision Reconstruction Group has new commercial projects around Austin."}, {"company": "Premier Outdoor Installations", "title": "Company Owner", "signal": "Permit-Velocity", "date": "2026-09-02", "expiry": "2026-12-01", "live": true, "line": "I noticed Premier Outdoor Installations has new commercial projects around Austin."}, {"company": "Quality Cable Contractors Inc.", "title": "Chief Executive Officer", "signal": "Permit-Velocity", "date": "2026-09-11", "expiry": "2026-12-10", "live": true, "line": "I noticed Quality Cable Contractors has new commercial projects around Orlando."}, {"company": "Raircon Corp", "title": "Co-Owner", "signal": "Permit-Velocity", "date": "2026-09-17", "expiry": "2026-12-16", "live": true, "line": "I noticed Raircon has new commercial projects around Miami."}, {"company": "Roof Tile Specialists LLC", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-17", "expiry": "2026-11-15", "live": true, "line": "I noticed Roof Tile Specialists has new commercial projects around Miami."}, {"company": "Scenic Capital Advisors, L.L.C.", "title": "Principal / Founder", "signal": "Permit-Velocity", "date": "2026-09-11", "expiry": "2026-12-10", "live": true, "line": "I saw Scenic Capital pulled permits for new jobs around Austin."}, {"company": "Southern Asphalt Engineering, Inc.", "title": "Owner", "signal": "Permit-Velocity", "date": "2026-08-17", "expiry": "2026-11-15", "live": true, "line": "I noticed Southern Asphalt Engineering has new commercial projects around Miami."}, {"company": "Sunshine State Air Conditioning, Inc", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-19", "expiry": "2026-11-17", "live": true, "line": "I noticed Sunshine State Air Conditioning has new commercial projects around Miami."}, {"company": "TEXAS COMFORT AIR", "title": "Chief Executive Officer", "signal": "Permit-Velocity", "date": "2026-09-24", "expiry": "2026-12-23", "live": true, "line": "I noticed Texas Comfort Air has new commercial projects around Austin."}, {"company": "Tron Electric Inc", "title": "Chief Executive Officer", "signal": "Permit-Velocity", "date": "2026-08-04", "expiry": "2026-11-02", "live": true, "line": "I noticed Tron Electric has new commercial projects around Austin."}, {"company": "Viking Air Mechanical Inc.", "title": "President", "signal": "Permit-Velocity", "date": "2026-09-01", "expiry": "2026-11-30", "live": true, "line": "I noticed Viking Air Mechanical has new commercial projects around Miami."}, {"company": "Vulcan Contractors Group LLC", "title": "Founder", "signal": "Permit-Velocity", "date": "2026-09-26", "expiry": "2026-12-25", "live": true, "line": "I noticed Vulcan Contractors Group has new commercial projects around Miami."}, {"company": "Rani Foods", "title": "Rani Brand Co-Founder", "signal": "Bookkeeper-Ad", "date": "2026-09-05", "expiry": "2026-10-05", "live": false, "line": "I noticed Rani Foods is hiring a bookkeeper in Houston."}, {"company": "WELL BILT Industries", "title": "CEO", "signal": "Bookkeeper-Ad", "date": "2026-09-09", "expiry": "2026-10-09", "live": false, "line": "I noticed Well Bilt Industries is hiring a bookkeeper in Ocala."}, {"company": "Allied Electric Services, Inc.", "title": "CEO", "signal": "Permit-Velocity", "date": "2026-08-26", "expiry": "2026-10-10", "live": false, "line": "I noticed Allied Electric Services has new commercial projects around Austin."}, {"company": "Atlas National Renovations", "title": "Founder and Managing Partner", "signal": "Permit-Velocity", "date": "2026-07-02", "expiry": "2026-09-30", "live": false, "line": "I noticed Atlas National Renovations has new commercial projects around Austin."}, {"company": "GENERATIONS HVAC", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-19", "expiry": "2026-10-03", "live": false, "line": "I noticed Generations HVAC has new commercial projects around Austin."}, {"company": "JM Engineering, LLC", "title": "President / Owner", "signal": "Permit-Velocity", "date": "2026-08-27", "expiry": "2026-10-11", "live": false, "line": "I noticed JM Engineering has new commercial projects around Austin."}, {"company": "POTENTIAL ELECTRIC LLC", "title": "President/CEO", "signal": "Permit-Velocity", "date": "2026-07-13", "expiry": "2026-10-11", "live": false, "line": "I noticed Potential Electric has new commercial projects around Orlando."}, {"company": "RCI AIR CONDITIONING COMPANY", "title": "President", "signal": "Permit-Velocity", "date": "2026-08-21", "expiry": "2026-10-05", "live": false, "line": "I noticed RCI Air Conditioning has new commercial projects around Miami."}];</script>
+<script>
+(function(){
+  var META={
+    "Permit-Velocity":{t:"Building permits",d:"Pulled permits at several sites in a short window. More jobs running at once means more invoices to keep straight.",ex:"I noticed you have had permits out at three sites since August."},
+    "Bookkeeper-Ad":{t:"Hiring a bookkeeper",d:"Advertised for bookkeeping help. They have told the world they are short-handed.",ex:"I noticed Well Bilt Industries is hiring a bookkeeper in Ocala."},
+    "New-Location":{t:"New location",d:"Registered a second address with the state. Two locations means two sets of books.",ex:"I noticed you opened a second location this summer."},
+    "New-State":{t:"Opened in a new state",d:"Registered the business in a second state, which brings new filing rules with it.",ex:"I noticed you registered in Texas earlier this year."}
+  };
+  var order=["Permit-Velocity","Bookkeeper-Ad","New-Location","New-State"];
+  var cards=document.getElementById("sigcards"), tb=document.getElementById("tb");
+  function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"})[c];});}
+  order.forEach(function(k){
+    var rs=ROWS.filter(function(r){return r.signal===k;});
+    if(!rs.length) return;
+    var live=rs.filter(function(r){return r.live;}).length;
+    var el=document.createElement("div"); el.className="sigcard";
+    el.innerHTML='<h3>'+esc(META[k].t)+'</h3><div class="cnt">'+rs.length+'</div>'+
+      '<p>'+esc(META[k].d)+'</p>'+
+      '<div class="ex">&ldquo;'+esc(META[k].ex)+'&rdquo;</div>'+
+      '<p style="margin-top:11px"><span class="pill '+(live?'on':'off')+'">'+live+' still current</span></p>';
+    cards.appendChild(el);
+  });
+  ROWS.forEach(function(r){
+    var tr=document.createElement("tr");
+    tr.innerHTML='<td><span class="co">'+esc(r.company)+'</span><br><span class="ti">'+esc(r.title)+'</span></td>'+
+      '<td>'+esc(META[r.signal]?META[r.signal].t:r.signal)+'</td>'+
+      '<td style="white-space:nowrap;font-variant-numeric:tabular-nums">'+esc(r.date)+'</td>'+
+      '<td><span class="pill '+(r.live?'on':'off')+'">'+(r.live?'Still current':'Gone stale')+'</span></td>';
+    tb.appendChild(tr);
+  });
+})();
+</script>
+</body></html>
