@@ -1,2 +1,5 @@
 User-agent: *
+Allow: /a/how-it-works-v2/
+Allow: /a/how-it-works-pharma/
+Allow: /a/how-it-works/
 Disallow: /a/

@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/a/(.*)",
+      "source": "/a/((?!how-it-works$|how-it-works/|how-it-works-v2|how-it-works-pharma).*)",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow, noarchive" },
         { "key": "Referrer-Policy", "value": "no-referrer" },
